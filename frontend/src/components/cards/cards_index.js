@@ -16,6 +16,8 @@ export default class CardsIndex extends Component {
   
   
   render() {
+    if (!this.props.cards) return null;
+    
     return (
       <>
         <div>

@@ -18,7 +18,7 @@ export default class CardsList extends Component {
       return (
         <div>
           <Link to={`${cardUrl}${card.id}`} >
-
+            {card.lc_title}
           </Link>
         </div>
       )
