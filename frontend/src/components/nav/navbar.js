@@ -19,14 +19,15 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div>
-          <button onClick={this.logoutUser}>Logout</button>
+          <button className='profile-button'>Profile</button> 
+          <button className='logout-button' onClick={this.logoutUser}>Logout</button>
         </div>
       );
     } else {
       return (
         <div>
-          <Link to={'/signup'}>Signup</Link>
-          <Link to={'/login'}>Login</Link>
+          <Link className='signup-button' to={'/signup'}>Signup</Link>
+          <Link className='login-button' to={'/login'}>Login</Link>
         </div>
       );
     }
@@ -34,7 +35,7 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className = 'navbar-div'> 
         <h1>FlashCode</h1>
         {this.getLinks()}
       </div>
