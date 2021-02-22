@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 
 const Card = require('../../models/Card');
-// const validateCardInput = require('../../validation/cards');
+const validateCardInput = require('../../validation/cards');
 
 // router.get("/test", (req, res) => res.json({ msg: "This is the cards route "}))
 
@@ -34,13 +34,32 @@ router.get('/user/:user_id', (req, res) => {
     .catch((err) => res.status(404).json({ nocardsfound: 'No cards found' }));
 });
 
-router.post('/', (req, res) => {
-    let dueDate = setDueDate(req.body.rating);
-    // console.log(req.body.updatedAt);
-    const newCard = new Card({
-        lc_number: req.body.lc_number,
-        rating: req.body.rating,
-        due_date: dueDate,
+router.get('/:id', (req, res) => {
+    Card.findById(req.params.id)
+        .then(card => res.json(card))
+        .catch(err =>
+            res.status(404).json({ nocardfound: 'No card with that ID'}));
+})
+
+router.post('/', 
+    passport.authenticate('jwt', {session: false}),
+    (req, res) => {
+        const { errors, isValid } = validateCardInput(req.body);
+
+        if (!isValid) {
+            return res.status(400).json(errors);
+        }
+        let dueDate = setDueDate(req.body.rating);
+        let urlTitle = req.body.title.split(' ').join('-');
+        const thisUrl = `https://leetcode.com/problems/${urlTitle}/`;
+        // console.log(req.body.updatedAt);
+        const newCard = new Card({
+            user: req.user.id,
+            title: req.body.title,
+            rating: req.body.rating,
+            url: thisUrl,
+            dueDate: dueDate,
+            notes: req.body.notes
     });
     
     newCard.save().then(card => res.json(card));
