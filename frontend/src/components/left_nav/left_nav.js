@@ -14,7 +14,7 @@ class LeftNav extends React.Component{
                 <h1>Logo goes here</h1>
                 <div>Welcome, {this.props.currentUser}</div>
                 <div>Index link goes here</div>
-                
+                <DecksIndex />
             </div>
         )
     }
