@@ -8,50 +8,49 @@ const CardSchema = new Schema(
       ref: 'users',
       index: true
     },
-    lc_number: {
-      type: Number,
+    title: {
+      type: String,
+      lowercase: true,
       required: true,
       index: true
-    },
-    lc_title: {
-      type: String,
-      required: true
-    },
-    lc_difficulty: {
-      type: String,
-      required: true
-    },
-    // title: {
-    //   type: String,
-    //   lowercase: true,
-    //   required: true
-    //   possible check for if question_name leads to valid url?
-    // },
-    url: {
-      type: String,
-      required: true
+      // possible check for if question_name leads to valid url?
     },
     rating: {
       type: Number,
       required: true
     },
+    dueDate: {
+      type: Date,
+      required: true
+    },
+    url: {
+      type: String,
+      required: true
+    },
     notes: {
       type: String
     },
-    // tag: {
-    //     type: String,
-    // }
-    due_date: {
-      type: Date,
-      required: true
-    }
+    // lc_number: {
+    //   type: Number,
+    //   required: true,
+    //   index: true
+    // },
+    // lc_title: {
+    //   type: String,
+    //   required: true
+    // },
+    // lc_difficulty: {
+    //   type: String,
+    //   required: true
+    // },
+    // tags: [{type: String}]
   },
   {
     timestamps: true
   },
-  { strict: false }
+
 );
 
-CardSchema.index({ user: 1, lc_number: 1 }), { unique: true };
+CardSchema.index({ user: 1, title: 1 }), { unique: true };
 
 module.exports = Card = mongoose.model('Card', CardSchema);
