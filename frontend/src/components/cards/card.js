@@ -23,7 +23,7 @@ export default class Card extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
+    // update card
   }
   
   render() {
