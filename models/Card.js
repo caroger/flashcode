@@ -21,16 +21,16 @@ const CardSchema = new Schema(
       type: String,
       required: true
     },
-    // title: {
+    // // title: {
+    // //   type: String,
+    // //   lowercase: true,
+    // //   required: true
+    // //   possible check for if question_name leads to valid url?
+    // // },
+    // url: {
     //   type: String,
-    //   lowercase: true,
     //   required: true
-    //   possible check for if question_name leads to valid url?
     // },
-    url: {
-      type: String,
-      required: true
-    },
     rating: {
       type: Number,
       required: true
@@ -38,13 +38,11 @@ const CardSchema = new Schema(
     notes: {
       type: String
     },
-    // tag: {
-    //     type: String,
-    // }
     due_date: {
       type: Date,
       required: true
-    }
+    },
+    // tags: [{type: String}]
   },
   {
     timestamps: true
