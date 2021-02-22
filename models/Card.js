@@ -15,7 +15,7 @@ const CardSchema = new Schema(
     },
     lc_title: {
       type: String,
-      required: true,
+      required: true
     },
     lc_difficulty: {
       type: String,
@@ -28,29 +28,30 @@ const CardSchema = new Schema(
     //   possible check for if question_name leads to valid url?
     // },
     url: {
-        type: String,
-        required: true
+      type: String,
+      required: true
     },
     rating: {
-        type: Number,
-        required: true
+      type: Number,
+      required: true
     },
     notes: {
-        type: String
+      type: String
     },
     // tag: {
     //     type: String,
     // }
     due_date: {
-        type: Date,
-        required: true
+      type: Date,
+      required: true
     }
   },
   {
     timestamps: true
-  }
-), {strict: false};
+  },
+  { strict: false }
+);
 
-CardSchema.index({user: 1, lc_number: 1}), {unique: true};
+CardSchema.index({ user: 1, lc_number: 1 }), { unique: true };
 
 module.exports = Card = mongoose.model('Card', CardSchema);
