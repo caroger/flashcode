@@ -6,7 +6,7 @@
 
 
 import { connect } from 'react-redux';
-// import { fetchCards } from '../../../actions/note_actions';
+import { fetchCards } from '../../actions/card_actions';
 import { getAllCards } from '../../reducers/selectors';
 import CardsIndex from './notes_index';
 
