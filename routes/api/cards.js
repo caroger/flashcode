@@ -39,9 +39,9 @@ router.get('/:id', (req, res) => {
         .then(card => res.json(card))
         .catch(err =>
             res.status(404).json({ nocardfound: 'No card with that ID'}));
-})
+});
 
-router.post('/', 
+router.post('/', //open
     passport.authenticate('jwt', {session: false}),
     (req, res) => {
         const { errors, isValid } = validateCardInput(req.body);
@@ -49,20 +49,28 @@ router.post('/',
         if (!isValid) {
             return res.status(400).json(errors);
         }
-        let dueDate = setDueDate(req.body.rating);
-        let urlTitle = req.body.title.split(' ').join('-');
-        const thisUrl = `https://leetcode.com/problems/${urlTitle}/`;
-        // console.log(req.body.updatedAt);
-        const newCard = new Card({
-            user: req.user.id,
-            title: req.body.title,
-            rating: req.body.rating,
-            url: thisUrl,
-            dueDate: dueDate,
-            notes: req.body.notes
+        // check if title with user already exist;
+
+        Card.findOne({ user: req.params.user_id, title: req.body.title }).then((card) => {
+        if (card) {
+            errors.title = 'You already have this problem in your flashcard collection';
+            return res.status(400).json(errors);
+        } else {
+            let dueDate = setDueDate(req.body.rating);
+            let urlTitle = req.body.title.split(' ').join('-');
+            const thisUrl = `https://leetcode.com/problems/${urlTitle}/`;
+            // console.log(req.body.updatedAt);
+            const newCard = new Card({
+                user: req.user.id,
+                title: req.body.title,
+                rating: req.body.rating,
+                url: thisUrl,
+                dueDate: dueDate,
+                notes: req.body.notes
+            })
+            newCard.save().then(card => res.json(card));
+        };
     });
-    
-    newCard.save().then(card => res.json(card));
 })
 // edit card
 

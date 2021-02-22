@@ -51,6 +51,6 @@ const CardSchema = new Schema(
 
 );
 
-CardSchema.index({ user: 1, title: 1 }), { unique: true };
+// CardSchema.index({ user: 1, title: 1 }), { unique: true };
 
 module.exports = Card = mongoose.model('Card', CardSchema);
