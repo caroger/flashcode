@@ -5,11 +5,13 @@ const CardSchema = new Schema(
   {
     user: {
       type: Schema.Types.ObjectId,
-      ref: 'users'
+      ref: 'users',
+      index: true
     },
     lc_number: {
       type: Number,
       required: true,
+      index: true
     },
     lc_title: {
       type: String,
@@ -47,6 +49,8 @@ const CardSchema = new Schema(
   {
     timestamps: true
   }
-);
+), {strict: false};
+
+CardSchema.index({user: 1, lc_number: 1}), {unique: true};
 
 module.exports = Card = mongoose.model('Card', CardSchema);
