@@ -1,18 +1,22 @@
 import React from 'react';
-import LeftNav from '../left_nav/left_nav';
-import Feed from '../right_nav/feed';
-import NavBar from '../nav/navbar';
+import {Redirect} from 'react-router-dom';
+import LoggedInComponent from './logged_in/logged_in_component';
+import LoggedOutComponent from './logged_out/logged_out_component';
+
 
 
 class MainPage extends React.Component {
 
   
   render() {
-    return (
-      <div>
-        <footer>Copyright &copy; 2020 FlashCode</footer>
-      </div>
-    );
+    if(this.props.signedIn){
+      return(
+       <Redirect to='/home' />
+      )} else{
+      return (
+        <div><LoggedOutComponent /></div>
+      )} 
+
   }
 }
 
