@@ -18,13 +18,7 @@ export default class CardsList extends Component {
       
       return (
         <div>
-          <Card 
-            lc_title={card.lc_title}
-            lc_difficulty={card.lc_difficulty}
-            rating={card.rating}
-            due_date={card.due_date}
-            notes={card.notes}
-          />
+          <Card card={card} />
         </div>
       )
     })
