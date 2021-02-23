@@ -10,7 +10,7 @@ export default class CardsIndex extends Component {
     super(props)
 
     this.state = {
-      num: '', 
+      probNum: '', 
       rating: '', 
       notes: '',
     }
@@ -56,7 +56,7 @@ export default class CardsIndex extends Component {
   render() {
     if (!this.props.cards) return null;
     
-    const { num, rating, notes } = this.state;
+    const { probNum, rating, notes } = this.state;
 
     return (
       <>
@@ -71,9 +71,9 @@ export default class CardsIndex extends Component {
               <input
                 type="text"
                 placeholder="Problem ID"
-                value={num}
+                value={probNum}
                 autoFocus={true}
-                onChange={this.update('num')}
+                onChange={this.update('probNum')}
               />
             </label>
             <label>My Rating:
