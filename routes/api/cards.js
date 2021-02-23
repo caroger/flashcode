@@ -14,12 +14,25 @@ axios.get('https://leetcode.com/api/problems/all/').then((res) => {
   lcdata = res.data;
 });
 
-const findProblem = (probNum) => {
+const findProblemStat = (probNum) => {
   data = lcdata['stat_status_pairs']
     .map((stat) => stat['stat'])
-    .find((stat) => stat['question_id'] === probNum);
+    .find((stat) => stat['frontend_question_id'] === probNum);
   return data;
 };
+const findProblemDifficulty = (probNum) => {
+  data = lcdata['stat_status_pairs']
+    .find((stat) => stat['stat']['frontend_question_id'] === probNum);
+  return data['difficulty']['level']
+};
+
+// intended usage
+// stat = findProblemStat(20);
+// difficulty = findProblemDifficulty(20);
+// url = ()`${stat['question__title_slug'])}`;
+// title = stat['question__title'];
+// lcDiff = difficulty;
+
 
 const setDueDate = (rating, updatedAt = new Date()) => {
   switch (rating) {
@@ -32,7 +45,6 @@ const setDueDate = (rating, updatedAt = new Date()) => {
   }
 };
 router.get('/user/:user_id', (req, res) => {
-    // console.log(findProblem(20));
     Card.find({ user: req.params.user_id })
     .then((cards) => res.json(cards))
     .catch((err) => res.status(404).json({ nocardsfound: 'No cards found' }));
@@ -71,6 +83,7 @@ router.post(
           url: thisUrl,
           dueDate: dueDate,
           notes: req.body.notes
+        //   refactor title, url, need questionnumber from user input, 
         });
         newCard.save().then((card) => res.json(card));
       }
