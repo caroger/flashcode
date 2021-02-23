@@ -36,7 +36,7 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className = 'navbar-div'> 
-        <h1>FlashCode</h1>
+        <Link to="/"><h1>FlashCode</h1></Link>
         {this.getLinks()}
       </div>
     );
