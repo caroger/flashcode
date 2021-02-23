@@ -29,7 +29,7 @@ const CardSchema = new Schema(
     },
     notes: {
       type: String
-    },
+    }
     // lc_number: {
     //   type: Number,
     //   required: true,
@@ -47,8 +47,7 @@ const CardSchema = new Schema(
   },
   {
     timestamps: true
-  },
-
+  }
 );
 
 // CardSchema.index({ user: 1, title: 1 }), { unique: true };
