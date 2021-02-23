@@ -2,11 +2,10 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
-// const findProblem = require('./_lcapi');
-
 const Card = require('../../models/Card');
 const validateCardInput = require('../../validation/cards');
 
+<<<<<<< HEAD
 const axios = require('axios');
 // set lcdata to all problems
 let lcdata;
@@ -33,6 +32,9 @@ const findProblemDifficulty = (probNum) => {
 // title = stat['question__title'];
 // lcDiff = difficulty;
 
+=======
+const findProblem = require('./lc_api');
+>>>>>>> refector_lcAPI
 
 const setDueDate = (rating, updatedAt = new Date()) => {
   switch (rating) {
@@ -45,7 +47,12 @@ const setDueDate = (rating, updatedAt = new Date()) => {
   }
 };
 router.get('/user/:user_id', (req, res) => {
+<<<<<<< HEAD
     Card.find({ user: req.params.user_id })
+=======
+  console.log(findProblem(20));
+  Card.find({ user: req.params.user_id })
+>>>>>>> refector_lcAPI
     .then((cards) => res.json(cards))
     .catch((err) => res.status(404).json({ nocardsfound: 'No cards found' }));
 });
@@ -88,25 +95,25 @@ router.post(
         newCard.save().then((card) => res.json(card));
       }
     });
-})
+  }
+);
 
 // edit card
 router.put('/:id', (req, res) => {
-    Card.findById(req.params.id).then((card) => {
-        if (card) {
-            if (req.body.rating) {
-                card.rating = req.body.rating;
-            }
+  Card.findById(req.params.id).then((card) => {
+    if (card) {
+      if (req.body.rating) {
+        card.rating = req.body.rating;
+      }
 
-            if (req.body.notes) {
-                card.notes = req.body.notes;
-            }
-            card.save().then(card => res.json(card));
-        } else {
-            res.status(404).json({ nocardfound: 'No card with that ID'});
-        }
-    })
+      if (req.body.notes) {
+        card.notes = req.body.notes;
+      }
+      card.save().then((card) => res.json(card));
+    } else {
+      res.status(404).json({ nocardfound: 'No card with that ID' });
+    }
+  });
 });
-
 
 module.exports = router;
