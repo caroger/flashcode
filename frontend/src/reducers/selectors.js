@@ -1,5 +1,5 @@
 // returns the state's notes as an array of notes
-export const getAllCards = ({ entities: { cards } } = {}) => (
+export const getAllUserCards = ({ entities: { cards } } = {}) => (
   Object.keys(cards).map(id => cards[id])
 )
 

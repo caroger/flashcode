@@ -13,7 +13,7 @@ import CardsIndex from './notes_index';
 
 const mapStateToProps = (state) => {
   return {
-    cards: getAllCards(state),
+    cards: getAllUserCards(state),
     currentUser: state.session.user
   }
 }
