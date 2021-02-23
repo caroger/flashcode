@@ -38,21 +38,21 @@ export default class CardsIndex extends Component {
       // .then(() => this.props.closeModal());
   }
   
-  // renderErrors() {
-  //   return (
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={i}>
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   )
-  // }
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={i}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    )
+  }
 
-  // componentWillUnmount() {
-  //   this.props.clearCardErrors();
-  // }
+  componentWillUnmount() {
+    this.props.clearCardErrors();
+  }
   
   render() {
     if (!this.props.cards) return null;
@@ -97,10 +97,9 @@ export default class CardsIndex extends Component {
               />
             </label>
 
-
-            {/* <div className="errors">
+            <div className="errors">
               {this.renderErrors()}
-            </div> */}
+            </div>
 
             <div className="form-buttons">
               <button type="submit" form="new-card-form">Create Card</button>

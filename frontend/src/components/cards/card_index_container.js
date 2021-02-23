@@ -5,7 +5,7 @@
 // fetchCards
 
 import { connect } from 'react-redux';
-import { createCard, fetchCards } from '../../actions/card_actions';
+import { clearCardErrors, createCard, fetchCards } from '../../actions/card_actions';
 import { getAllUserCards } from '../../reducers/selectors';
 import CardsIndex from './notes_index';
 
@@ -13,14 +13,16 @@ import CardsIndex from './notes_index';
 const mapStateToProps = (state) => {
   return {
     cards: getAllUserCards(state),
-    currentUser: state.session.user
+    currentUser: state.session.user,
+    errors: Object.values(state.errors.cards)
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     fetchCards: () => dispatch(fetchCards()),
-    createCard: card => dispatch(createCard(card))
+    createCard: card => dispatch(createCard(card)),
+    clearCardErrors: () => dispatch(clearCardErrors())
   }
 }
 
