@@ -4,10 +4,9 @@
 // mDTP
 // fetchCards
 
-
 import { connect } from 'react-redux';
 import { createCard, fetchCards } from '../../actions/card_actions';
-import { getAllCards } from '../../reducers/selectors';
+import { getAllUserCards } from '../../reducers/selectors';
 import CardsIndex from './notes_index';
 
 
