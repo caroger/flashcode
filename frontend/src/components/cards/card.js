@@ -1,14 +1,16 @@
 // fetchCard and set State to update card
 
 import React, { Component } from 'react';
+import { updateCard } from '../../actions/card_actions';
 
 export default class Card extends Component {
   constructor(props) {
     super(props)
   
     this.state = {
-      notes = '',
-      due_date = ''
+      rating: '',
+      notes: '',
+      due_date: ''
     }
 
     this.update = this.update.bind(this);
@@ -23,7 +25,9 @@ export default class Card extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // update card
+    
+    const { rating, notes, due_date } = this.state;
+    updateCard({ rating, notes, due_date });
   }
   
   render() {
@@ -44,9 +48,9 @@ export default class Card extends Component {
         </div>
         <div>
           <form onSubmit={this.handleSubmit}>
-            <input type="button" value="Easy" />
-            <input type="button" value="Medium" />
-            <input type="button" value="Hard" />
+            <input type="button" value="Easy" onClick={this.update('rating')}/>
+            <input type="button" value="Medium" onClick={this.update('rating')}/>
+            <input type="button" value="Hard" onClick={this.update('rating')}/>
           </form>
         </div>
       </div>
