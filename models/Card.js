@@ -27,22 +27,6 @@ const CardSchema = new Schema(
       type: String,
       required: true
     },
-<<<<<<< HEAD
-    rating: {
-      type: Number,
-      required: true
-    },
-    notes: {
-      type: String
-    },
-    // tag: {
-    //     type: String,
-    // }
-    due_date: {
-      type: Date,
-      required: true
-    }
-=======
     notes: {
       type: String
     },
@@ -60,21 +44,13 @@ const CardSchema = new Schema(
     //   required: true
     // },
     // tags: [{type: String}]
->>>>>>> main
   },
   {
     timestamps: true
   },
-<<<<<<< HEAD
-  { strict: false }
-);
-
-CardSchema.index({ user: 1, lc_number: 1 }), { unique: true };
-=======
 
 );
 
 // CardSchema.index({ user: 1, title: 1 }), { unique: true };
->>>>>>> main
 
 module.exports = Card = mongoose.model('Card', CardSchema);
