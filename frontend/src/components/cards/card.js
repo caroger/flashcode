@@ -14,12 +14,15 @@ export default class Card extends Component {
       rating: null,
       dueDate: '',
       notes: '',
-      updatedAt: new Date()
+      updatedAt: new Date(),
+      flip: false
     }
 
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.grabCard = this.grabCard.bind(this);
+
+    this.toggleFlip = this.toggleFlip.bind(this);
   }
 
   componentDidMount() {
@@ -35,20 +38,25 @@ export default class Card extends Component {
       this.setState({ [field]: e.target.value })
     }
   }
-
+  
   handleSubmit(e) {
     e.preventDefault();
     
     const { rating, notes, dueDate } = this.state;
     updateCard({ rating, notes, dueDate });
   }
+
   
+  toggleFlip() {
+    this.setState({ flip: [!flip] });
+  }
+
   render() {
     const { title, num, difficulty, rating, dueDate, notes } = this.props.card;
     
     return (
-      <div className="card-container">
-        <div className="card-front">
+      <div className={`card ${this.state.flip ? 'flipped' : ''}`} onClick={this.toggleFlip}>
+        <div className="front">
           <h1>{title}</h1>
           <p>Problem #{num}</p>
           <div>
@@ -57,7 +65,7 @@ export default class Card extends Component {
             <h3>Next Review: {dueDate}</h3>
           </div>
         </div>
-        <div className="card-back">
+        <div className="back">
           <h2>Notes</h2>
           <textarea value={notes || 'Add notes'} />
           <button onClick={() => this.update('notes')}>Save Notes</button>
