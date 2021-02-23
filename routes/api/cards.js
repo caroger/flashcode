@@ -72,7 +72,25 @@ router.post('/', //open
         };
     });
 })
+
 // edit card
+router.put('/:id', (req, res) => {
+    Card.findById(req.params.id).then((card) => {
+        if (card) {
+            if (req.body.rating) {
+                card.rating = req.body.rating;
+            }
+
+            if (req.body.notes) {
+                card.notes = req.body.notes;
+            }
+            card.save().then(card => res.json(card));
+        } else {
+            res.status(404).json({ nocardfound: 'No card with that ID'});
+        }
+    })
+});
+
 
 
 

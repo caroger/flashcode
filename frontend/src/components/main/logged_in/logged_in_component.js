@@ -21,7 +21,7 @@ class LoggedInComponent extends React.Component{
              {this.redirect()}
             <LeftNav />
             <Feed />
-             <NavBar />
+            <NavBar />
             </div>
         )
     }
