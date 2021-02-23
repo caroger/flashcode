@@ -31,7 +31,7 @@ export default class Card extends Component {
   }
   
   render() {
-    const { lc_title, lc_difficulty, rating, due_date, notes } = this.props.card;
+    const { lc_title, lc_difficulty, rating, due_date, notes } = this.props;
     
     return (
       <div className="card-container">
@@ -44,7 +44,7 @@ export default class Card extends Component {
         <div>
           <h2>Notes</h2>
           <textarea value={notes || 'Add notes'} />
-          <button onClick={() => this.update('notes')}>Save</button>
+          <button onClick={() => this.update('notes')}>Save Notes</button>
         </div>
         <div>
           <form onSubmit={this.handleSubmit}>
