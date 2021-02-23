@@ -18,7 +18,7 @@ export default class CardsList extends Component {
       
       return (
         <div>
-          <Card card={card} />
+          <Card card={card} key={card._id} />
         </div>
       )
     })
