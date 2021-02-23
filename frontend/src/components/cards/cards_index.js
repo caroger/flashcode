@@ -10,16 +10,14 @@ export default class CardsIndex extends Component {
     super(props)
 
     this.state = {
-      lc_title: '', 
-      lc_difficulty: '',
+      title: '', 
       rating: '', 
       notes: '',
-      due_date: new Date()
+      user: this.props.currentUser
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
-    // this.assignDueDate = this.assignDueDate.bind(this);
   }
 
   componentDidMount() {
@@ -31,18 +29,6 @@ export default class CardsIndex extends Component {
       this.setState({ [field]: e.target.value })
     }
   }
-
-  // assignDueDate(rating) {
-  //   const date = this.state.due_date;
-
-  //   if (rating === 'easy') {
-  //     this.setState({ due_date: date + 7 })
-  //   } else if (rating === 'medium') {
-  //     this.setState({ due_date: date + 3 })
-  //   } else {
-  //     this.setState({ due_date: date + 1 })
-  //   }
-  // }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -71,6 +57,8 @@ export default class CardsIndex extends Component {
   render() {
     if (!this.props.cards) return null;
     
+    const { title, rating, notes } = this.state;
+
     return (
       <>
         <div>
@@ -85,13 +73,13 @@ export default class CardsIndex extends Component {
                 type="text"
                 name="name"
                 placeholder="Title"
-                value={lc_title}
+                value={title}
                 autoFocus={true}
-                onChange={this.update('lc_title')}
+                onChange={this.update('title')}
               /> 
             </label>
             <label>My Rating:
-              <select value={this.state.rating} 
+              <select value={rating} 
                 onChange={() => {
                   this.update('rating');
                   this.assignDueDate(rating);
@@ -103,7 +91,7 @@ export default class CardsIndex extends Component {
             </label>
             <label>Problem Notes:
               <textarea 
-                value={this.state.notes} 
+                value={notes} 
                 placeholder="Add notes"
                 onChange={this.update('notes')} 
               />
