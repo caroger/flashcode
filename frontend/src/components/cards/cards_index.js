@@ -90,14 +90,6 @@ export default class CardsIndex extends Component {
                 onChange={this.update('lc_title')}
               /> 
             </label>
-            <label>Problem Difficulty:
-              <select value={this.state.lc_difficulty} 
-                onChange={this.update('lc_difficulty')}>
-                  <option value="easy">Easy</option>
-                  <option value="medium" selected>Medium</option>
-                  <option value="hard">Hard</option>
-              </select>
-            </label>
             <label>My Rating:
               <select value={this.state.rating} 
                 onChange={() => {
