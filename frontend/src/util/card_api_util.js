@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export const getCards = () => {
-  return axios.get('/api/cards')
+export const getCards = (userId) => {
+  return axios.get(`/api/cards/${userId}`)
 };
 
 export const getCard = cardId => {

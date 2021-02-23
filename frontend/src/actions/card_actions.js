@@ -1,11 +1,11 @@
 import * as CardAPI from '../util/card_api_util';
 
-export const RECEIVE_CARDS = "RECEIVE_CARDS";
+export const RECEIVE_USER_CARDS = "RECEIVE_USER_CARDS";
 export const RECEIVE_CARD = "RECEIVE_CARD";
 export const RECEIVE_NEW_CARD = "RECEIVE_NEW_CARD";
 
 export const receiveCards = cards => ({
-  type: RECEIVE_CARDS,
+  type: RECEIVE_USER_CARDS,
   cards
 });
 
@@ -20,8 +20,8 @@ export const receiveNewCard = card => ({
 })
 
 // thunk actions
-export const fetchCards = () => dispatch => (
-  CardAPI.getCards()
+export const fetchCards = (userId) => dispatch => (
+  CardAPI.getCards(userId)
     .then(cards => dispatch(receiveCards(cards)))
     .catch(err => console.log(err))
 );
