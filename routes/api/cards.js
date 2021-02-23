@@ -7,31 +7,10 @@ const Card = require('../../models/Card');
 const validateCardInput = require('../../validation/cards');
 
 const axios = require('axios');
-// axios.get('https://leetcode.com/api/problems/all/').then((res) => {
-//   console.log(res.data);
-// });
-
-// router.get("/test", (req, res) => res.json({ msg: "This is the cards route "}))
-
-// hard cards
-// 'api/cards/:userId/hard'
-// Card.find(user: req.params.userid, rating: 3)
-//     .then(cards => res.json(cards))
-// medium cards
-// easy cards
-// daily cards
-
-// create card
-
-const fetchFromLC = () => {
-  let lcdata;
-  axios.get('https://leetcode.com/api/problems/all/').then((res) => {
-    lcdata = res.data;
-    // console.log(lcdata);
-    return lcdata;
-  });
-  return lcdata;
-};
+let lcdata;
+axios.get('https://leetcode.com/api/problems/all/').then((res) => {
+  lcdata = res.data;
+});
 
 const setDueDate = (rating, updatedAt = new Date()) => {
   switch (rating) {
@@ -44,7 +23,7 @@ const setDueDate = (rating, updatedAt = new Date()) => {
   }
 };
 router.get('/user/:user_id', (req, res) => {
-  console.log(fetchFromLC());
+  console.log(lcdata);
   Card.find({ user: req.params.user_id })
     .then((cards) => res.json(cards))
     .catch((err) => res.status(404).json({ nocardsfound: 'No cards found' }));
