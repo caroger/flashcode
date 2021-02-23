@@ -20,7 +20,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchCards: () => dispatch(fetchCards()),
+    fetchCards: userId => dispatch(fetchCards(userId)),
     createCard: card => dispatch(createCard(card)),
     clearCardErrors: () => dispatch(clearCardErrors())
   }

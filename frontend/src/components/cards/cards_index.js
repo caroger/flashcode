@@ -21,7 +21,7 @@ export default class CardsIndex extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchCards();
+    this.props.fetchCards(currentUser._id);
   }
 
   update(field) {
