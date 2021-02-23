@@ -10,16 +10,14 @@ export default class CardsIndex extends Component {
     super(props)
 
     this.state = {
-      lc_title: '', 
-      lc_difficulty: '',
+      title: '', 
       rating: '', 
       notes: '',
-      due_date: new Date()
+      user: this.props.currentUser
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
-    // this.assignDueDate = this.assignDueDate.bind(this);
   }
 
   componentDidMount() {
@@ -32,18 +30,6 @@ export default class CardsIndex extends Component {
     }
   }
 
-  // assignDueDate(rating) {
-  //   const date = this.state.due_date;
-
-  //   if (rating === 'easy') {
-  //     this.setState({ due_date: date + 7 })
-  //   } else if (rating === 'medium') {
-  //     this.setState({ due_date: date + 3 })
-  //   } else {
-  //     this.setState({ due_date: date + 1 })
-  //   }
-  // }
-
   handleSubmit(e) {
     e.preventDefault();
 
@@ -52,25 +38,27 @@ export default class CardsIndex extends Component {
       // .then(() => this.props.closeModal());
   }
   
-  // renderErrors() {
-  //   return (
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={i}>
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   )
-  // }
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={i}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    )
+  }
 
-  // componentWillUnmount() {
-  //   this.props.clearCardErrors();
-  // }
+  componentWillUnmount() {
+    this.props.clearCardErrors();
+  }
   
   render() {
     if (!this.props.cards) return null;
     
+    const { title, rating, notes } = this.state;
+
     return (
       <>
         <div>
@@ -85,21 +73,13 @@ export default class CardsIndex extends Component {
                 type="text"
                 name="name"
                 placeholder="Title"
-                value={lc_title}
+                value={title}
                 autoFocus={true}
-                onChange={this.update('lc_title')}
+                onChange={this.update('title')}
               /> 
             </label>
-            <label>Problem Difficulty:
-              <select value={this.state.lc_difficulty} 
-                onChange={this.update('lc_difficulty')}>
-                  <option value="easy">Easy</option>
-                  <option value="medium" selected>Medium</option>
-                  <option value="hard">Hard</option>
-              </select>
-            </label>
             <label>My Rating:
-              <select value={this.state.rating} 
+              <select value={rating} 
                 onChange={() => {
                   this.update('rating');
                   this.assignDueDate(rating);
@@ -111,16 +91,15 @@ export default class CardsIndex extends Component {
             </label>
             <label>Problem Notes:
               <textarea 
-                value={this.state.notes} 
+                value={notes} 
                 placeholder="Add notes"
                 onChange={this.update('notes')} 
               />
             </label>
 
-
-            {/* <div className="errors">
+            <div className="errors">
               {this.renderErrors()}
-            </div> */}
+            </div>
 
             <div className="form-buttons">
               <button type="submit" form="new-card-form">Create Card</button>
