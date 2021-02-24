@@ -101,6 +101,7 @@ router.put('/:id', (req, res) => {
     if (card) {
       if (req.body.rating) {
         card.rating = req.body.rating;
+        card.dueDate = setDueDate(req.body.rating);
       }
 
       if (req.body.notes) {
