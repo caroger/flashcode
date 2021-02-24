@@ -2,7 +2,7 @@ import React from 'react';
 import {Redirect} from 'react-router-dom';
 import LeftNav from '../../left_nav/left_nav';
 import Feed from '../../right_nav/feed';
-
+//commit
 import NavBar from '../../nav/navbar';
 
 class LoggedInComponent extends React.Component{
