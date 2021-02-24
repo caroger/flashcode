@@ -6,8 +6,9 @@ import CardsIndex from './notes_index';
 
 const mapStateToProps = (state) => {
   return {
-    cards: getAllUserCards(state), //TODO - check if this selector gets current users cards for index
-    currentUser: state.session.user,
+    // cards: getAllUserCards(state), //TODO - check if this selector gets current users cards for index
+    cards: Object.values(state.cards.all),
+    currentUser: state.session.user, 
     errors: Object.values(state.errors.cards)
   }
 }
