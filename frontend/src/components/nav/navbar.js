@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
@@ -19,15 +18,22 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div>
-          <button className='profile-button'>Profile</button> 
-          <button className='logout-button' onClick={this.logoutUser}>Logout</button>
+          <button className="profile-button">Profile</button>
+          <button className="logout-button" onClick={this.logoutUser}>
+            Logout
+          </button>
         </div>
       );
     } else {
       return (
         <div>
-          <Link className='signup-button' to={'/signup'}>Signup</Link>
-          <Link className='login-button' to={'/login'}>Login</Link>
+          <Link className="signup-button" to={'/signup'}>
+            Sign up
+          </Link>
+          <br />
+          <Link className="login-button" to={'/login'}>
+            Login
+          </Link>
         </div>
       );
     }
@@ -35,8 +41,10 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div className = 'navbar-div'> 
-        <Link to="/"><h1>FlashCode</h1></Link>
+      <div className="navbar-div">
+        <Link to="/">
+          <h1>FlashCode</h1>
+        </Link>
         {this.getLinks()}
       </div>
     );
