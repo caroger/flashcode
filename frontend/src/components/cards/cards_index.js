@@ -10,20 +10,17 @@ export default class CardsIndex extends Component {
     super(props)
 
     this.state = {
-      lc_title: '', 
-      lc_difficulty: '',
+      probNum: '', 
       rating: '', 
       notes: '',
-      due_date: new Date()
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
-    // this.assignDueDate = this.assignDueDate.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchCards();
+    this.props.fetchCards(this.props.currentUser._id);
   }
 
   update(field) {
@@ -31,18 +28,6 @@ export default class CardsIndex extends Component {
       this.setState({ [field]: e.target.value })
     }
   }
-
-  // assignDueDate(rating) {
-  //   const date = this.state.due_date;
-
-  //   if (rating === 'easy') {
-  //     this.setState({ due_date: date + 7 })
-  //   } else if (rating === 'medium') {
-  //     this.setState({ due_date: date + 3 })
-  //   } else {
-  //     this.setState({ due_date: date + 1 })
-  //   }
-  // }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -52,25 +37,27 @@ export default class CardsIndex extends Component {
       // .then(() => this.props.closeModal());
   }
   
-  // renderErrors() {
-  //   return (
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={i}>
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   )
-  // }
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={i}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    )
+  }
 
-  // componentWillUnmount() {
-  //   this.props.clearCardErrors();
-  // }
+  componentWillUnmount() {
+    this.props.clearCardErrors();
+  }
   
   render() {
     if (!this.props.cards) return null;
     
+    const { probNum, rating, notes } = this.state;
+
     return (
       <>
         <div>
@@ -80,47 +67,37 @@ export default class CardsIndex extends Component {
         <div>
           <h2>Create New Flash Card</h2>
           <form id="new-card-form" onSubmit={this.handleSubmit}>
-            <label>Problem Title:
+            <label>Problem Number:
               <input
                 type="text"
-                name="name"
-                placeholder="Title"
-                value={lc_title}
+                placeholder="Problem ID"
+                value={probNum}
                 autoFocus={true}
-                onChange={this.update('lc_title')}
-              /> 
-            </label>
-            <label>Problem Difficulty:
-              <select value={this.state.lc_difficulty} 
-                onChange={this.update('lc_difficulty')}>
-                  <option value="easy">Easy</option>
-                  <option value="medium" selected>Medium</option>
-                  <option value="hard">Hard</option>
-              </select>
+                onChange={this.update('probNum')}
+              />
             </label>
             <label>My Rating:
-              <select value={this.state.rating} 
+              <select value={rating} 
                 onChange={() => {
                   this.update('rating');
                   this.assignDueDate(rating);
                 }}>
-                <option value="easy">Easy</option>
-                <option value="medium" selected>Medium</option>
-                <option value="hard">Hard</option>
+                <option value="1">Easy</option>
+                <option value="2" selected>Medium</option>
+                <option value="3">Hard</option>
               </select>
             </label>
             <label>Problem Notes:
               <textarea 
-                value={this.state.notes} 
+                value={notes} 
                 placeholder="Add notes"
                 onChange={this.update('notes')} 
               />
             </label>
 
-
-            {/* <div className="errors">
+            <div className="errors">
               {this.renderErrors()}
-            </div> */}
+            </div>
 
             <div className="form-buttons">
               <button type="submit" form="new-card-form">Create Card</button>

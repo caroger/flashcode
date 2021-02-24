@@ -11,8 +11,8 @@ module.exports = function validateCardInput(data) {
     data.title = validText(data.title) ? data.title : '';
 
 
-    if (Validator.isEmpty(data.title)) {
-      errors.title = 'Title field is required';
+    if (Validator.isEmpty(data.probNum)) {
+      errors.probNum = 'Problem number is required';
     }
     if (Validator.isEmpty(data.rating)) {
       errors.rating = 'Rating field is required';

@@ -8,12 +8,21 @@ const CardSchema = new Schema(
       ref: 'users',
       index: true
     },
+    probNum: {
+      type: Number,
+      required: true,
+      index: true,
+    },
     title: {
       type: String,
       lowercase: true,
       required: true,
-      index: true
+      index: true,
       // possible check for if question_name leads to valid url?
+    },
+    lcDifficulty: {
+      type: Number,
+      required: true,
     },
     rating: {
       type: Number,

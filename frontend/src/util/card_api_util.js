@@ -13,5 +13,5 @@ export const createCard = card => {
 }
 
 export const updateCard = card => {
-  return axios.patch(`/api/cards/${card.id}`, card)
+  return axios.put(`/api/cards/${card.id}`, card)
 }
