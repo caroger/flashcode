@@ -75,6 +75,9 @@ router.post(
         return res.status(400).json(errors);
       } else {
         let problem = findProblem(parseInt(req.body.probNum));
+        if (!problem) {
+          res.status(404).json({noproblemfound: 'No Leetcode problem with that number'});
+        }
         let dueDate = setDueDate(req.body.rating);
         const thisUrl = `https://leetcode.com/problems/${problem['stat']['question__title_slug']}/`;
         const newCard = new Card({
@@ -86,7 +89,7 @@ router.post(
           url: thisUrl,
           dueDate: dueDate,
           notes: req.body.notes
-        //   refactor title, url, need questionnumber from user input, 
+        
         });
         newCard
           .save()
