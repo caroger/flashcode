@@ -1,3 +1,36 @@
-.nav-bar-div{
+.navbar-div{
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    padding-top: 5px;
+    background-color: #ececec;
+}
+
+.navbar-logo{
+    //reset
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    text-decoration: none;
+
+    padding-top: 8px;
+    padding-left: 2%;
+
     
 }
+
+.navbar-button-div{
+    display: flex;
+    flex-direction: row;
+    margin-left: 75%;
+    padding-bottom: 
+}
+
+.navbar-button{
+   
+}
+
