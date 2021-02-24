@@ -1,13 +1,15 @@
 // fetchCard and set State to update card
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { updateCard } from '../../actions/card_actions';
 
-export default class Card extends Component {
+class Card extends Component {
   constructor(props) {
     super(props)
   
     this.state = {
+      _id: null,
       probNum: '',
       title: '',
       lcDifficulty: '',
@@ -26,7 +28,7 @@ export default class Card extends Component {
   }
 
   componentDidMount() {
-    grabCard()
+    this.grabCard()
   }
   
   grabCard() {
@@ -42,20 +44,28 @@ export default class Card extends Component {
   handleSubmit(e) {
     e.preventDefault();
     
-    const { rating, notes, dueDate } = this.state;
-    updateCard({ rating, notes, dueDate });
+    const card = this.state;
+    this.props.updateCard(card);
   }
 
   
   toggleFlip() {
-    this.setState({ flip: [!flip] });
+    if (this.state.flip) {
+      this.setState({ flip: false });
+    } else {
+      this.setState({ flip: true });
+    }
   }
 
   render() {
-    const { title, probNum, lcDifficulty, rating, dueDate, notes } = this.props.card;
+    if (!this.props.card) return null;
+
+    const { title, probNum, lcDifficulty, rating, dueDate, notes } = this.state;
     
     return (
-      <div className={`card ${this.state.flip ? 'flipped' : ''}`} onClick={this.toggleFlip}>
+      <div key={this.props.key} 
+        className={`card ${this.state.flip ? 'flipped' : ''}`} 
+        onClick={this.toggleFlip}>
         <div className="front">
           <h1>{title}</h1>
           <p>Problem #{probNum}</p>
@@ -64,20 +74,29 @@ export default class Card extends Component {
             <h3>Diffulty: {lcDifficulty}</h3>
             <h3>Next Review: {dueDate}</h3>
           </div>
+          <form onSubmit={this.handleSubmit}>
+            <input type="submit" value="1" onClick={this.update('rating')}/>
+            <input type="submit" value="2" onClick={this.update('rating')}/>
+            <input type="submit" value="3" onClick={this.update('rating')}/>
+          </form>
         </div>
         <div className="back">
           <h2>Notes</h2>
-          <textarea value={notes || 'Add notes'} />
-          <button onClick={() => this.update('notes')}>Save Notes</button>
+          <textarea value={notes} onChange={this.update('notes')}/>
+          <button onClick={this.handleSubmit}>Save</button>
         </div>
         <div>
-          <form onSubmit={this.handleSubmit}>
-            <input type="button" value="1" onClick={this.update('rating')}/>
-            <input type="button" value="2" onClick={this.update('rating')}/>
-            <input type="button" value="3" onClick={this.update('rating')}/>
-          </form>
         </div>
       </div>
     )
   }
 }
+
+
+const mapDispatchToProps = dispatch => {
+  return {
+    updateCard: card => dispatch(updateCard(card))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Card);

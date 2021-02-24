@@ -10,7 +10,7 @@ const CardsReducer = (state = { all: {}, user: {}, new: undefined }, action) => 
       newState.all = action.cards.data;
       return newState;
     case RECEIVE_CARD:
-      newState[action.cardId] = action.card.data;
+      newState[action.card._id] = action.card.data;
       return newState;
     case RECEIVE_NEW_CARD:
       newState.new = action.card.data;

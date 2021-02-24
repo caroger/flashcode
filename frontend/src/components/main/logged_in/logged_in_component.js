@@ -19,7 +19,7 @@ class LoggedInComponent extends React.Component{
         return(
             <div>
              {this.redirect()}
-            <LeftNav />
+            <LeftNav currentUser={this.props.currentUser}/>
             <Feed />
             <NavBar />
             </div>

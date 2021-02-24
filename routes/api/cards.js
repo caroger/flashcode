@@ -97,10 +97,10 @@ router.post(
 
 // edit card
 router.put('/:id', (req, res) => {
-  Card.findById(req.params.id).then((card) => {
+  Card.findById(req.body._id).then((card) => {
     if (card) {
       if (req.body.rating) {
-        card.rating = req.body.rating;
+        card.rating = parseInt(req.body.rating);
       }
 
       if (req.body.notes) {

@@ -32,11 +32,11 @@ export const clearCardErrors = () => ({
 
 
 // thunk actions
-export const fetchCards = (userId) => dispatch => (
-  CardAPI.getCards(userId)
+export const fetchUserCards = (userId) => dispatch => {
+  return CardAPI.getUserCards(userId)
     .then(cards => dispatch(receiveCards(cards)))
     .catch(err => dispatch(receiveCardErrors(err)))
-);
+};
 
 export const fetchCard = cardId => dispatch => (
   CardAPI.getCard(cardId)
@@ -50,8 +50,8 @@ export const createCard = card => dispatch => (
     .catch(err => dispatch(receiveCardErrors(err)))
 );
 
-export const updateCard = cardId => dispatch => (
-  CardAPI.updateCard(cardId)
+export const updateCard = card => dispatch => {
+  return CardAPI.updateCard(card)
     .then(card => dispatch(receiveCard(card)))
     .catch(err => dispatch(receiveCardErrors(err)))
-);
+};

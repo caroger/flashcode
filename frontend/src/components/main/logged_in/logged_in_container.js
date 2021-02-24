@@ -3,7 +3,8 @@ import LoggedInComponent from './logged_in_component';
 
 const mapStateToProps = (state) => {
     return{
-        signedIn: !!state.session.user
+        signedIn: !!state.session.user,
+        currentUser: state.session.user
     }
 };
    

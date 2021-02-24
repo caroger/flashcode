@@ -8,6 +8,8 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import LoggedinContainer from './main/logged_in/logged_in_container';
 
+import CardsIndexContainer from './cards/card_index_container'; // TODO
+
 const App = () => (
   <div>
     <NavBarContainer />
@@ -16,6 +18,8 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute path="/home/" component={LoggedinContainer}/>
+
+      <ProtectedRoute path="/cards/users/:userId" component={CardsIndexContainer}/>
     </Switch>
   </div>
 );

@@ -20,7 +20,7 @@ export default class CardsIndex extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchCards(this.props.currentUser._id);
+    this.props.fetchUserCards(this.props.currentUser.id);
   }
 
   update(field) {
@@ -34,7 +34,6 @@ export default class CardsIndex extends Component {
 
     const card = this.state;
     this.props.createCard(card);
-      // .then(() => this.props.closeModal());
   }
   
   renderErrors() {
@@ -61,8 +60,10 @@ export default class CardsIndex extends Component {
     return (
       <>
         <div>
-          <h1>My Cards</h1>g
-          <CardsList cards={this.props.cards} />
+          <h1>My Cards</h1>
+          <div className="card-list">
+            <CardsList cards={this.props.cards} />
+          </div>
         </div>
         <div>
           <h2>Create New Flash Card</h2>
@@ -83,7 +84,7 @@ export default class CardsIndex extends Component {
                   this.assignDueDate(rating);
                 }}>
                 <option value="1">Easy</option>
-                <option value="2" selected>Medium</option>
+                <option value="2">Medium</option>
                 <option value="3">Hard</option>
               </select>
             </label>

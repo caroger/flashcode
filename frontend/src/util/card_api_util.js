@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export const getCards = (userId) => {
-  return axios.get(`/api/cards/${userId}`)
+export const getUserCards = userId => {
+  return axios.get(`/api/cards/user/${userId}`)
 };
 
 export const getCard = cardId => {
@@ -13,5 +13,5 @@ export const createCard = card => {
 }
 
 export const updateCard = card => {
-  return axios.put(`/api/cards/${card.id}`, card)
+  return axios.put(`/api/cards/${card._id}`, card)
 }
