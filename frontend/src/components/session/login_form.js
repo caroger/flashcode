@@ -31,7 +31,6 @@ class LoginForm extends React.Component {
       });
   }
 
- 
   handleSubmit(e) {
     e.preventDefault();
 
@@ -43,7 +42,6 @@ class LoginForm extends React.Component {
     this.props.login(user);
   }
 
-  
   renderErrors() {
     return (
       <ul>
@@ -82,4 +80,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default withRouter(LoginForm);
+export default LoginForm;

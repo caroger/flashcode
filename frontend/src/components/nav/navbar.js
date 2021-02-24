@@ -1,54 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class NavBar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.logoutUser = this.logoutUser.bind(this);
-    this.getLinks = this.getLinks.bind(this);
-  }
+const NavBar = ({ loggedIn, logout, openModal }) => {
+  const loginBtn = () => {
+    return <button onClick={() => openModal('login')}>Sign In</button>;
+  };
 
-  logoutUser(e) {
-    e.preventDefault();
-    this.props.logout();
-  }
+  const logoutBtn = () => {
+    return <button onClick={logout}> Logout</button>;
+  };
 
-  // Selectively render links dependent on whether the user is logged in
-  getLinks() {
-    if (this.props.loggedIn) {
-      return (
-        <div>
-          <button className="profile-button">Profile</button>
-          <button className="logout-button" onClick={this.logoutUser}>
-            Logout
-          </button>
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <Link className="signup-button" to={'/signup'}>
-            Sign up
-          </Link>
-          <br />
-          <Link className="login-button" to={'/login'}>
-            Login
-          </Link>
-        </div>
-      );
-    }
-  }
-
-  render() {
-    return (
-      <div className="navbar-div">
-        <Link to="/">
-          <h1>FlashCode</h1>
-        </Link>
-        {this.getLinks()}
-      </div>
-    );
-  }
-}
+  return (
+    <div className="navbar-div">
+      <Link to="/">
+        <h1>FlashCode</h1>
+        {loggedIn ? logoutBtn() : loginBtn()}
+      </Link>
+    </div>
+  );
+};
 
 export default NavBar;
