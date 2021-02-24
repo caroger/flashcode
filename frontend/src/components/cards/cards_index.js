@@ -10,10 +10,9 @@ export default class CardsIndex extends Component {
     super(props)
 
     this.state = {
-      title: '', 
+      probNum: '', 
       rating: '', 
       notes: '',
-      user: this.props.currentUser
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,7 +20,7 @@ export default class CardsIndex extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchCards();
+    this.props.fetchCards(this.props.currentUser._id);
   }
 
   update(field) {
@@ -57,7 +56,7 @@ export default class CardsIndex extends Component {
   render() {
     if (!this.props.cards) return null;
     
-    const { title, rating, notes } = this.state;
+    const { probNum, rating, notes } = this.state;
 
     return (
       <>
@@ -68,15 +67,14 @@ export default class CardsIndex extends Component {
         <div>
           <h2>Create New Flash Card</h2>
           <form id="new-card-form" onSubmit={this.handleSubmit}>
-            <label>Problem Title:
+            <label>Problem Number:
               <input
                 type="text"
-                name="name"
-                placeholder="Title"
-                value={title}
+                placeholder="Problem ID"
+                value={probNum}
                 autoFocus={true}
-                onChange={this.update('title')}
-              /> 
+                onChange={this.update('probNum')}
+              />
             </label>
             <label>My Rating:
               <select value={rating} 
@@ -84,9 +82,9 @@ export default class CardsIndex extends Component {
                   this.update('rating');
                   this.assignDueDate(rating);
                 }}>
-                <option value="easy">Easy</option>
-                <option value="medium" selected>Medium</option>
-                <option value="hard">Hard</option>
+                <option value="1">Easy</option>
+                <option value="2" selected>Medium</option>
+                <option value="3">Hard</option>
               </select>
             </label>
             <label>Problem Notes:

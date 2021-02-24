@@ -10,6 +10,7 @@ export default class CardsList extends Component {
     // pull out cards and deck to render list of cards depending on view/route
     const { cards, deck } = this.props;
 
+    // TODO - filter cardList depending on selected deck
     // let cardUrl = "/cards/";
     // update cardUrl if view is "deck"
 
@@ -18,13 +19,7 @@ export default class CardsList extends Component {
       
       return (
         <div>
-          <Card 
-            lc_title={card.lc_title}
-            lc_difficulty={card.lc_difficulty}
-            rating={card.rating}
-            due_date={card.due_date}
-            notes={card.notes}
-          />
+          <Card card={card} key={card._id} />
         </div>
       )
     })
