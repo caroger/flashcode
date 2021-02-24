@@ -1,3 +1,29 @@
 .feed-div{
    grid-column-start: 3;
+   background-color: white;
+   width: 60%;
+   margin-left: 40%;
+   color: #444343;
+   border-left: 1px solid #696969;
+}
+
+.feed-title{
+   padding-left: 35%;
+   padding-top: 20px;
+   padding-bottom: 10px;
+   border-bottom: 1px solid #696969;
+}
+
+.feed-ul{
+   font-size: 11px;
+  text-align: right;
+  padding-right: 15px;
+}
+
+.feed-li{
+   padding-top: 20px;
+   padding-bottom: 20px;
+   margin: auto;
+   border-radius: 1px solid #696969;
+   font-weight: 500;
 }
