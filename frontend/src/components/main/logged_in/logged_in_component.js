@@ -2,6 +2,7 @@ import React from 'react';
 import {Redirect} from 'react-router-dom';
 import LeftNav from '../../left_nav/left_nav';
 import Feed from '../../right_nav/feed';
+
 import NavBar from '../../nav/navbar';
 
 class LoggedInComponent extends React.Component{
@@ -17,11 +18,11 @@ class LoggedInComponent extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className='component-div'>
              {this.redirect()}
             <LeftNav />
+            
             <Feed />
-            <NavBar />
             </div>
         )
     }
