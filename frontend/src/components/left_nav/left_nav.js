@@ -1,6 +1,7 @@
 // render logo, user handle, search (to be implemented later)
 // 
 import React from 'react';
+import { receiveCurrentUser } from '../../actions/session_actions';
 import DecksIndex from './decks/decks_index';
 import { Link } from 'react-router-dom';
 
@@ -8,6 +9,7 @@ class LeftNav extends React.Component{
     constructor(props){
         super(props);
     }
+    
     render(){
         return(
             <div className='left-nav-div'>
