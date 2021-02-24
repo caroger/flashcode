@@ -10,7 +10,7 @@ export default class Card extends Component {
     this.state = {
       probNum: '',
       title: '',
-      difficulty: '',
+      lcDifficulty: '',
       rating: null,
       dueDate: '',
       notes: '',
@@ -52,7 +52,7 @@ export default class Card extends Component {
   }
 
   render() {
-    const { title, probNum, difficulty, rating, dueDate, notes } = this.props.card;
+    const { title, probNum, lcDifficulty, rating, dueDate, notes } = this.props.card;
     
     return (
       <div className={`card ${this.state.flip ? 'flipped' : ''}`} onClick={this.toggleFlip}>
@@ -61,7 +61,7 @@ export default class Card extends Component {
           <p>Problem #{probNum}</p>
           <div>
             <h2>My Rating: {rating}</h2>
-            <h3>Diffulty: {difficulty}</h3>
+            <h3>Diffulty: {lcDifficulty}</h3>
             <h3>Next Review: {dueDate}</h3>
           </div>
         </div>
