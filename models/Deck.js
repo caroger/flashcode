@@ -6,7 +6,7 @@ const DeckSchema = new Schema(
         user: {
             type: Schema.Types.ObjectId,
             ref: 'users',
-            index:true        
+            index: true        
         },
         name: {
             type: String,

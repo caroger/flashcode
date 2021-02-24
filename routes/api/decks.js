@@ -4,7 +4,7 @@ const passport = require('passport');
 const Card = require('../../models/Card');
 const Deck = require('../../models/Deck');
 const User = require('../../models/User');
-const validateDeckInput = require('../../validation/cards');
+const validateDeckInput = require('../../validation/decks');
 
 
 // get user decks
@@ -27,7 +27,7 @@ router.get('/:id', (req, res) => {
 router.post('/', 
     passport.authenticate('jwt', { session: false}),
     (req, res) => {
-        const { errors, isValid } = validateCardInput(req.body);
+        const { errors, isValid } = validateDeckInput(req.body);
 
         if (!isValid) {
             return res.status(400).json(errors);
@@ -44,17 +44,19 @@ router.post('/',
                     name: req.body.name,
                     deckCards: []
                 });
+                newDeck.save()
+                    .then(deck => res.json(deck));
             }
         });
     }
 );
 
 // edit deck, edit title or add cards
-router.put(':id/', (req, res) => {
+router.put('/:id/', (req, res) => {
     Deck.findById(req.params.id).then(deck => {
         if (deck) {
             if (req.body.card) {
-                deck.cards.push(req.body.card.id);
+                deck.deckCards.push(req.body.cardId);
             }
 
             if (req.body.name) {
@@ -70,12 +72,12 @@ router.put(':id/', (req, res) => {
 })
 
 // delete cards
-router.put(':id/remove_card', (req, res) => {
+router.put('/:id/remove_card', (req, res) => {
     Deck.findById(req.params.id).then(deck => {
         if (deck) {
-            let index = deck.cards.indexOf(req.body.card.id);
+            let i = deck.deckCards.indexOf(req.body.card.id);
             if (i > -1) {
-                deck.cards.splice(i, 1);
+                deck.deckCards.splice(i, 1);
             }
             deck.save()
                 .then((deck) => res.json(deck))
