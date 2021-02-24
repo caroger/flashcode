@@ -3,27 +3,27 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 const Card = require('../../models/Card');
+const User = require('../../models/User');
 const validateCardInput = require('../../validation/cards');
 
-<<<<<<< HEAD
-const axios = require('axios');
-// set lcdata to all problems
-let lcdata;
-axios.get('https://leetcode.com/api/problems/all/').then((res) => {
-  lcdata = res.data;
-});
+// const axios = require('axios');
+// // set lcdata to all problems
+// let lcdata;
+// axios.get('https://leetcode.com/api/problems/all/').then((res) => {
+//   lcdata = res.data;
+// });
 
-const findProblemStat = (probNum) => {
-  data = lcdata['stat_status_pairs']
-    .map((stat) => stat['stat'])
-    .find((stat) => stat['frontend_question_id'] === probNum);
-  return data;
-};
-const findProblemDifficulty = (probNum) => {
-  data = lcdata['stat_status_pairs']
-    .find((stat) => stat['stat']['frontend_question_id'] === probNum);
-  return data['difficulty']['level']
-};
+// const findProblemStat = (probNum) => {
+//   data = lcdata['stat_status_pairs']
+//     .map((stat) => stat['stat'])
+//     .find((stat) => stat['frontend_question_id'] === probNum);
+//   return data;
+// };
+// const findProblemDifficulty = (probNum) => {
+//   data = lcdata['stat_status_pairs']
+//     .find((stat) => stat['stat']['frontend_question_id'] === probNum);
+//   return data['difficulty']['level']
+// };
 
 // intended usage
 // stat = findProblemStat(20);
@@ -32,9 +32,7 @@ const findProblemDifficulty = (probNum) => {
 // title = stat['question__title'];
 // lcDiff = difficulty;
 
-=======
 const findProblem = require('./lc_api');
->>>>>>> refector_lcAPI
 
 const setDueDate = (rating, updatedAt = new Date()) => {
   switch (rating) {
@@ -47,12 +45,8 @@ const setDueDate = (rating, updatedAt = new Date()) => {
   }
 };
 router.get('/user/:user_id', (req, res) => {
-<<<<<<< HEAD
-    Card.find({ user: req.params.user_id })
-=======
-  console.log(findProblem(20));
+    // Card.find({ user: req.params.user_id })
   Card.find({ user: req.params.user_id })
->>>>>>> refector_lcAPI
     .then((cards) => res.json(cards))
     .catch((err) => res.status(404).json({ nocardsfound: 'No cards found' }));
 });
@@ -74,25 +68,28 @@ router.post(
     }
     // check if title with user already exist;
 
-    Card.findOne({ user: req.params.user_id, title: req.body.title }).then((card) => {
+    Card.findOne({ user: req.user.id, probNum: req.body.probNum }).then((card) => {
       if (card) {
-        errors.title = 'You already have this problem in your flashcard collection';
+        errors.probNum = 'You already have this problem in your flashcard collection';
         return res.status(400).json(errors);
       } else {
+        let problem = findProblem(parseInt(req.body.probNum));
         let dueDate = setDueDate(req.body.rating);
-        let urlTitle = req.body.title.split(' ').join('-');
-        const thisUrl = `https://leetcode.com/problems/${urlTitle}/`;
-        // console.log(req.body.updatedAt);
+        const thisUrl = `https://leetcode.com/problems/${problem['stat']['question__title_slug']}/`;
         const newCard = new Card({
           user: req.user.id,
-          title: req.body.title,
-          rating: req.body.rating,
+          probNum: req.body.probNum,
+          title: problem['stat']['question__title'],
+          lcDifficulty: problem['difficulty']['level'],
+          rating: parseInt(req.body.rating),
           url: thisUrl,
           dueDate: dueDate,
           notes: req.body.notes
         //   refactor title, url, need questionnumber from user input, 
         });
-        newCard.save().then((card) => res.json(card));
+        newCard
+          .save()
+          .then((card) => res.json(card));
       }
     });
   }
