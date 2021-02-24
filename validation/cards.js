@@ -8,7 +8,6 @@ module.exports = function validateCardInput(data) {
     // data.lc_difficulty = validText(data.lc_difficulty) ? data.lc_difficulty : '';
     // data.url = validText(data.url) ? data.url : '';
     data.notes = validText(data.notes) ? data.notes : '';
-    data.title = validText(data.title) ? data.title : '';
 
 
     if (Validator.isEmpty(data.probNum)) {
