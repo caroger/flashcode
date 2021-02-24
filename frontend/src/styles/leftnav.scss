@@ -1,9 +1,10 @@
 .left-nav-div{
+padding-top: 5%;
  grid-column-start: 1;
  grid-column-end: 2;
  height: 100vh;
- background-color: rgb(34, 34, 34) ;
- color: whitesmoke;
+ background-color:#f8f8ff ;
+ color:#696969;
  width: 70%;
   letter-spacing: 1px;
 }
@@ -18,7 +19,7 @@
     margin-bottom: 10px;
     padding-bottom: 10px;
     align-items: center;
-    border-bottom: 1px solid whitesmoke;
+    border-bottom: 1px solid #C0C0C0;
 }
 
 .left-nav-button{
@@ -27,7 +28,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
     letter-spacing: 2px;
-    color: white;
+    color: #696969;
     text-decoration: none;
 }
 
@@ -54,5 +55,5 @@
 }
 
 .deck-button:hover, .left-nav-button:hover{
-    background-color: rgb(66, 66, 66);
+    background-color: #DCDCDC;
 }
