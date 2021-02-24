@@ -5,7 +5,6 @@ import CardsIndex from './cards_index';
 
 
 const mapStateToProps = (state) => {
-  debugger
   return {
     // cards: getAllUserCards(state), //TODO - check if this selector gets current users cards for index
     cards: state.cards.all ? Object.values(state.cards.all) : [],

@@ -37,7 +37,6 @@ export default class CardsIndex extends Component {
   }
   
   renderErrors() {
-    debugger
     return (
       <ul>
         {this.props.errors.map((error, i) => (
