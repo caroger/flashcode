@@ -41,3 +41,8 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+button, section, a,
+input[type="submit"] {
+  cursor:pointer;
+}
