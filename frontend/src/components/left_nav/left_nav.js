@@ -14,8 +14,8 @@ class LeftNav extends React.Component{
         return(
             <div className='left-nav-div'>
                 <h1>Logo goes here</h1>
-                <div>Welcome, {this.props.currentUser.username}</div>
-                <Link to={`/cards/users/${this.props.currentUser.id}`}>
+                <div className = 'welcome-message'>Welcome, {this.props.currentUser.username}</div>
+                <Link className='left-nav-button' to={`/cards/users/${this.props.currentUser.id}`}>
                     Cards Index
                 </Link>
                 <DecksIndex />

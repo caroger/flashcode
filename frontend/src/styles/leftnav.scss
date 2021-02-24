@@ -1,9 +1,58 @@
 .left-nav-div{
  grid-column-start: 1;
  grid-column-end: 2;
+ height: 100vh;
+ background-color: rgb(34, 34, 34) ;
+ color: whitesmoke;
+ width: 70%;
+  letter-spacing: 1px;
 }
 
-.top-left-div{
-    
+.welcome-message{
+    font-size: 15px;
+    padding-top: 10px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding-left: 15%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.left-nav-button{
+    letter-spacing: 1px;
+    margin-left: 25%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    color: white;
+    text-decoration: none;
+}
+
+.deck-index-div{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    text-decoration: none;
+}
+
+.deck-button{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+
+     margin-top: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
    
+}
+
+.deck-button:hover, .left-nav-button:hover{
+    background-color: rgb(66, 66, 66);
 }
