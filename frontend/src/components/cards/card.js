@@ -15,6 +15,7 @@ class Card extends Component {
       lcDifficulty: '',
       rating: null,
       dueDate: '',
+      url: '',
       notes: '',
       updatedAt: new Date(),
       flip: false
@@ -60,12 +61,14 @@ class Card extends Component {
   render() {
     if (!this.props.card) return null;
 
-    const { title, probNum, lcDifficulty, rating, dueDate, notes } = this.state;
+    const { title, probNum, lcDifficulty, rating, url, dueDate, notes } = this.state;
     
     return (
-      <div key={this.props.key} 
-        className={`card ${this.state.flip ? 'flipped' : ''}`} 
-        onClick={this.toggleFlip}>
+      <div
+        key={this.props.key}
+        className={`card ${this.state.flip ? 'flipped' : ''}`}
+        onClick={this.toggleFlip}
+      >
         <div className="front">
           <h1>{title}</h1>
           <p>Problem #{probNum}</p>
@@ -73,22 +76,27 @@ class Card extends Component {
             <h2>My Rating: {rating}</h2>
             <h3>Diffulty: {lcDifficulty}</h3>
             <h3>Next Review: {dueDate}</h3>
+            <h3>
+              Link:{' '}
+              <a href={url} target="_blank">
+                Go to Problem!
+              </a>
+            </h3>
           </div>
           <form onSubmit={this.handleSubmit}>
-            <input type="submit" value="1" onClick={this.update('rating')}/>
-            <input type="submit" value="2" onClick={this.update('rating')}/>
-            <input type="submit" value="3" onClick={this.update('rating')}/>
+            <input type="submit" value="1" onClick={this.update('rating')} />
+            <input type="submit" value="2" onClick={this.update('rating')} />
+            <input type="submit" value="3" onClick={this.update('rating')} />
           </form>
         </div>
         <div className="back">
           <h2>Notes</h2>
-          <textarea value={notes} onChange={this.update('notes')}/>
+          <textarea value={notes} onChange={this.update('notes')} />
           <button onClick={this.handleSubmit}>Save</button>
         </div>
-        <div>
-        </div>
+        <div></div>
       </div>
-    )
+    );
   }
 }
 

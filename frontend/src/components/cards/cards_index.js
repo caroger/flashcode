@@ -78,11 +78,12 @@ export default class CardsIndex extends Component {
               />
             </label>
             <label>My Rating:
-              <select value={rating} 
-                onChange={() => {
-                  this.update('rating');
-                  this.assignDueDate(rating);
-                }}>
+              <select
+                defaultValue='-Choose One-'
+                onChange={
+                  this.update('rating')
+                  }>
+                <option disabled selected>-Choose One-</option>
                 <option value="1">Easy</option>
                 <option value="2">Medium</option>
                 <option value="3">Hard</option>

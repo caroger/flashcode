@@ -12,10 +12,10 @@ module.exports = function validateCardInput(data) {
 
 
     if (Validator.isEmpty(data.probNum)) {
-      errors.probNum = 'Problem number is required';
+      errors.probNum = 'Please enter a problem number';
     }
     if (Validator.isEmpty(data.rating)) {
-      errors.rating = 'Rating field is required';
+      errors.rating = 'Must choose a rating';
     }
     // if (Validator.isEmpty(data.url)) {
     //   errors.url = 'Something went wrong';
