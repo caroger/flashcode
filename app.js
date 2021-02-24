@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const users = require('./routes/api/users');
 const cards = require("./routes/api/cards");
+const decks = require('./routes/api/decks');
 const passport = require('passport');
 const app = express();
 const path = require('path');
