@@ -7,11 +7,7 @@ export default class CardsList extends Component {
   }
   
   render() {
-    // pull out cards and deck to render list of cards depending on view/route
-    const { cards, deck } = this.props;
-    // TODO - filter cardList depending on selected deck
-    // let cardUrl = "/cards/";
-    // update cardUrl if view is "deck"
+    const { cards } = this.props;
 
     const cardList = cards.map(card => {
       if (!card) return null;

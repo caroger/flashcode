@@ -99,10 +99,7 @@ class Card extends Component {
           </form>
         </div>
         <div className="back">
-          {/* <div className="card-header"> */}
-            <h2>Notes</h2>
-            {/* <button className="flip-button" onClick={this.toggleFlip}>>></button> */}
-          {/* </div> */}
+          <h2>Notes</h2>
           <textarea value={notes} onChange={this.update('notes')} rows="12" cols="25"/>
           <br />
           <button onClick={this.handleSubmit}>Save</button>
