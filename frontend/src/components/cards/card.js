@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateCard } from '../../actions/card_actions';
+import { parseDate } from '../../util/date_util';
 
 class Card extends Component {
   constructor(props) {
@@ -61,7 +62,9 @@ class Card extends Component {
   render() {
     if (!this.props.card) return null;
 
-    const { title, probNum, lcDifficulty, rating, url, dueDate, notes } = this.state;
+    let date = parseDate(this.state.dueDate);
+
+    const { title, probNum, lcDifficulty, rating, url, notes } = this.state;
     
     return (
       <div
@@ -69,30 +72,39 @@ class Card extends Component {
         className={`card ${this.state.flip ? 'flipped' : ''}`} 
       >
         <div className="front">
-          <button onClick={this.toggleFlip}>>></button>
-          <h1>{title}</h1>
-          <p>Problem #{probNum}</p>
           <div>
-            <h2>My Rating: {rating}</h2>
-            <h3>Diffulty: {lcDifficulty}</h3>
-            <h3>Next Review: {dueDate}</h3>
-            <h3>
-              Link:{' '}
-              <a href={url} target="_blank">
-                Go to Problem!
-              </a>
-            </h3>
+            <div className="card-header">
+              <div>
+                <h1>{title}</h1>
+                <p>Problem #{probNum}</p>
+              </div>
+              <button className="flip-button" onClick={this.toggleFlip}>>></button>
+            </div>
+            <div>
+              <h3>Diffulty: {lcDifficulty}</h3>
+              <h3>Next Review: {date}</h3>
+              <h3>
+                Link:{' '}
+                <a href={url} target="_blank">
+                  Go to Problem!
+                </a>
+              </h3>
+            </div>
           </div>
           <form onSubmit={this.handleSubmit}>
-            <input type="submit" value="1" onClick={this.update('rating')} />
-            <input type="submit" value="2" onClick={this.update('rating')} />
-            <input type="submit" value="3" onClick={this.update('rating')} />
+            <h2>My Rating: {rating}</h2>
+            <input className="easy-button" type="submit" value="1" onClick={this.update('rating')} />
+            <input className="medium-button" type="submit" value="2" onClick={this.update('rating')} />
+            <input className="hard-button" type="submit" value="3" onClick={this.update('rating')} />
           </form>
         </div>
         <div className="back">
-          <button onClick={this.toggleFlip}>>></button>
-          <h2>Notes</h2>
-          <textarea value={notes} onChange={this.update('notes')} />
+          {/* <div className="card-header"> */}
+            <h2>Notes</h2>
+            {/* <button className="flip-button" onClick={this.toggleFlip}>>></button> */}
+          {/* </div> */}
+          <textarea value={notes} onChange={this.update('notes')} rows="12" cols="25"/>
+          <br />
           <button onClick={this.handleSubmit}>Save</button>
         </div>
       </div>
