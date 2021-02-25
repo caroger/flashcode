@@ -1,10 +1,3 @@
-.splash-container {
-  // width: 80%;
-  // align-content: center;
-}
-
-
-
 .splash-hero-container {
   display: flex;
   justify-content: center;
@@ -31,19 +24,22 @@
       font-size: 16px;
       padding: 16px 50px;
       border-radius: 25px;
-      background-color: #759FEB;
+      // background-color: #759FEB;
+      background-color: #4C82E6;
       color: white;
       border: none;
-      transition: .2s background-color ease-in-out;
+      transition: .3s background-color ease-in-out;
+      outline: none;
     }
 
     button:hover {
-      background-color: #4C82E6;
+      background-color: #3067cc;
     }
 
     h5 {
       color: #696969;
-      padding: 20px 0 10px 0;
+      font-size: 20px;
+      padding: 20px 0 15px 0;
       font-family: "Soleil_Medium",Helvetica,Arial,sans-serif;
       font-weight: 400;
     }
@@ -59,7 +55,7 @@
   img {
     width: 100%;
     height: auto;
-    padding: 10px 0 10px 30px;
+    padding: 10px 0 10px 40px;
     margin: 0 auto;
 
   }
@@ -69,7 +65,7 @@
   padding: 3rem 10%;
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
-  grid-gap: 30px;
+  grid-gap: 50px;
 
   .callout-card {
     display: flex;

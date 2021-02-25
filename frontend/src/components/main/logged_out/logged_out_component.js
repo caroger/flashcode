@@ -1,6 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { connect } from 'react-redux';
 import tempImage from '../../../styles/images/temp_app_image.png';
+import Modal from '../../modal/modal';
+import { openModal } from '../../../actions/modal_actions';
 
 class LoggedOutComponent extends React.Component{
     constructor(props){
@@ -17,9 +20,10 @@ class LoggedOutComponent extends React.Component{
                         <h1>The Perfect Pair Programmer</h1>
                         <h2>FlashCode is the best platform to help you study LeetCode® problems, build your knowledge, and prepare for technical interviews.</h2>
                         <h5>Try FlashCode for Free</h5>
-                        <Link className="main-cta" to='/signup'>
-                            <button>Sign up here!</button>
-                        </Link>
+                        <button className="main-cta"
+                            onClick={() => this.props.openModal('signup')} >
+                                Sign up here!
+                        </button>
                     </div>
                     <div className="hero-image-container">
                         <img src={tempImage} alt="hero image" />
@@ -52,4 +56,11 @@ class LoggedOutComponent extends React.Component{
     }
 }
 
-export default LoggedOutComponent;
+
+const mapDispatchToProps = dispatch => {
+    return {
+        openModal: modal => dispatch(openModal(modal))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(LoggedOutComponent);
