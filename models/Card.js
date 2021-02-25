@@ -38,7 +38,8 @@ const CardSchema = new Schema(
     },
     notes: {
       type: String
-    }
+    },
+    interval: [{ type: Number }]
     // lc_number: {
     //   type: Number,
     //   required: true,
