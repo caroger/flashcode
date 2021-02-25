@@ -20,10 +20,11 @@ class LoggedInComponent extends React.Component{
     }
 
     render(){
+        debugger;
         return(
             <div className='component-div'>
                 {this.redirect()}
-                <LeftNav currentUser={this.props.currentUser}/>
+                <LeftNav currentUser={this.props.currentUser} openModal={this.props.openModal}/>
                 {/* <div className='temp-deck'>Decks go here</div> */}
                 
                 <CardIndexContainer />

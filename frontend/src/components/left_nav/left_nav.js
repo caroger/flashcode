@@ -5,10 +5,12 @@ import { receiveCurrentUser } from '../../actions/session_actions';
 import DecksIndex from './decks/decks_index';
 import { Link } from 'react-router-dom';
 
+
+
 class LeftNav extends React.Component{
-    constructor(props){
-        super(props);
-    }
+    // constructor(props){
+    //     super(props);
+    // }
 
     createBtn() {
         return <button onClick={() => this.props.openModal('createCard')}>Create a Card</button>;
