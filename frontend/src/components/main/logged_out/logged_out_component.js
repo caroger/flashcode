@@ -22,7 +22,7 @@ class LoggedOutComponent extends React.Component{
                                 Sign up here!
                         </button>
                     </div>
-                    <div className="hero-image-container">\
+                    <div className="hero-image-container">
                         <img src={tempImage} alt="hero image" />
                     </div>
                 </div>

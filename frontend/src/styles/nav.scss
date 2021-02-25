@@ -4,14 +4,13 @@
     background-color: #444343;
     position: sticky;
     top: 0px;
+    // padding: 5px 0px;
 }
 
 .navbar-middle{
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 
     img {
         height: 50px;
@@ -28,7 +27,7 @@
         border-radius: 5px;
         padding: 5px 10px;
         transition: .1s background-color ease-in-out;
-        font-size: 14px;
+        font-size: 12px;
         letter-spacing: 1.2px;
         font-weight: 500;
         outline: none;
@@ -39,8 +38,3 @@
         color: #444343;
     }
 }
-
-.navbar-button{
-   
-}
-
