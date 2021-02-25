@@ -6,7 +6,7 @@
   display: grid;
   height: 100vh;
   grid-template-rows: 100px 1fr;
-  
+
 }
 
 .cards-index-header {
@@ -50,7 +50,7 @@
   transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
   transform-style: preserve-3d;
   transition: 250ms;
-    
+
   h1 {
     font-size: 20px;
     text-transform: uppercase;
@@ -68,7 +68,7 @@
   --rotate-y: 180deg;
 }
 
-.card .front, 
+.card .front,
 .card .back {
   position: absolute;
   padding: 2rem;
@@ -128,16 +128,16 @@
   form {
     text-align: center;
     padding: 10px;
-    
+
     input[type=submit] {
       padding: 15px 20px;
       margin: 0 10px;
       border-radius: 100%;
-      background-color: rgb(245, 245, 245);
       border: none;
       transition: .2s background-color ease-in-out;
       font-weight: 400;
       font-size: 16px;
+
     }
 
     // input[type=submit]:hover {
@@ -145,24 +145,54 @@
     //   color: white;
     // }
 
-    .easy-button:hover {
-      background-color: #238823;
-      color: white;
+    .easy-button {
+      background-color: rgb(245, 245, 245);
+
+      &:hover {
+        color: white;
+        background-color: #238823;
+      }
+
+      &-selected {
+        @extend .easy-button;
+        color: white;
+        background-color: #238823;
+      }
     }
 
-    .medium-button:hover {
-      background-color: #FFBF00;
-      color: white;
+    .medium-button {
+      background-color: rgb(245, 245, 245);
+
+      &:hover {
+        color: white;
+        background-color: #FFBF00;
+      }
+
+      &-selected {
+        @extend .medium-button;
+        background-color: #FFBF00;
+        color: white;
+      }
     }
 
-    .hard-button:hover {
-      background-color: #d2222e;
-      color: white;
+    .hard-button {
+      background-color: rgb(245, 245, 245);
+
+      &:hover {
+        color: white;
+        background-color: #d2222e;
+      }
+
+      &-selected {
+        @extend .hard-button;
+        background-color: #d2222e;
+        color: white;
+      }
     }
   }
 }
 
-.back  {
+.back {
   text-align: right;
 
   h2 {
