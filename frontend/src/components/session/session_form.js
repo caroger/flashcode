@@ -47,7 +47,9 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(this.props.closeModal);
+    // this.props.processForm(user).then(this.props.closeModal);
+    this.props.processForm(user)
+    .then(() => this.props.closeModal())
   }
 
   handleDemoUser(e) {
@@ -56,8 +58,11 @@ class SessionForm extends React.Component {
       email: 'mango@mango.com',
       password: 'mangomango'
     };
-    this.props.processForm(demoUser).then(this.props.closeModal);
+    // this.props.processForm(demoUser).then(this.props.closeModal);
+    this.props.processForm(demoUser)
+    .then(() => this.props.closeModal())
   }
+  
 
   renderHeader() {
     if (this.props.formType === 'login') {
@@ -95,8 +100,7 @@ class SessionForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <div className="login-form">
               <label className="login-input-label">
-                Email address
-                <input type="text" value={this.state.email} onChange={this.update('email')} />
+                <input type="text" placeholder="Email address" value={this.state.email} onChange={this.update('email')} />
                 <p className="error">{this.props.errors.email}</p>
               </label>
               {this.props.formType === 'signup' && (
@@ -113,9 +117,9 @@ class SessionForm extends React.Component {
                 </div>
               )}
               <label className="login-input-label">
-                Password
                 <input
                   type="password"
+                  placeholder="Password"
                   value={this.state.password}
                   onChange={this.update('password')}
                 />
