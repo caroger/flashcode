@@ -3,6 +3,7 @@
 // decks to be buttons linking to deck show page
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class DecksIndex extends React.Component{
     constructor(props){
@@ -12,10 +13,10 @@ class DecksIndex extends React.Component{
     render(){
         return(
             <div className='deck-index-div'>
-                <button className='deck-button' id='daily'>Daily Deck</button>
-                <button className='deck-button' id='hard'>Difficult Deck</button>
-                <button className='deck-button' id='medium'>Medium Deck</button>
-                <button className='deck-button' id='easy'>Easy Deck</button>
+                <Link className='deck-button' id='daily'>Daily Deck</Link>
+                <Link to="/decks/hard" className='deck-button' id='hard'>Difficult Deck</Link>
+                <Link to="/decks/medium" className='deck-button' id='medium'>Medium Deck</Link>
+                <Link to="/decks/easy" className='deck-button' id='easy'>Easy Deck</Link>
             </div>
         )
     }
