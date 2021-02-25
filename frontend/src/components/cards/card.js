@@ -7,8 +7,8 @@ import { parseDate } from '../../util/date_util';
 
 class Card extends Component {
   constructor(props) {
-    super(props)
-  
+    super(props);
+
     this.state = {
       _id: null,
       probNum: '',
@@ -20,7 +20,7 @@ class Card extends Component {
       notes: '',
       updatedAt: new Date(),
       flip: false
-    }
+    };
 
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,27 +30,26 @@ class Card extends Component {
   }
 
   componentDidMount() {
-    this.grabCard()
+    this.grabCard();
   }
-  
+
   grabCard() {
     if (this.props.card) this.setState(this.props.card);
   }
 
   update(field) {
     return (e) => {
-      this.setState({ [field]: e.target.value })
-    }
+      this.setState({ [field]: e.target.value });
+    };
   }
-  
+
   handleSubmit(e) {
     e.preventDefault();
-    
+
     const card = this.state;
     this.props.updateCard(card);
   }
 
-  
   toggleFlip() {
     if (this.state.flip) {
       this.setState({ flip: false });
@@ -65,12 +64,9 @@ class Card extends Component {
     let date = parseDate(this.state.dueDate);
 
     const { title, probNum, lcDifficulty, rating, url, notes } = this.state;
-    
+
     return (
-      <div
-        key={this.props.key}
-        className={`card ${this.state.flip ? 'flipped' : ''}`} 
-      >
+      <div key={this.props.key} className={`card ${this.state.flip ? 'flipped' : ''}`}>
         <div className="front">
           <div>
             <div className="card-header">
@@ -78,7 +74,9 @@ class Card extends Component {
                 <h1>{title}</h1>
                 <p>Problem #{probNum}</p>
               </div>
-              <button className="flip-button" onClick={this.toggleFlip}>>></button>
+              <button className="flip-button" onClick={this.toggleFlip}>
+                {'>>'}
+              </button>
             </div>
             <div>
               <h3>Diffulty: {lcDifficulty}</h3>
@@ -93,17 +91,34 @@ class Card extends Component {
           </div>
           <form onSubmit={this.handleSubmit}>
             <h2>My Rating: {rating}</h2>
-            <input className="easy-button" type="submit" value="1" onClick={this.update('rating')} />
-            <input className="medium-button" type="submit" value="2" onClick={this.update('rating')} />
-            <input className="hard-button" type="submit" value="3" onClick={this.update('rating')} />
+            <input
+              className={rating == 1 ? 'easy-button-selected' : 'esay-button'}
+              type="submit"
+              value="1"
+              onClick={this.update('rating')}
+            />
+            <input
+              className={rating == 2 ? 'medium-button-selected' : 'medium-button'}
+              // className="medium-button"
+              type="submit"
+              value="2"
+              onClick={this.update('rating')}
+            />
+            <input
+              className={rating == 3 ? 'hard-button-selected' : 'hard-button'}
+              // className="hard-button"
+              type="submit"
+              value="3"
+              onClick={this.update('rating')}
+            />
           </form>
         </div>
         <div className="back">
           {/* <div className="card-header"> */}
-            <h2>Notes</h2>
-            {/* <button className="flip-button" onClick={this.toggleFlip}>>></button> */}
+          <h2>Notes</h2>
+          {/* <button className="flip-button" onClick={this.toggleFlip}>>></button> */}
           {/* </div> */}
-          <textarea value={notes} onChange={this.update('notes')} rows="12" cols="25"/>
+          <textarea value={notes} onChange={this.update('notes')} rows="12" cols="25" />
           <br />
           <button onClick={this.handleSubmit}>Save</button>
         </div>
@@ -112,11 +127,10 @@ class Card extends Component {
   }
 }
 
-
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    updateCard: card => dispatch(updateCard(card))
-  }
-}
+    updateCard: (card) => dispatch(updateCard(card))
+  };
+};
 
 export default connect(null, mapDispatchToProps)(Card);
