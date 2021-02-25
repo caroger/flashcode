@@ -14,7 +14,7 @@ const App = () => (
   <div>
       <Route component={NavBarContainer} />
       <Route component={Modal} />
-      <ProtectedRoute path="/home" component={MainPage} />z
+      <ProtectedRoute path="/home" component={MainPage} />
       <AuthRoute exact path="/" component={LoggedOutComponent} />
   </div>
 );

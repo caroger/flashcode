@@ -13,9 +13,6 @@ class LoggedOutComponent extends React.Component{
         return(
             <div className="splash-container">
                 <div className="splash-hero-container">
-                {/* <div className="splash-header">
-                    
-                </div> */}
                     <div className="cta-container">
                         <h1>The Perfect Pair Programmer</h1>
                         <h2>FlashCode is the best platform to help you study LeetCode® problems, build your knowledge, and prepare for technical interviews.</h2>

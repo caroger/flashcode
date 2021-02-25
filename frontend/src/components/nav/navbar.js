@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import horizontalLogo from '../../styles/images/horizontal-white-typeface.png';
 
 const NavBar = ({ loggedIn, logout, openModal }) => {
   const loginBtn = () => {
@@ -12,10 +13,12 @@ const NavBar = ({ loggedIn, logout, openModal }) => {
 
   return (
     <div className="navbar-div">
-      <div className="navbar-logo">
-        <Link to="/">FlashCode</Link>
+      <div></div>
+      <div className="navbar-middle">
+        <Link to="/"><img src={horizontalLogo}/></Link>
+        <div className="navbar-button-div">{loggedIn ? logoutBtn() : loginBtn()}</div>
       </div>
-      <div className="navbar-button-div">{loggedIn ? logoutBtn() : loginBtn()}</div>
+      <div></div>
     </div>
   );
 };

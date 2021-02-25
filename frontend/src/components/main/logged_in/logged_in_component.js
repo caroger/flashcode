@@ -2,7 +2,6 @@ import React from 'react';
 import {Route, Redirect} from 'react-router-dom';
 import LeftNav from '../../left_nav/left_nav';
 import Feed from '../../right_nav/feed';
-//commit
 import NavBar from '../../nav/navbar';
 import CardIndexContainer from '../../cards/card_index_container'
 
@@ -25,8 +24,6 @@ class LoggedInComponent extends React.Component{
             <div className='component-div'>
                 {this.redirect()}
                 <LeftNav currentUser={this.props.currentUser} openModal={this.props.openModal}/>
-                {/* <div className='temp-deck'>Decks go here</div> */}
-                
                 <CardIndexContainer />
                 <Feed />
             </div>
