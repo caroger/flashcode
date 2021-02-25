@@ -1,9 +1,10 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom';
+import {Route, Redirect} from 'react-router-dom';
 import LeftNav from '../../left_nav/left_nav';
 import Feed from '../../right_nav/feed';
 //commit
 import NavBar from '../../nav/navbar';
+import CardIndexContainer from '../../cards/card_index_container'
 
 class LoggedInComponent extends React.Component{
     constructor(props){
@@ -19,10 +20,11 @@ class LoggedInComponent extends React.Component{
     render(){
         return(
             <div className='component-div'>
-             {this.redirect()}
-            <LeftNav currentUser={this.props.currentUser}/>
-            <div className='temp-deck'>Decks go here</div>
-            <Feed />
+                {this.redirect()}
+                <LeftNav currentUser={this.props.currentUser}/>
+                {/* <div className='temp-deck'>Decks go here</div> */}
+                <CardIndexContainer />
+                <Feed />
             </div>
         )
     }

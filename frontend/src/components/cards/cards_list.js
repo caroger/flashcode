@@ -17,7 +17,7 @@ export default class CardsList extends Component {
       if (!card) return null;
       
       return (
-        <div key={card._id}>
+        <div className="card-container" key={card._id}>
           <Card card={card} />
         </div>
       )
