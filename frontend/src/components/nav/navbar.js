@@ -6,6 +6,10 @@ const NavBar = ({ loggedIn, logout, openModal }) => {
     return <button onClick={() => openModal('login')}>Sign In</button>;
   };
 
+  const signupBtn = () => {
+    return <button onClick={() => openModal('signup')}>Sign up</button>;
+  };
+
   const logoutBtn = () => {
     return <button onClick={logout}> Logout</button>;
   };
@@ -14,7 +18,7 @@ const NavBar = ({ loggedIn, logout, openModal }) => {
     <div className="navbar-div">
       <Link to="/">
         <h1>FlashCode</h1>
-        {loggedIn ? logoutBtn() : loginBtn()}
+        {loggedIn ? logoutBtn() : loginBtn()};{signupBtn()};
       </Link>
     </div>
   );

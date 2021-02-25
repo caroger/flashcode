@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -8,15 +7,15 @@ class SessionForm extends React.Component {
       email: '',
       username: '',
       password: '',
-      password2: '',
-      errors: {}
+      password2: ''
+      // errors: {}
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoUser = this.handleDemoUser.bind(this);
     this.handleKeyUp = this.handleKeyUp.bind(this);
   }
   componentWillUnmount() {
-    // this.props.clearErrors();
+    this.props.clearErrors();
     window.removeEventListener('keyup', this.handleKeyUp, false);
   }
   componentDidMount() {
@@ -60,9 +59,9 @@ class SessionForm extends React.Component {
     this.props.login(demoUser).then(this.props.closeModal);
   }
 
-  renderErrors(err) {
-    return <p className="error">{err.length === 0 ? ' ' : err[0]}</p>;
-  }
+  // renderErrors(err) {
+  //   return <p className="error">{err.length === 0 ? ' ' : err[0]}</p>;
+  // }
 
   renderHeader() {
     if (this.props.formType === 'login') {
@@ -91,9 +90,18 @@ class SessionForm extends React.Component {
       </div>
     );
   }
-
+  renderErrors() {
+    return (
+      <ul>
+        {Object.keys(this.props.errors).map((error, i) => (
+          <li key={`error-${i}`}>{this.state.errors[error]}</li>
+        ))}
+      </ul>
+    );
+  }
   render() {
-    // const fnErr = this.props.errors.filter((err) => err.toLowerCase().includes('firstname'));
+    // const unErr = this.state.errors;
+    // console.log(unErr);
     // const emErr = this.props.errors.filter((err) => err.toLowerCase().includes('email'));
     // const pwErr = this.props.errors.filter((err) => err.toLowerCase().includes('password'));
     return (
@@ -123,10 +131,10 @@ class SessionForm extends React.Component {
                       type="text"
                       value={this.state.username}
                       onChange={this.update('username')}
-                      // className={fnErr.length > 0 ? 'login-input--error' : 'login-input'}
+                      // className={unErr.length > 0 ? 'login-input--error' : 'login-input'}
                     />
                   </label>
-                  {/* {this.renderErrors(fnErr)} */}
+                  {/* {this.renderErrors(unErr)} */}
                 </div>
               )}
               <br />
@@ -140,7 +148,21 @@ class SessionForm extends React.Component {
                 />
               </label>
               {/* {this.renderErrors(pwErr)} */}
-              <br />
+              {this.props.formType === 'signup' && (
+                <div>
+                  <label className="login-input-label">
+                    Password2
+                    <input
+                      type="password2"
+                      value={this.state.password2}
+                      onChange={this.update('password2')}
+                      // className={unErr.length > 0 ? 'login-input--error' : 'login-input'}
+                    />
+                  </label>
+                  {/* {this.renderErrors(unErr)} */}
+                </div>
+              )}
+              {this.renderErrors()}
               <button className="session-submit" type="submit">
                 {this.props.formType === 'login' ? 'Sign in' : 'Register'}
               </button>

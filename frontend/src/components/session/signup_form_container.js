@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
-import { signup } from '../../actions/session_actions';
+import { signup, clearErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
-import { closeModal } from '../../actions/modal_actions';
+import { closeModal, openModal } from '../../actions/modal_actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ errors }) => {
   return {
     // signedIn: state.session.isAuthenticated,
-    errors: state.errors.session,
+    errors: errors.session,
     formType: 'signup'
   };
 };
@@ -14,7 +14,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     processForm: (user) => dispatch(signup(user)),
-    closeModal: () => dispatch(closeModal())
+    openModal: (modal) => dispatch(openModal(modal)),
+    closeModal: () => dispatch(closeModal()),
+    clearErrors: () => dispatch(clearErrors())
   };
 };
 
