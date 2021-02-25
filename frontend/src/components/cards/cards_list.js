@@ -9,6 +9,10 @@ export default class CardsList extends Component {
   render() {
     const { cards } = this.props;
 
+    cards.sort((a, b) => {
+      return new Date(a.dueDate) - new Date(b.dueDate);
+    });
+
     const cardList = cards.map(card => {
       if (!card) return null;
       
