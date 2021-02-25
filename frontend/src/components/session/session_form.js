@@ -10,16 +10,18 @@ class SessionForm extends React.Component {
       password2: ''
       // errors: {}
     };
+    
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoUser = this.handleDemoUser.bind(this);
     this.handleKeyUp = this.handleKeyUp.bind(this);
   }
+
   componentWillUnmount() {
-    // this.props.clearErrors();
-    // window.removeEventListener('keyup', this.handleKeyUp, false);
+    this.props.clearErrors();
+    window.removeEventListener('keyup', this.handleKeyUp, false);
   }
   componentDidMount() {
-    // window.addEventListener('keyup', this.handleKeyUp, false);
+    window.addEventListener('keyup', this.handleKeyUp, false);
   }
 
   // Press Escape to Close Form
@@ -46,10 +48,10 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
     const user = Object.assign({}, this.state);
-    // this.props.processForm(user).then(this.props.closeModal);
     this.props.processForm(user)
-    .then(() => this.props.closeModal())
+      .then(() => this.props.closeModal)
   }
 
   handleDemoUser(e) {
@@ -58,9 +60,9 @@ class SessionForm extends React.Component {
       email: 'mango@mango.com',
       password: 'mangomango'
     };
-    // this.props.processForm(demoUser).then(this.props.closeModal);
+    
     this.props.processForm(demoUser)
-    .then(() => this.props.closeModal())
+      .then(this.props.closeModal)
   }
   
 
