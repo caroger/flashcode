@@ -70,7 +70,7 @@ export default class CardsIndex extends Component {
           <form id="new-card-form" onSubmit={this.handleSubmit}>
             <label>Problem Number:
               <input
-                type="text"
+                type="number"
                 placeholder="Problem ID"
                 value={probNum}
                 autoFocus={true}

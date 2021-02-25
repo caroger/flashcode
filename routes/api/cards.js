@@ -5,44 +5,10 @@ const passport = require('passport');
 const Card = require('../../models/Card');
 const User = require('../../models/User');
 const validateCardInput = require('../../validation/cards');
-
-// const axios = require('axios');
-// // set lcdata to all problems
-// let lcdata;
-// axios.get('https://leetcode.com/api/problems/all/').then((res) => {
-//   lcdata = res.data;
-// });
-
-// const findProblemStat = (probNum) => {
-//   data = lcdata['stat_status_pairs']
-//     .map((stat) => stat['stat'])
-//     .find((stat) => stat['frontend_question_id'] === probNum);
-//   return data;
-// };
-// const findProblemDifficulty = (probNum) => {
-//   data = lcdata['stat_status_pairs']
-//     .find((stat) => stat['stat']['frontend_question_id'] === probNum);
-//   return data['difficulty']['level']
-// };
-
-// intended usage
-// stat = findProblemStat(20);
-// difficulty = findProblemDifficulty(20);
-// url = ()`${stat['question__title_slug'])}`;
-// title = stat['question__title'];
-// lcDiff = difficulty;
-
 const findProblem = require('./lc_api');
 
-const setDueDate = (rating, updatedAt = new Date()) => {
-  switch (rating) {
-    case '1':
-      return updatedAt.setDate(updatedAt.getDate() + 28);
-    case '2':
-      return updatedAt.setDate(updatedAt.getDate() + 7);
-    case '3':
-      return updatedAt.setDate(updatedAt.getDate() + 3);
-  }
+const setDueDate = (interval, updatedAt = new Date()) => {
+      return updatedAt.setDate(updatedAt.getDate() + interval);
 };
 router.get('/user/:user_id', (req, res) => {
     // Card.find({ user: req.params.user_id })
@@ -75,10 +41,13 @@ router.post(
         return res.status(400).json(errors);
       } else {
         let problem = findProblem(parseInt(req.body.probNum));
+        console.log(problem);
         if (!problem) {
           res.status(404).json({noproblemfound: 'No Leetcode problem with that number'});
+          return 0;
         }
-        let dueDate = setDueDate(req.body.rating);
+        let dueDate = new Date();
+        dueDate = dueDate.setDate(dueDate.getDate() + 2);
         const thisUrl = `https://leetcode.com/problems/${problem['stat']['question__title_slug']}/`;
         const newCard = new Card({
           user: req.user.id,
@@ -88,12 +57,13 @@ router.post(
           rating: parseInt(req.body.rating),
           url: thisUrl,
           dueDate: dueDate,
-          notes: req.body.notes
-        
+          notes: req.body.notes,
+          interval: [2]
         });
         newCard
           .save()
-          .then((card) => res.json(card));
+          .then((card) => res.json(card))
+          .catch(err => (res.status(404).json({noproblemfound: 'No Leetcode problem with that number'})));
       }
     });
   }
@@ -103,8 +73,28 @@ router.post(
 router.put('/:id', (req, res) => {
   Card.findById(req.body._id).then((card) => {
     if (card) {
-      if (req.body.rating) {
-        card.rating = parseInt(req.body.rating);
+      let today = new Date();
+      if (card.dueDate <= today) {
+        if (req.body.rating) {
+          card.rating = parseInt(req.body.rating);
+          let lastInt = card.interval.last;
+          switch (req.body.rating) {
+            case 1:
+              lastInt = Math.floor(lastInt * .4) + 1;
+              break;
+            case 2:
+              lastInt = lastInt;
+              break;
+            case 3:
+              lastInt = lastInt * 2;
+              break;
+          }
+          card.dueDate = setDueDate(lastInt);
+          card.interval.push(lastInt);
+        }} else {
+        if (req.body.rating) {
+          card.rating = parseInt(req.body.rating);
+        }
       }
 
       if (req.body.notes) {
