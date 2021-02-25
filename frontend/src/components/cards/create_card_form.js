@@ -14,9 +14,6 @@ export default class CreateCardForm extends Component {
         this.update = this.update.bind(this);
     }
 
-    // componentDidMount() {
-    //     this.props.fetchUserCards(this.props.currentUser.id);
-    // }
 
     update(field) {
         return (e) => {
@@ -53,46 +50,55 @@ export default class CreateCardForm extends Component {
         return (
             <>
                     <div className="create-card-form">
-                            <h2>Create New Flash Card</h2>
+                            <h2 className='create-card-title'>Create A New Flash Card</h2>
                             <form id="new-card-form" onSubmit={this.handleSubmit}>
-                                <label>Problem Number:
-                                     <input
-                                        type="text"
-                                        placeholder="Problem ID"
-                                        value={probNum}
-                                        autoFocus={true}
-                                        onChange={this.update('probNum')}
-                                    />
-                                </label>
+                                <div  className='create-input-div'>
+                                    <label>Problem Number:
+                                        <input
+                                            className ='problem-num-input'
+                                            type="text"
+                                            placeholder="Problem ID"
+                                            value={probNum}
+                                            autoFocus={true}
+                                            onChange={this.update('probNum')}
+                                        />
+                                    </label>
+                                 </div>
+                                <br/>
+                                <div className='create-input-div'>
                                 <label>My Rating:
-                                    <select
-                                        defaultValue='-Choose One-'
-                                        onChange={
-                                            this.update('rating')
-                                        }>
-                                        <option disabled selected>-Choose One-</option>
-                                        <option value="1">Easy</option>
-                                        <option value="2">Medium</option>
-                                        <option value="3">Hard</option>
-                                    </select>
+                                <input type='radio' name="rating" value = '1'onChange={
+                                    this.update('rating') 
+                                }/> Easy
+                                 <input type='radio' name="rating" value='2'onChange={
+                                    this.update('rating')
+                                } /> Medium
+                                 <input type='radio' name="rating" value='3' onChange={
+                                    this.update('rating')
+                                } /> Hard
                                 </label>
-                                <label>Problem Notes:
+                                </div>
+                                <br/>
+
+                                <div className='create-input-div'id='create-notes-div'>
+                                <label>Problem Notes:</label>
                                     <textarea
+                                        className='create-text-area'
                                         value={notes}
                                         placeholder="Add notes"
                                         onChange={this.update('notes')}
                                     />
-                                </label>
-
+                                
+                                 </div>
                                 <div className="errors">
                                     {this.renderErrors()}
                                 </div>
 
                                 <div className="form-buttons">
-                                    <button type="submit" form="new-card-form">Create Card</button>
+                                     <button className='create-button' type="submit" form="new-card-form">Create Card</button>
                                 </div>
                             </form>
-                            <button>I'm feeling lucky</button>
+                            
                     </div>
                     
                    
