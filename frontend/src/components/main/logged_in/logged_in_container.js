@@ -2,11 +2,11 @@ import { connect} from 'react-redux';
 import LoggedInComponent from './logged_in_component';
 import { openModal } from '../../../actions/modal_actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return{
         signedIn: !!state.session.user,
         currentUser: state.session.user,
-        
+        deck: ownProps.match.params.deckId 
     }
     
 };
