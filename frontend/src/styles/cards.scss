@@ -1,6 +1,6 @@
-body {
-  background-color: rgb(252, 252, 252);
-}
+// body {
+//   background-color: rgb(252, 252, 252);
+// }
 
 .cards-index-container {
   display: grid;
@@ -30,6 +30,7 @@ body {
   overflow: auto;
   padding: 10px 30px;
   justify-content: center;
+  // background-color: rgb(221, 221, 221);
 }
 
 .card-container {
@@ -37,6 +38,7 @@ body {
 }
 
 .card {
+  // background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 5px 2px rgba(177, 191, 206, 0.5);
   padding: 5px 20px;
@@ -71,6 +73,7 @@ body {
   position: absolute;
   padding: 2rem;
   backface-visibility: hidden;
+  // background-color: white;
 }
 
 .card .back {

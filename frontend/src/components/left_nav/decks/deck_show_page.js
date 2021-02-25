@@ -47,6 +47,17 @@ export default class DeckShow extends Component {
           </div>
         </div>
       )
+    case 'today':
+      return (
+        <div className="cards-index-container">
+          <div className="cards-index-header">
+            <h1>Today's Cards</h1>
+          </div>
+          <div className="card-list-container">
+            <CardsList cards={this.props.todayCards} />
+          </div>
+        </div>
+      )
     default:
       return (
         <div>Nothing works</div>

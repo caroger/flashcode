@@ -13,7 +13,7 @@ class DecksIndex extends React.Component{
     render(){
         return(
             <div className='deck-index-div'>
-                <Link className='deck-button' id='daily'>Daily Deck</Link>
+                <Link to="/decks/today" className='deck-button' id='daily'>Daily Deck</Link>
                 <Link to="/decks/hard" className='deck-button' id='hard'>Difficult Deck</Link>
                 <Link to="/decks/medium" className='deck-button' id='medium'>Medium Deck</Link>
                 <Link to="/decks/easy" className='deck-button' id='easy'>Easy Deck</Link>
