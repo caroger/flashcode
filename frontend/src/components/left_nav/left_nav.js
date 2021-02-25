@@ -9,12 +9,18 @@ class LeftNav extends React.Component{
     constructor(props){
         super(props);
     }
+
+    createBtn() {
+        return <button onClick={() => this.props.openModal('createCard')}>Create a Card</button>;
+    }
     
     render(){
+        
         return(
             <div className='left-nav-div'>
                 <h1>Logo goes here</h1>
                 <div className = 'welcome-message'>Welcome, {this.props.currentUser.username}</div>
+                {this.createBtn()}
                 <Link className='left-nav-button' to={`/cards/users/${this.props.currentUser.id}`}>
                     Cards Index
                 </Link>
