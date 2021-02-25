@@ -29,24 +29,26 @@ export const logoutUser = () => ({
 });
 
 export const signup = (user) => (dispatch) =>
-  APIUtil.signup(user).then(
-    () => dispatch(receiveUserSignIn()),
-    (err) => dispatch(receiveErrors(err.response.data))
-  );
+  APIUtil.signup(user)
+    .then(() => dispatch(receiveUserSignIn()))
+    .catch((err) => {
+      dispatch(receiveErrors(err.response.data));
+      return Promise.reject(err);
+    });
 
 export const login = (user) => (dispatch) =>
-  APIUtil.login(user).then(
-    (res) => {
+  APIUtil.login(user)
+    .then((res) => {
       const { token } = res.data;
       localStorage.setItem('jwtToken', token);
       APIUtil.setAuthToken(token);
       const decoded = jwt_decode(token);
       dispatch(receiveCurrentUser(decoded));
-    },
-    (err) => {
+    })
+    .catch((err) => {
       dispatch(receiveErrors(err.response.data));
-    }
-  );
+      return Promise.reject(err);
+    });
 
 export const logout = () => (dispatch) => {
   localStorage.removeItem('jwtToken');
