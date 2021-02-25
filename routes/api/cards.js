@@ -74,7 +74,7 @@ router.put('/:id', (req, res) => {
   Card.findById(req.body._id).then((card) => {
     if (card) {
       let today = new Date();
-      if (card.dueDate <= today) {
+      if (Date.parse(card.dueDate.toDateString) <= Date.parse(today.toDateString)) {
         if (req.body.rating) {
           card.rating = parseInt(req.body.rating);
           let lastInt = card.interval.last;

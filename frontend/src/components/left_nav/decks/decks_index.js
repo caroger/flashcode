@@ -5,7 +5,7 @@
 import React from 'react';
 
 class DecksIndex extends React.Component{
-    constructor(props){
+    constructor(props) {
         super(props);
     }
 
