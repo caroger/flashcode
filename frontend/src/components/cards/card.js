@@ -66,10 +66,10 @@ class Card extends Component {
     return (
       <div
         key={this.props.key}
-        className={`card ${this.state.flip ? 'flipped' : ''}`}
-        onClick={this.toggleFlip}
+        className={`card ${this.state.flip ? 'flipped' : ''}`} 
       >
         <div className="front">
+          <button onClick={this.toggleFlip}>>></button>
           <h1>{title}</h1>
           <p>Problem #{probNum}</p>
           <div>
@@ -90,11 +90,11 @@ class Card extends Component {
           </form>
         </div>
         <div className="back">
+          <button onClick={this.toggleFlip}>>></button>
           <h2>Notes</h2>
           <textarea value={notes} onChange={this.update('notes')} />
           <button onClick={this.handleSubmit}>Save</button>
         </div>
-        <div></div>
       </div>
     );
   }
