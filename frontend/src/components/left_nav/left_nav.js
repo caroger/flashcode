@@ -13,7 +13,7 @@ class LeftNav extends React.Component{
     // }
 
     createBtn() {
-        return <button onClick={() => this.props.openModal('createCard')}>Create a Card</button>;
+        return <button className = 'deck-button' onClick={() => this.props.openModal('createCard')}>Create a Card</button>;
     }
     
     render(){

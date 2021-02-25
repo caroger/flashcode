@@ -1,0 +1,77 @@
+.create-card-form{
+    background-color: white;
+    height: 500px;
+    width: 400px;
+    border-radius: 5%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  justify-content: flex-start;
+}
+
+.create-card-title{
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 15px;
+    letter-spacing: 1px;
+    font-weight: 350;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+}
+
+.problem-num-input {
+    margin-left: 10px;
+    padding-left: 5px;
+    height: 15px;
+}
+
+
+.create-input-div{
+    padding-top: 20px;
+    font-weight: 270;
+}
+
+#create-notes-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.create-text-area{
+    margin-top: 20px;
+    height: 60px;
+     padding-left: 5px;
+}
+
+.form-buttons{
+    margin-top: 40px;
+    display:flex;
+    justify-content: center;
+    height: 40px;
+
+}
+
+.create-button{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    width: 100%;
+    height: 100%;
+    background-color: #4C82E6;
+    color: white;
+    border-radius: 5px;
+}
+
+.errors{
+    color: red;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.create-button:hover{
+    background-color:#3067CC;
+}
