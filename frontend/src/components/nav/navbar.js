@@ -12,10 +12,10 @@ const NavBar = ({ loggedIn, logout, openModal }) => {
 
   return (
     <div className="navbar-div">
-      <Link to="/">
-        <h1>FlashCode</h1>
-        {loggedIn ? logoutBtn() : loginBtn()};
-      </Link>
+      <div className="navbar-logo">
+        <Link to="/">FlashCode</Link>
+      </div>
+      <div className="navbar-button-div">{loggedIn ? logoutBtn() : loginBtn()}</div>
     </div>
   );
 };

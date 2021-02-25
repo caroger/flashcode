@@ -15,11 +15,11 @@ class SessionForm extends React.Component {
     this.handleKeyUp = this.handleKeyUp.bind(this);
   }
   componentWillUnmount() {
-    this.props.clearErrors();
-    window.removeEventListener('keyup', this.handleKeyUp, false);
+    // this.props.clearErrors();
+    // window.removeEventListener('keyup', this.handleKeyUp, false);
   }
   componentDidMount() {
-    window.addEventListener('keyup', this.handleKeyUp, false);
+    // window.addEventListener('keyup', this.handleKeyUp, false);
   }
 
   // Press Escape to Close Form
@@ -56,12 +56,8 @@ class SessionForm extends React.Component {
       email: 'mango@mango.com',
       password: 'mangomango'
     };
-    this.props.login(demoUser).then(this.props.closeModal);
+    this.props.processForm(demoUser).then(this.props.closeModal);
   }
-
-  // renderErrors(err) {
-  //   return <p className="error">{err.length === 0 ? ' ' : err[0]}</p>;
-  // }
 
   renderHeader() {
     if (this.props.formType === 'login') {
@@ -90,20 +86,7 @@ class SessionForm extends React.Component {
       </div>
     );
   }
-  renderErrors() {
-    return (
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>{error}</li>
-        ))}
-      </ul>
-    );
-  }
   render() {
-    // const unErr = this.state.errors;
-    // console.log(unErr);
-    // const emErr = this.props.errors.filter((err) => err.toLowerCase().includes('email'));
-    // const pwErr = this.props.errors.filter((err) => err.toLowerCase().includes('password'));
     return (
       <div className="login-form-container">
         {this.renderClose()}
@@ -111,18 +94,11 @@ class SessionForm extends React.Component {
           {this.renderHeader()}
           <form onSubmit={this.handleSubmit}>
             <div className="login-form">
-              <br />
               <label className="login-input-label">
                 Email address
-                <input
-                  type="text"
-                  value={this.state.email}
-                  onChange={this.update('email')}
-                  // className={emErr.length > 0 ? 'login-input--error' : 'login-input'}
-                />
-                {/* {this.props.formType === 'signup' && this.renderErrors(emErr)} */}
+                <input type="text" value={this.state.email} onChange={this.update('email')} />
+                <p className="error">{this.props.errors.email}</p>
               </label>
-              <br />
               {this.props.formType === 'signup' && (
                 <div>
                   <label className="login-input-label">
@@ -131,23 +107,21 @@ class SessionForm extends React.Component {
                       type="text"
                       value={this.state.username}
                       onChange={this.update('username')}
-                      // className={unErr.length > 0 ? 'login-input--error' : 'login-input'}
                     />
+                    <p className="error">{this.props.errors.username}</p>
                   </label>
-                  {/* {this.renderErrors(unErr)} */}
                 </div>
               )}
-              <br />
               <label className="login-input-label">
                 Password
                 <input
                   type="password"
                   value={this.state.password}
                   onChange={this.update('password')}
-                  // className={pwErr.length > 0 ? 'login-input--error' : 'login-input'}
                 />
+                <p className="error">{this.props.errors.password}</p>
               </label>
-              {/* {this.renderErrors(pwErr)} */}
+
               {this.props.formType === 'signup' && (
                 <div>
                   <label className="login-input-label">
@@ -156,13 +130,11 @@ class SessionForm extends React.Component {
                       type="password2"
                       value={this.state.password2}
                       onChange={this.update('password2')}
-                      // className={unErr.length > 0 ? 'login-input--error' : 'login-input'}
                     />
+                    <p className="error">{this.props.errors.password2}</p>
                   </label>
-                  {/* {this.renderErrors(unErr)} */}
                 </div>
               )}
-              {this.renderErrors()}
               <button className="session-submit" type="submit">
                 {this.props.formType === 'login' ? 'Sign in' : 'Register'}
               </button>
