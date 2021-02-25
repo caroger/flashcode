@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const NavBar = ({ loggedIn, logout, openModal }) => {
+  const loginBtn = () => {
+    return <button onClick={() => openModal('login')}>Sign In</button>;
+  };
 
-class NavBar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.logoutUser = this.logoutUser.bind(this);
-    this.getLinks = this.getLinks.bind(this);
-  }
+  const logoutBtn = () => {
+    return <button onClick={logout}> Logout</button>;
+  };
 
+<<<<<<< HEAD
   logoutUser(e) {
     e.preventDefault();
     this.props.logout();
@@ -42,5 +44,16 @@ class NavBar extends React.Component {
     );
   }
 }
+=======
+  return (
+    <div className="navbar-div">
+      <Link to="/">
+        <h1>FlashCode</h1>
+        {loggedIn ? logoutBtn() : loginBtn()};
+      </Link>
+    </div>
+  );
+};
+>>>>>>> login_form_modal
 
 export default NavBar;

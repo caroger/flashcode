@@ -20,6 +20,10 @@ export const receiveErrors = (errors) => ({
   errors
 });
 
+export const clearErrors = () => (dispatch) => {
+  dispatch(receiveErrors([]));
+};
+
 export const logoutUser = () => ({
   type: RECEIVE_USER_LOGOUT
 });
