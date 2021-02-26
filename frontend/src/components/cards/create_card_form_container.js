@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import { clearCardErrors, createCard } from '../../actions/card_actions';
 // import { getAllUserCards } from '../../reducers/selectors';
 import CreateCardForm from './create_card_form';
-import {closeModal} from '../../actions/modal_actions';
+import { closeModal } from '../../actions/modal_actions';
+
 
 
 const mapStateToProps = (state) => {
