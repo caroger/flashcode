@@ -35,13 +35,13 @@ class LeftNav extends React.Component{
                 </div>
                 <div></div>
                 <div className="social-links">
-                    <a href="https://github.com/caroger/flashcode" target="_blank">
+                    <a href="#" target="_blank">
                         <FontAwesomeIcon icon={faLinkedin} />
                     </a>
-                    <a href="https://github.com/caroger/flashcode" target="_blank">
+                    <a href="https://github.com/caroger/flashcode/wiki/Group-Members-and-Work-Breakdown" target="_blank">
                         <FontAwesomeIcon icon={faGithub} />
                     </a>
-                    <a href="https://github.com/caroger/flashcode" target="_blank">
+                    <a href="#" target="_blank">
                         <FontAwesomeIcon icon={faAngellist} />
                     </a>
                 </div>
