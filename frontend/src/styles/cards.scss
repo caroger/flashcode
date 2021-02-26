@@ -69,6 +69,14 @@
   --rotate-y: 180deg;
 }
 
+.past-due {
+  box-shadow: 0 0 5px 2px rgb(255, 171, 171);
+}
+
+.past-due:hover {
+  box-shadow: 0 0 5px 2px rgb(255, 63, 63);
+}
+
 .card .front,
 .card .back {
   position: absolute;
