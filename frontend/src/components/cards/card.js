@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateCard } from '../../actions/card_actions';
 import { parseDate } from '../../util/date_util';
+import { Link } from 'react-router-dom';
 
 class Card extends Component {
   constructor(props) {
@@ -72,7 +73,9 @@ class Card extends Component {
             <div className="card-header">
               <div>
                 <h1>{title}</h1>
-                <p>Problem #{probNum}</p>
+                <p>
+                  <a href={url} target="_blank">Problem #{probNum}</a>
+                </p>
               </div>
               <button className="flip-button" onClick={this.toggleFlip}>
                 {'>>'}
@@ -81,31 +84,24 @@ class Card extends Component {
             <div>
               <h3>Diffulty: {lcDifficulty}</h3>
               <h3>Next Review: {date}</h3>
-              <h3>
-                Link:{' '}
-                <a href={url} target="_blank">
-                  Go to Problem!
-                </a>
-              </h3>
             </div>
           </div>
           <form onSubmit={this.handleSubmit}>
-            <h2>My Rating: {rating}</h2>
+            <h2>My Rating</h2>
             <input
-              className={rating == 1 ? 'easy-button-selected' : 'esay-button'}
+              className={rating == 1 ? 'rating-button-easy-selected' : 'rating-button-easy'}
               type="submit"
               value="1"
               onClick={this.update('rating')}
             />
             <input
-              className={rating == 2 ? 'medium-button-selected' : 'medium-button'}
-              // className="medium-button"
+              className={rating == 2 ? 'rating-button-medium-selected' : 'rating-button-medium'}
               type="submit"
               value="2"
               onClick={this.update('rating')}
             />
             <input
-              className={rating == 3 ? 'hard-button-selected' : 'hard-button'}
+              className={rating == 3 ? 'rating-button-hard-selected' : 'rating-button-hard'}
               // className="hard-button"
               type="submit"
               value="3"

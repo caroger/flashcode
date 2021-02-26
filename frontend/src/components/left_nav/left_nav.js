@@ -19,12 +19,19 @@ class LeftNav extends React.Component{
     render(){
         
         return(
-            <div className='left-nav-div'>
-                {/* <h1>Logo goes here</h1> */}
-                <div className = 'welcome-message'>Welcome, {this.props.currentUser.username}</div>
-                {this.createBtn()}
-                <Link className='left-nav-button' to="/home">Cards Index</Link>
-                <DecksIndex />
+            <div className='left-nav-container'>
+                <div className = 'welcome-message'>
+                    <h1>Welcome, {this.props.currentUser.username}</h1>
+                </div>
+                <div>
+                    {this.createBtn()}
+                </div>
+                <div>
+                    <Link className='left-nav-button' to="/home">Cards Index</Link>
+                </div>
+                <div>
+                    <DecksIndex />
+                </div>
             </div>
         )
     }
