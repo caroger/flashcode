@@ -78,7 +78,7 @@ router.put('/:id', (req, res) => {
         if (req.body.rating) {
           card.rating = parseInt(req.body.rating);
           let lastInt = card.interval[card.interval.length -1];
-          switch (req.body.rating) {
+          switch (card.rating) {
             case 1:
               lastInt = Math.floor(lastInt * .4) + 1;
               break;
