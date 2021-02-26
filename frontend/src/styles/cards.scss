@@ -144,51 +144,55 @@
     //   background-color: #4C82E6;
     //   color: white;
     // }
-
-    .easy-button {
+    .rating-button {
       background-color: rgb(245, 245, 245);
 
-      &:hover {
-        color: white;
-        background-color: #238823;
+      &-easy {
+        @extend .rating-button;
+
+        &:hover {
+          color: white;
+          background-color: #238823;
+        }
+
+        &-selected {
+          @extend .rating-button-easy;
+          color: white;
+          background-color: #238823;
+        }
       }
 
-      &-selected {
-        @extend .easy-button;
-        color: white;
-        background-color: #238823;
+      &-medium {
+        @extend .rating-button;
+
+        &:hover {
+          color: white;
+          background-color: #FFBF00;
+        }
+
+        &-selected {
+          @extend .rating-button-medium;
+          color: white;
+          background-color: #FFBF00;
+        }
+      }
+
+      &-hard {
+        @extend .rating-button;
+
+        &:hover {
+          color: white;
+          background-color: #d2222e;
+        }
+
+        &-selected {
+          @extend .rating-button-hard;
+          color: white;
+          background-color: #d2222e;
+        }
       }
     }
 
-    .medium-button {
-      background-color: rgb(245, 245, 245);
-
-      &:hover {
-        color: white;
-        background-color: #FFBF00;
-      }
-
-      &-selected {
-        @extend .medium-button;
-        background-color: #FFBF00;
-        color: white;
-      }
-    }
-
-    .hard-button {
-      background-color: rgb(245, 245, 245);
-
-      &:hover {
-        color: white;
-        background-color: #d2222e;
-      }
-
-      &-selected {
-        @extend .hard-button;
-        background-color: #d2222e;
-        color: white;
-      }
-    }
   }
 }
 
@@ -212,10 +216,11 @@
   color: #696969;
   font-weight: 400;
   border-radius: 3px;
-  transform: scaleY(2.0);
+  transform: scaleY(1.2);
   border: none;
   transition: .2s background-color ease-in-out;
-  outline: none
+  outline: none;
+  font-size: 22px;
 }
 
 .flip-button:hover {
