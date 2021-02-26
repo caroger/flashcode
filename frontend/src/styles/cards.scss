@@ -6,7 +6,7 @@
   display: grid;
   height: 100vh;
   grid-template-rows: 100px 1fr;
-  
+
 }
 
 .cards-index-header {
@@ -50,7 +50,7 @@
   transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
   transform-style: preserve-3d;
   transition: 250ms;
-    
+
   h1 {
     font-size: 20px;
     text-transform: uppercase;
@@ -68,7 +68,7 @@
   --rotate-y: 180deg;
 }
 
-.card .front, 
+.card .front,
 .card .back {
   position: absolute;
   padding: 2rem;
@@ -98,7 +98,7 @@
   }
 
   h2 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
     padding-bottom: 15px;
   }
@@ -125,19 +125,20 @@
     text-decoration: underline;
   }
 
+
   form {
     text-align: center;
     padding: 10px;
-    
+
     input[type=submit] {
       padding: 15px 20px;
       margin: 0 10px;
       border-radius: 100%;
-      background-color: rgb(245, 245, 245);
       border: none;
       transition: .2s background-color ease-in-out;
       font-weight: 400;
       font-size: 16px;
+
     }
 
     // input[type=submit]:hover {
@@ -145,24 +146,51 @@
     //   color: white;
     // }
 
-    .easy-button:hover {
-      background-color: #238823;
-      color: white;
+   .rating-button {
+      background-color: rgb(245, 245, 245);
+      &-easy {
+        @extend .rating-button;
+        &:hover {
+          color: white;
+          background-color: #4ecdc4;
+        }
+        &-selected {
+          @extend .rating-button-easy;
+          color: white;
+          background-color: #4ecdc4;
+        }
+      }
+      &-medium {
+        @extend .rating-button;
+        &:hover {
+          color: white;
+          background-color: #ffd97d;
+        }
+        &-selected {
+          @extend .rating-button-medium;
+          color: white;
+          background-color: #ffd97d;
+        }
+      }
+      &-hard {
+        @extend .rating-button;
+        &:hover {
+          color: white;
+          background-color: #ff6b6b;
+        }
+        &-selected {
+          @extend .rating-button-hard;
+          color: white;
+          background-color: #ff6b6b;
+        }
+      }
     }
+    
 
-    .medium-button:hover {
-      background-color: #FFBF00;
-      color: white;
-    }
-
-    .hard-button:hover {
-      background-color: #d2222e;
-      color: white;
-    }
   }
 }
 
-.back  {
+.back {
   text-align: right;
 
   h2 {
@@ -182,10 +210,11 @@
   color: #696969;
   font-weight: 400;
   border-radius: 3px;
-  transform: scaleY(2.0);
+  transform: scaleY(1.2);
   border: none;
   transition: .2s background-color ease-in-out;
-  outline: none
+  outline: none;
+  font-size: 22px;
 }
 
 .flip-button:hover {

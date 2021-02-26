@@ -6,31 +6,35 @@ import NavBar from '../../nav/navbar';
 import CardIndexContainer from '../../cards/card_index_container';
 import DeckShowContainer from '../../left_nav/decks/deck_show_container';
 
-class LoggedInComponent extends React.Component{
-    constructor(props){
-        super(props);
-    }
+class LoggedInComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-    redirect() {
-        if (this.props.signedIn === false) {
-            return <Redirect to="/" />
-        }
+  redirect() {
+    if (this.props.signedIn === false) {
+      return <Redirect to="/" />;
     }
+  }
 
-    render(){
-        // debugger;
-        // const location = useLocation();
+  render() {
+    // debugger;
+    // const location = useLocation();
 
-        return(
-            <div className='component-div'>
-                {this.redirect()}
-                <LeftNav currentUser={this.props.currentUser} openModal={this.props.openModal}/>
-                {/* <CardIndexContainer /> */}
-                { this.props.match.params.deckId ? <DeckShowContainer deck={this.props.deck} /> : <CardIndexContainer /> }
-                <Feed />
-            </div>
-        )
-    }
+    return (
+      <div className="component-div">
+        {this.redirect()}
+        <LeftNav currentUser={this.props.currentUser} openModal={this.props.openModal} />
+        {/* <CardIndexContainer /> */}
+        {this.props.match.params.deckId ? (
+          <DeckShowContainer deck={this.props.deck} />
+        ) : (
+          <CardIndexContainer />
+        )}
+        <Feed />
+      </div>
+    );
+  }
 }
 
 export default LoggedInComponent;
