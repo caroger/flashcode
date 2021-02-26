@@ -7,6 +7,10 @@ padding-top: 5%;
  color:#696969;
 //  width: 70%;
   letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+   
+   text-align: center;
 }
 
 .welcome-message{
@@ -14,20 +18,31 @@ padding-top: 5%;
     padding-top: 10px;
     font-weight: 400;
     letter-spacing: 1px;
-    padding-left: 22%;
+    
     margin-top: 10px;
     margin-bottom: 10px;
     padding-bottom: 10px;
     align-items: center;
     border-bottom: 1px solid #C0C0C0;
+  
+}
+
+.left-item-wrapper{
+    padding-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #C0C0C0;
 }
 
 .left-nav-button{
     letter-spacing: 1px;
-    margin-left: 32%;
+    
     margin-top: 10px;
     margin-bottom: 10px;
+   
+    
     letter-spacing: 2px;
+
     color: #696969;
     text-decoration: none;
 }
@@ -35,7 +50,7 @@ padding-top: 5%;
 .deck-index-div{
     display: flex;
     flex-direction: column;
-    padding-top: 10px;
+    
     text-decoration: none;
 }
 
@@ -47,10 +62,12 @@ padding-top: 5%;
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
+    text-decoration: none;
 
-     margin-top: 10px;
-    margin-bottom: 10px;
+    
+    margin-bottom: 20px;
     letter-spacing: 2px;
+
    
 }
 

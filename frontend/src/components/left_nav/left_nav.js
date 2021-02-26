@@ -22,9 +22,12 @@ class LeftNav extends React.Component{
             <div className='left-nav-div'>
                 {/* <h1>Logo goes here</h1> */}
                 <div className = 'welcome-message'>Welcome, {this.props.currentUser.username}</div>
+                <div className= 'left-item-wrapper'>
                 {this.createBtn()}
                 <Link className='left-nav-button' to="/home">Cards Index</Link>
+                </div>
                 <DecksIndex />
+                
             </div>
         )
     }
