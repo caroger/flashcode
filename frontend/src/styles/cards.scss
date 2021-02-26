@@ -189,14 +189,17 @@
   text-align: right;
 
   h2 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 400;
-    padding-bottom: 30px;
+    padding-bottom: 25px;
   }
 
   textarea {
     border: 1px solid #f2f2f2;
-   resize: none;
+    resize: none;
+    font-family: inherit;
+    padding: 10px;
+    font-size: 16px;
   }
 }
 
