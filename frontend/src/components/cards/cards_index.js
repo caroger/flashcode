@@ -61,7 +61,7 @@ export default class CardsIndex extends Component {
       <>
         <div className="cards-index-container">
           <div className="cards-index-header">
-            <h1>My Cards</h1>
+            <h1 className='cards-header'>My Cards</h1>
             
           </div>
           <div className="card-list-container">
