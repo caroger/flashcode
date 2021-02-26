@@ -1,3 +1,4 @@
+
 .left-nav-container{
     align-items: center;
     padding-left: 15px;
@@ -8,6 +9,7 @@
     background-color:#f8f8ff;
     color:#696969;
     letter-spacing: 1px;
+
 }
 
 .welcome-message{
@@ -15,20 +17,30 @@
     padding-top: 10px;
     font-weight: 400;
     letter-spacing: 1px;
-    padding-left: 22%;
+    
     margin-top: 10px;
     margin-bottom: 10px;
     padding-bottom: 10px;
     align-items: center;
+
+    border-bottom: 1px solid #C0C0C0;
+  
+}
+
+
     // border-bottom: 1px solid #C0C0C0;
+
 }
 
 .left-nav-button{
     letter-spacing: 1px;
-    margin-left: 32%;
+    
     margin-top: 10px;
     margin-bottom: 10px;
+   
+    
     letter-spacing: 2px;
+
     color: #696969;
     text-decoration: none;
 }
@@ -36,7 +48,7 @@
 .deck-index-div{
     display: flex;
     flex-direction: column;
-    padding-top: 10px;
+    
     text-decoration: none;
 }
 
@@ -44,6 +56,7 @@
     // margin-top: 10px;
     margin-bottom: 10px;
     letter-spacing: 2px;
+
    
 }
 

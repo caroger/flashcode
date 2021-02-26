@@ -25,7 +25,7 @@ export default class CreateCardForm extends Component {
         e.preventDefault();
 
         const card = this.state;
-        this.props.createCard(card);
+        this.props.createCard(card).then(this.props.closeModal);
     }
 
     renderErrors() {
