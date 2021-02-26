@@ -89,7 +89,6 @@ router.put('/:id', (req, res) => {
               lastInt = lastInt * 2;
               break;
           }
-          console.log(lastInt);
           card.dueDate = setDueDate(lastInt);
           card.interval.push(lastInt);
         }} else {
