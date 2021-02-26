@@ -19,6 +19,18 @@
 }
 
 .navbar-button-div{
+    display: flex;
+    .team-link {
+        margin-right: 30px;
+        display: flex;
+        align-self: center;
+        color: white;
+    }
+
+    .team-link:hover {
+        color: #4c82e6;
+        transition: .3s color ease-in-out;
+    }
     
     button {
         background-color: #4C82E6;
