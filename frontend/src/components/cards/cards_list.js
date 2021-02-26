@@ -6,6 +6,9 @@ export default class CardsList extends Component {
     super(props)
   }
   
+  componentDidUpdate(nextProps) {
+    
+  }
   render() {
     const { cards } = this.props;
 
