@@ -1,7 +1,6 @@
 import React from 'react';
 import FCLogo from '../../styles/images/FCLogo.png';
 
-
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -68,15 +67,13 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'login') {
       return (
         <div>
-        <div className='header-wrapper'>
-         <img className='session-logo' src={FCLogo} />
+          <div className="header-wrapper">
+            <img className="session-logo" src={FCLogo} />
           </div>
-        <div className="login-header">
-          <div className="form-type">Sign In</div>
-          
+          <div className="login-header">
+            <div className="form-type">Sign In</div>
+          </div>
         </div>
-        </div>
-        
       );
     } else {
       return (
@@ -87,7 +84,6 @@ class SessionForm extends React.Component {
       );
     }
   }
-  
 
   renderClose() {
     return (
@@ -99,7 +95,6 @@ class SessionForm extends React.Component {
     );
   }
   render() {
-    
     return (
       <div className="login-form-container">
         <div className="login-form-box">
@@ -200,9 +195,7 @@ class SessionForm extends React.Component {
                     <button onClick={this.handleDemoUser} className="session-submit">
                       Demo Login
                     </button>
-                    <div className="extra-info">
-                      Don't have an account? {this.props.otherForm}
-                    </div>
+                    <div className="extra-info">Don't have an account? {this.props.otherForm}</div>
                   </div>
                 )}
               </div>
