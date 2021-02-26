@@ -36,7 +36,7 @@ class LoggedOutComponent extends React.Component{
                         <p>Try your hand at the Daily Challenge problems to test what you've learned. Add them to your decks and grow your knowledge base.</p>
                     </div>
                     <div className="callout-card">
-                        <h4>Add Notesnpm to Tailor Your Studying</h4>
+                        <h4>Add Notes to Tailor Your Studying</h4>
                         <p>Know a helpful trick to solving a problem? Capture it in your Flash Card notes to help you when you get stuck.</p>
                     </div>
                 </div>
