@@ -1,12 +1,12 @@
-.left-nav-div{
-padding-top: 5%;
- grid-column-start: 1;
- grid-column-end: 2;
- height: 100vh;
- background-color:#f8f8ff;
- color:#696969;
-//  width: 70%;
-  letter-spacing: 1px;
+.left-nav-container{
+    padding-left: 15px;
+    min-width: 200px;
+    display: grid;
+    grid-template-rows: 100px 60px 40px 40px 1fr 130px;
+    height: 100vh;
+    background-color:#f8f8ff;
+    color:#696969;
+    letter-spacing: 1px;
 }
 
 .welcome-message{
@@ -19,7 +19,7 @@ padding-top: 5%;
     margin-bottom: 10px;
     padding-bottom: 10px;
     align-items: center;
-    border-bottom: 1px solid #C0C0C0;
+    // border-bottom: 1px solid #C0C0C0;
 }
 
 .left-nav-button{

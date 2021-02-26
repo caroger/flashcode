@@ -74,7 +74,9 @@ class Card extends Component {
             <div className="card-header">
               <div>
                 <h1>{title}</h1>
-                <p>Problem #{probNum}</p>
+                <p>
+                  <a href={url} target="_blank">Problem #{probNum}</a>
+                </p>
               </div>
               <button className="flip-button" onClick={this.toggleFlip}>
                 <FontAwesomeIcon icon={faAngleRight} />
@@ -84,16 +86,10 @@ class Card extends Component {
             <div>
               <h3>Diffulty: {lcDifficulty}</h3>
               <h3>Next Review: {date}</h3>
-              <h3>
-                Link:{' '}
-                <a href={url} target="_blank">
-                  Go to Problem!
-                </a>
-              </h3>
             </div>
           </div>
           <form onSubmit={this.handleSubmit}>
-            <h2>My Rating: {rating}</h2>
+            <h2>My Rating</h2>
             <input
               className={rating == 1 ? 'rating-button-easy-selected' : 'rating-button-easy'}
               type="submit"
