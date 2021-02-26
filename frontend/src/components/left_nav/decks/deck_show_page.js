@@ -20,7 +20,7 @@ export default class DeckShow extends Component {
       return (
         <div className="cards-index-container">
           <div className="cards-index-header">
-            <h1>Easy Cards</h1>
+            <h1 className='cards-header'>Easy Cards</h1>
           </div>
           <div className="card-list-container">
             <CardsList 
@@ -34,7 +34,7 @@ export default class DeckShow extends Component {
       return (
         <div className="cards-index-container">
           <div className="cards-index-header">
-            <h1>Medium Cards</h1>
+            <h1 className='cards-header'>Medium Cards</h1>
           </div>
           <div className="card-list-container">
             <CardsList
@@ -49,7 +49,7 @@ export default class DeckShow extends Component {
       return (
         <div className="cards-index-container">
           <div className="cards-index-header">
-            <h1>Hard Cards</h1>
+            <h1 className='cards-header'>Hard Cards</h1>
           </div>
           <div className="card-list-container">
             <CardsList
@@ -64,7 +64,7 @@ export default class DeckShow extends Component {
       return (
         <div className="cards-index-container">
           <div className="cards-index-header">
-            <h1>Today's Cards</h1>
+            <h1 className='cards-header'>Today's Cards</h1>
           </div>
           <div className="card-list-container">
             <CardsList cards={this.props.todayCards} fetchUserCards={this.props.fetchUserCards} />
