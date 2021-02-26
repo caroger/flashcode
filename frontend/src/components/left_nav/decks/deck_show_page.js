@@ -5,9 +5,9 @@ import React, { Component } from 'react'
 import CardsList from '../../cards/cards_list';
 
 export default class DeckShow extends Component {
-  // constructor(props) {
-  //   super(props)
-  // }
+  constructor(props) {
+    super(props)
+  }
 
   componentDidMount() {
     this.props.fetchUserCards(this.props.currentUser)

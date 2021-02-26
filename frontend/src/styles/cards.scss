@@ -196,6 +196,7 @@
 
   textarea {
     border: 1px solid #f2f2f2;
+   resize: none;
   }
 }
 
@@ -215,4 +216,18 @@
 .flip-button:hover {
   background-color: #f2f2f2;
   border: none;
+}
+
+.save-button-card {
+  padding: 6px 14px;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
+  background-color: rgb(245, 245, 245);
+  transition: .3s background-color ease-in-out;
+}
+
+.save-button-card:hover {
+  background-color: #4C82E6;
+  color: white;
 }
