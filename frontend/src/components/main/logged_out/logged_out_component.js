@@ -44,7 +44,7 @@ class LoggedOutComponent extends React.Component{
                     <h2>Start Exploring</h2>
                     <p>FlashCode is a well-organized tool that helps you get the most out of LeetCode® by providing structure to guide your progress.</p>
                     <div className="alt-cta">
-                        <Link to='/signup'>Get Started</Link>
+                        <Link to='/team'>Meet the Developers</Link>
                     </div>
                 </div>
                 <footer>Copyright &copy; 2020 FlashCode</footer>

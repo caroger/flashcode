@@ -1,0 +1,76 @@
+.team-page-container {
+  text-align: center;
+  background-color: #F8F8FF;
+  clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+  padding: 5rem 20%;
+
+  h1 {
+    display: block;
+    font-size: 67px;
+    line-height: 70px;
+    padding: 20px 0 0;
+    color: #4C82E6;
+    font-family: "Soleil_Bold",Helvetica,Arial,sans-serif;
+  }
+
+  .members-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: space-between;
+    justify-content: space-evenly;
+    padding: 30px 0;
+    margin: 0 1em;
+
+    .member-card {
+      border-radius: 10px;
+      box-shadow: 0 0 5px 2px rgba(177, 191, 206, 0.5);
+      padding: 40px 20px;
+      height: 350px;
+      min-width: 300px;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      // align-items: center;
+
+      h2 {
+        font-family: "Soleil",Helvetica,Arial,sans-serif;
+        font-size: 22px;
+        // padding-bottom: 20px;
+      }
+
+      .social-links {
+        color:rgba(177, 191, 206, 0.5)
+      }
+
+      .image-cropper {
+      width: 160px;
+      height: 160px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 50%;
+      align-self: center;
+      margin: 30px 0;
+      top: -25px;
+      }
+      
+      .profile-pic {
+        display: inline;
+        margin: 0 auto;
+        // margin-left: -25%; //centers the image
+        height: 110%;
+        width: auto;
+      }
+    }
+  }
+
+  .members-container > * {
+    margin: 1em 1em;
+  }
+
+  .members-container .member-card {
+    // flex: 0 0 150px;;
+    // // flex-shrink: 0;
+  }
+}

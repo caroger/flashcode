@@ -12,9 +12,7 @@ import { faLinkedin, faGithub, faAngellist } from '@fortawesome/free-brands-svg-
 class LeftNav extends React.Component{
     
     render(){
-        
         return(
-
             <div className='left-nav-container'>
                 <div className='welcome-message'>
                     <h1><FontAwesomeIcon icon={faUserAlt} />  {this.props.currentUser.username}</h1>
