@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { closeModal } from '../../actions/modal_actions';
 
 export default class CreateCardForm extends Component {
     constructor(props) {
@@ -20,6 +21,9 @@ export default class CreateCardForm extends Component {
             this.setState({ [field]: e.target.value })
         }
     }
+    componentWillUnmount() {
+        this.props.clearCardErrors();
+    }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -38,10 +42,6 @@ export default class CreateCardForm extends Component {
                 ))}
             </ul>
         )
-    }
-
-    componentWillUnmount() {
-        this.props.clearCardErrors();
     }
 
     render() {
