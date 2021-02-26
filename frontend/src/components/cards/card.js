@@ -66,20 +66,16 @@ class Card extends Component {
     // debugger
     let date = parseDate(this.state.dueDate);
 
-    let due = Date.parse(this.state.dueDate);
+    let due = Date.parse(this.props.card.dueDate);
     let today = new Date();
-    let pastDueDate = today.getDate() - 3;
-    let expiry = Date.parse(this.state.expiry);
-    // ${
-    //       due <= expiry ? 'past-due' : ''
-    //     }
-// pastdue
+    let pastDueDate = today.setDate(today.getDate() - 2);
+
     const { title, probNum, lcDifficulty, rating, url, notes } = this.state;
 
     return (
       <div
         key={this.props.key}
-        className={`card ${this.state.flip ? 'flipped' : ''} `}
+        className={`card ${this.state.flip ? 'flipped' : ''} ${due <= pastDueDate ? 'past-due' : ''}`}
       >
         <div className="front">
           <div>
