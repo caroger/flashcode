@@ -11,26 +11,43 @@ $form-font: "Rubik", sans-serif;
     flex-direction: row;
     justify-content: flex-end;
     height: 48px;
+    margin-right: -10px;
+    margin-top: -10px;
+    margin-bottom: -40px;
     .close-x {
       font-size: 20px;
-      color: white;
+      color: #888888;
       font-weight: bold;
-      display: block;
-      border: none;
-      width: 28px;
-      height: 28px;
+      background: transparent;
+      height: 35px;
+      width: 35px;
+    }
+    .close-x:hover {
+      background: #888888;
+      color: white;
       border-radius: 50%;
-      margin-bottom: 5px;
-      background-color: transparent;
-      &:hover {
-        background-color: #727272;
-        cursor: pointer;
-      }
     }
   }
+  //   .close-x {
+  //     font-size: 20px;
+  //     color: white;
+  //     font-weight: bold;
+  //     display: block;
+  //     border: none;
+  //     width: 28px;
+  //     height: 28px;
+  //     border-radius: 50%;
+  //     margin-bottom: 5px;
+  //     background-color: transparent;
+  //     &:hover {
+  //       background-color: #727272;
+  //       cursor: pointer;
+  //     }
+  //   }
+  // }
   .login-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex;
     align-items: center;
     padding-right: 15 px;
     .form-type {
@@ -83,6 +100,9 @@ $form-font: "Rubik", sans-serif;
     line-height: 24px;
     font-weight: 300;
     display: block;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
   }
 
   .login-form-box {
@@ -105,10 +125,10 @@ $form-font: "Rubik", sans-serif;
       padding-top: 1em;
       .login-input {
         display: block;
-        font-size: 16px;
+        font-size: 13px;
         font-family: inherit;
-        line-height: 28px;
-        padding: 9px 12px 9px 12px;
+        line-height: 20px;
+        padding: 12px 12px 12px 12px;
         border: 1px solid #e5e4e2;
         border-radius: 6px;
         width: 100%;
@@ -129,15 +149,17 @@ $form-font: "Rubik", sans-serif;
       }
       .login-input-label {
         line-height: 18px;
-        font-size: 13px;
+        font-size: 12px;
         font-weight: bold;
         letter-spacing: 0.1px;
+        padding-bottom: 5px;
+        
       }
       .session-submit {
         display: block;
         font-size: 16px;
         font-weight: bold;
-        background-color: black;
+        background-color: #4C82E6;
         color: white;
         width: 350px;
         border-radius: 5px;
@@ -152,8 +174,38 @@ $form-font: "Rubik", sans-serif;
           transform: scale(1.01);
           opacity: 1;
           cursor: pointer;
+           background-color:#3067CC;
         }
       }
     }
   }
 }
+
+.input-wrap{
+  display: flex;
+  flex-direction: column;
+}
+
+.header-wrapper{
+  padding-left: 125px;
+  border-bottom: 1px solid #888888;
+}
+.session-logo{
+  width: 100px;
+  height: 100px;
+  
+}
+
+.extra-info {
+  margin-top: 100px;
+  margin-left: 5px;
+  .other-form {
+    background: transparent;
+    color: rgb(0, 153, 255);
+  }
+  .other-form:hover {
+    text-decoration: underline;
+    color: #4C82E6;
+  }
+}
+

@@ -21,7 +21,7 @@ export default class CreateCardForm extends Component {
             this.setState({ [field]: e.target.value })
         }
     }
-    
+
     componentWillUnmount() {
         this.props.fetchUserCards(this.props.currentUser.id)
             .then(this.props.clearCardErrors());

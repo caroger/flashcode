@@ -83,7 +83,7 @@ class Card extends Component {
               </button>
             </div>
             <div>
-              <h3>Diffulty: {lcDifficulty}</h3>
+              <h3>Difficulty: {lcDifficulty}</h3>
               <h3>Next Review: {date}</h3>
             </div>
           </div>

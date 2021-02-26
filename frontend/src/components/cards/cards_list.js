@@ -27,7 +27,7 @@ export default class CardsList extends Component {
     
     if (!cards || cards.length === 0) {
       return (
-            <h1>No Cards to show!</h1>
+            <h1>No Cards to show; Create some new cards to get started!</h1>
       );
     }
 
