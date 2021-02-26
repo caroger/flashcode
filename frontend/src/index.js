@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore({});
   }
 
-  window.store = store; //TODO remove for production
+  // window.store = store; //TODO remove for production
 
   const root = document.getElementById('root');
 
