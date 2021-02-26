@@ -188,17 +188,25 @@
   }
 
   textarea {
+    resize: none;
     border: 1px solid #f2f2f2;
+  }
+
+  textarea:focus {
+    // border: none
+    border: 1px solid #8baeee;
   }
 }
 
 .flip-button {
   margin-left: 20px;
+
   background-color: transparent;
   color: #696969;
   font-weight: 400;
-  border-radius: 3px;
-  transform: scaleY(1.2);
+  border-radius: 5px;
+  padding: 2px 7px 0 7px;
+  transform: scaleY(1.05);
   border: none;
   transition: .2s background-color ease-in-out;
   outline: none;
@@ -208,4 +216,18 @@
 .flip-button:hover {
   background-color: #f2f2f2;
   border: none;
+}
+
+.save-card-button {
+  background: rgb(245, 245, 245);
+  padding: 7px 15px;
+  border-radius: 5px;
+  color: #696969;
+  margin-top: 10px;
+  transition: .2s background-color ease-in-out;
+}
+
+.save-card-button:hover {
+  background: #4C82E6;
+  color: white;
 }

@@ -111,9 +111,11 @@ class Card extends Component {
         </div>
         <div className="back">
           <h2>Notes</h2>
-          <textarea value={notes} onChange={this.update('notes')} rows="12" cols="25" />
+          <textarea value={notes} onChange={this.update('notes')} rows="13" cols="28" />
           <br />
-          <button onClick={this.handleSubmit}>Save</button>
+          <button className="save-card-button" 
+            onClick={this.handleSubmit}>Save
+          </button>
         </div>
       </div>
     );
