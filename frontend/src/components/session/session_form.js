@@ -101,118 +101,109 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
-        {this.renderClose()}
         <div className="login-form-box">
+          {this.renderClose()}
           {this.renderHeader()}
           <form onSubmit={this.handleSubmit}>
-            
-          
             <div className="login-form">
-              {this.props.formType === 'login' && (<div className='input-wrap'>
-                <label className="login-input-label"></label>
-                <input
-                  className = 'login-input'
-                  type="text"
-                  placeholder="Email address"
-                  value={this.state.email}
-                  onChange={this.update('email')}
-                />
-                <p className="error">{this.props.errors.email}</p>
-              
-              </div>)} 
-
-         {this.props.formType === 'login' && (
-                <div className='input-wrap'>
-                <label className="login-input-label"></label>
+              {this.props.formType === 'login' && (
+                <div className="input-wrap">
+                  <label className="login-input-label"></label>
                   <input
-                    className='login-input'
+                    className="login-input"
+                    type="text"
+                    placeholder="Email address"
+                    value={this.state.email}
+                    onChange={this.update('email')}
+                  />
+                  <p className="error">{this.props.errors.email}</p>
+                </div>
+              )}
+
+              {this.props.formType === 'login' && (
+                <div className="input-wrap">
+                  <label className="login-input-label"></label>
+                  <input
+                    className="login-input"
                     type="password"
                     placeholder="Password"
                     value={this.state.password}
                     onChange={this.update('password')}
                   />
                   <p className="error">{this.props.errors.password}</p>
-                
-         </div>)}
+                </div>
+              )}
 
-
-              {this.props.formType === 'signup' && (<div className = 'input-wrap'>
-                <label className="login-input-label">
-                 Email: </label>
+              {this.props.formType === 'signup' && (
+                <div className="input-wrap">
+                  <label className="login-input-label">Email: </label>
                   <input
-                  className='login-input'
+                    className="login-input"
                     type="text"
                     placeholder="Enter your email address."
                     value={this.state.email}
                     onChange={this.update('email')}
                   />
                   <p className="error">{this.props.errors.email}</p>
-               
-              </div>)} 
-              
-
-
-            {this.props.formType === 'signup' && (
-                <div className='input-wrap'>
-                <label className="login-input-label">
-                  Username:</label>
-                <input
-                    className='login-input'
-                  type="text"
-                  placeholder='Enter a username.'
-                  value={this.state.username}
-                  onChange={this.update('username')}
-                />
-                <p className="error">{this.props.errors.username}</p>
-              </div>
-            )}
-
-            {this.props.formType === 'signup' && (
-                <div className='input-wrap'>
-               <label className="login-input-label">
-                 Password:
-                 </label>
-                <input
-                    className='login-input'
-                  type="password"
-                  placeholder="Enter your password."
-                  value={this.state.password}
-                  onChange={this.update('password')}
-                />
-                <p className="error">{this.props.errors.password}</p>
                 </div>
-             )}
+              )}
 
               {this.props.formType === 'signup' && (
-                <div className='input-wrap'> 
-                  <label className="login-input-label">
-                    Confirm your password:</label>
-                    <input
-                    className='login-input'
-                      type="password"
-                      placeholder='Enter password again.'
-                      value={this.state.password2}
-                      onChange={this.update('password2')}
-                    />
-                    <p className="error">{this.props.errors.password2}</p>
-
+                <div className="input-wrap">
+                  <label className="login-input-label">Username:</label>
+                  <input
+                    className="login-input"
+                    type="text"
+                    placeholder="Enter a username."
+                    value={this.state.username}
+                    onChange={this.update('username')}
+                  />
+                  <p className="error">{this.props.errors.username}</p>
                 </div>
               )}
-              <div className = 'session-button-wrapper'>
-              <button className="session-submit" type="submit">
-                {this.props.formType === 'login' ? 'Sign in' : 'Register'}
-              </button>
 
-              {this.props.formType === 'login' && (
-                <div>
-                <button onClick={this.handleDemoUser} className="session-submit">
-                  Demo Login
-                </button>
-               <div>Don't have an account? {this.props.otherForm}</div>
-               </div>
+              {this.props.formType === 'signup' && (
+                <div className="input-wrap">
+                  <label className="login-input-label">Password:</label>
+                  <input
+                    className="login-input"
+                    type="password"
+                    placeholder="Enter your password."
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                  />
+                  <p className="error">{this.props.errors.password}</p>
+                </div>
               )}
 
+              {this.props.formType === 'signup' && (
+                <div className="input-wrap">
+                  <label className="login-input-label">Confirm your password:</label>
+                  <input
+                    className="login-input"
+                    type="password"
+                    placeholder="Enter password again."
+                    value={this.state.password2}
+                    onChange={this.update('password2')}
+                  />
+                  <p className="error">{this.props.errors.password2}</p>
+                </div>
+              )}
+              <div className="session-button-wrapper">
+                <button className="session-submit" type="submit">
+                  {this.props.formType === 'login' ? 'Sign in' : 'Register'}
+                </button>
 
+                {this.props.formType === 'login' && (
+                  <div>
+                    <button onClick={this.handleDemoUser} className="session-submit">
+                      Demo Login
+                    </button>
+                    <div className="extra-info">
+                      Don't have an account? {this.props.otherForm}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </form>

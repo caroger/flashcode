@@ -11,28 +11,44 @@ $form-font: "Rubik", sans-serif;
     flex-direction: row;
     justify-content: flex-end;
     height: 48px;
+    margin-right: -10px;
+    margin-top: -10px;
+    margin-bottom: -40px;
     .close-x {
       font-size: 20px;
-      color: white;
+      color: #888888;
       font-weight: bold;
-      display: block;
-      border: none;
-      width: 28px;
-      height: 28px;
+      background: transparent;
+      height: 35px;
+      width: 35px;
+    }
+    .close-x:hover {
+      background: #888888;
+      color: white;
       border-radius: 50%;
-      margin-bottom: 5px;
-      background-color: transparent;
-      &:hover {
-        background-color: #727272;
-        cursor: pointer;
-      }
     }
   }
+  //   .close-x {
+  //     font-size: 20px;
+  //     color: white;
+  //     font-weight: bold;
+  //     display: block;
+  //     border: none;
+  //     width: 28px;
+  //     height: 28px;
+  //     border-radius: 50%;
+  //     margin-bottom: 5px;
+  //     background-color: transparent;
+  //     &:hover {
+  //       background-color: #727272;
+  //       cursor: pointer;
+  //     }
+  //   }
+  // }
   .login-header {
     display: flex;
     justify-content: flex;
     align-items: center;
-    padding-top: 10px;
     padding-right: 15 px;
     .form-type {
       font-size: 20px;
@@ -172,7 +188,7 @@ $form-font: "Rubik", sans-serif;
 
 .header-wrapper{
   padding-left: 125px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #888888;
 }
 .session-logo{
   width: 100px;
@@ -180,4 +196,16 @@ $form-font: "Rubik", sans-serif;
   
 }
 
+.extra-info {
+  margin-top: 20px;
+  margin-left: 5px;
+  .other-form {
+    background: transparent;
+    color: rgb(0, 153, 255);
+  }
+  .other-form:hover {
+    text-decoration: underline;
+    color: #4C82E6;
+  }
+}
 
