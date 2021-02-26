@@ -17,13 +17,13 @@ export default function TeamPage() {
             <img src={Roger} alt="member image" class="profile-pic" />
           </div>
           <div className="social-links">
-            <a href="#" target="_blank">
+            <a href="https://www.linkedin.com/in/rogerhu1989/" target="_blank">
                 <FontAwesomeIcon icon={faLinkedin} />
             </a>
-            <a href="#" target="_blank">
+            <a href="https://github.com/caroger" target="_blank">
                 <FontAwesomeIcon icon={faGithub} />
             </a>
-            <a href="#" target="_blank">
+            <a href="https://angel.co/u/roger-hu-6" target="_blank">
                 <FontAwesomeIcon icon={faAngellist} />
             </a>
           </div>
@@ -34,13 +34,13 @@ export default function TeamPage() {
             <img src={Colin} alt="member image" class="profile-pic" />
           </div>
           <div className="social-links">
-            <a href="#" target="_blank">
+            <a href="https://www.linkedin.com/in/colin-eckert/" target="_blank">
                 <FontAwesomeIcon icon={faLinkedin} />
             </a>
-            <a href="#" target="_blank">
+            <a href="https://github.com/colineckert" target="_blank">
                 <FontAwesomeIcon icon={faGithub} />
             </a>
-            <a href="#" target="_blank">
+            <a href="https://angel.co/u/colin-eckert#" target="_blank">
                 <FontAwesomeIcon icon={faAngellist} />
             </a>
           </div>
@@ -51,13 +51,13 @@ export default function TeamPage() {
             <img src={Dongsoo} alt="member image" class="profile-pic" />
           </div>
           <div className="social-links">
-            <a href="#" target="_blank">
+            <a href="https://www.linkedin.com/in/dongsoo-cha-72511476/" target="_blank">
                 <FontAwesomeIcon icon={faLinkedin} />
             </a>
-            <a href="#" target="_blank">
+            <a href="https://github.com/chubbibanana/" target="_blank">
                 <FontAwesomeIcon icon={faGithub} />
             </a>
-            <a href="#" target="_blank">
+            <a href="https://angel.co/u/dongsoo-cha" target="_blank">
                 <FontAwesomeIcon icon={faAngellist} />
             </a>
           </div>
@@ -68,10 +68,10 @@ export default function TeamPage() {
             <img src={Edwin} alt="member image" class="profile-pic" />
           </div>
           <div className="social-links">
-              <a href="#" target="_blank">
+              <a href="https://www.linkedin.com/in/edwin-zhou-a231b31b6/" target="_blank">
                   <FontAwesomeIcon icon={faLinkedin} />
               </a>
-              <a href="#" target="_blank">
+              <a href="https://github.com/ezhou0" target="_blank">
                   <FontAwesomeIcon icon={faGithub} />
               </a>
               <a href="#" target="_blank">
