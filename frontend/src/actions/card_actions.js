@@ -35,23 +35,32 @@ export const clearCardErrors = () => ({
 export const fetchUserCards = (userId) => dispatch => {
   return CardAPI.getUserCards(userId)
     .then(cards => dispatch(receiveCards(cards)))
-    .catch(err => dispatch(receiveCardErrors(err.response.data)))
+    .catch(err => {
+      dispatch(receiveCardErrors(err.response.data));
+      return Promise.reject(err)})
 };
 
-export const fetchCard = cardId => dispatch => (
+export const fetchCard = (cardId) => (dispatch) =>
   CardAPI.getCard(cardId)
-    .then(card => dispatch(receiveCard(card)))
-    .catch(err => dispatch(receiveCardErrors(err.response.data)))
-);
+    .then((card) => dispatch(receiveCard(card)))
+    .catch((err) => {
+      dispatch(receiveCardErrors(err.response.data));
+      return Promise.reject(err);
+    });
 
-export const createCard = card => dispatch => (
+export const createCard = (card) => (dispatch) =>
   CardAPI.createCard(card)
-    .then(card => dispatch(receiveNewCard(card)))
-    .catch(err => dispatch(receiveCardErrors(err.response.data)))
-);
+    .then((card) => dispatch(receiveNewCard(card)))
+    .catch((err) => {
+      dispatch(receiveCardErrors(err.response.data));
+      return Promise.reject(err);
+    });
 
 export const updateCard = card => dispatch => {
   return CardAPI.updateCard(card)
-    .then(card => dispatch(receiveCard(card)))
-    .catch(err => dispatch(receiveCardErrors(err.response.data)))
+    .then((card) => dispatch(receiveCard(card)))
+    .catch((err) => {
+      dispatch(receiveCardErrors(err.response.data));
+      return Promise.reject(err);
+    });
 };
