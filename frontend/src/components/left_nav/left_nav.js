@@ -1,5 +1,5 @@
 // render logo, user handle, search (to be implemented later)
-// 
+// add
 import React from 'react';
 import { receiveCurrentUser } from '../../actions/session_actions';
 import DecksIndex from './decks/decks_index';
