@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateCard } from '../../actions/card_actions';
 import { parseDate } from '../../util/date_util';
-import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 class Card extends Component {
   constructor(props) {
@@ -78,7 +79,8 @@ class Card extends Component {
                 </p>
               </div>
               <button className="flip-button" onClick={this.toggleFlip}>
-                {'>>'}
+                <FontAwesomeIcon icon={faAngleRight} />
+                {/* {'>>'} */}
               </button>
             </div>
             <div>

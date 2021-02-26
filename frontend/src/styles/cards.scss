@@ -145,6 +145,7 @@
     //   background-color: #4C82E6;
     //   color: white;
     // }
+
    .rating-button {
       background-color: rgb(245, 245, 245);
       &-easy {
@@ -185,6 +186,7 @@
       }
     }
     
+
   }
 }
 
@@ -208,10 +210,11 @@
   color: #696969;
   font-weight: 400;
   border-radius: 3px;
-  transform: scaleY(2.0);
+  transform: scaleY(1.2);
   border: none;
   transition: .2s background-color ease-in-out;
-  outline: none
+  outline: none;
+  font-size: 22px;
 }
 
 .flip-button:hover {
