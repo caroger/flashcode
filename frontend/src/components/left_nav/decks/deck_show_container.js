@@ -28,6 +28,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchUserCards: userId => dispatch(fetchUserCards(userId)),
+    
   }
 }
 

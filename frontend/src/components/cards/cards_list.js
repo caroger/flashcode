@@ -4,16 +4,25 @@ import Card from './card';
 export default class CardsList extends Component {
   constructor(props) {
     super(props)
+
+    // this.checkCards = this.checkCards.bind(this);
   }
   
-  // componentDidUpdate(prevProps) {
-  //   if (this.props.cards.length !== prevProps.cards.length) {
-  //     this.props.fetchUserCards(this.props.currentUser);  
-  //   }
+  componentDidUpdate(prevProps) {
+    if (this.props.cards.length !== prevProps.cards.length) {
+      this.props.fetchUserCards(this.props.currentUser);  
+    // } else if (this.checkCards(this.props.cards, 1) !== this.checkCards(prevProps.cards, 1)) {
+    //   this.props.fetchUserCards(this.props.currentUser);
+    }
+  }
+
+  // checkCards(cards, rating) {
+  //   // const cards = this.props.fetchUserCards(this.props.currentUser);
+  //   const filteredCards = cards.all.filter(card => card.rating === rating);
+  //   return filteredCards;
   // }
 
   render() {
-
     const { cards } = this.props;
     
     if (!cards || cards.length === 0) {

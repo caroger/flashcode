@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateCard } from '../../actions/card_actions';
+import { fetchUserCards, updateCard } from '../../actions/card_actions';
 import { parseDate } from '../../util/date_util';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
@@ -42,7 +42,7 @@ class Card extends Component {
   update(field) {
     return (e) => {
       this.setState({ [field]: e.target.value });
-    };
+    }
   }
 
   handleSubmit(e) {

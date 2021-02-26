@@ -5,14 +5,14 @@ import React, { Component } from 'react'
 import CardsList from '../../cards/cards_list';
 
 export default class DeckShow extends Component {
-  // constructor(props) {
-  //   super(props)
-  // }
+  constructor(props) {
+    super(props)
+  }
 
   componentDidMount() {
     this.props.fetchUserCards(this.props.currentUser)
   }
-  
+
   render() {
     if (!this.props.deck) return null;
     switch (this.props.deck) {
