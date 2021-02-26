@@ -47,7 +47,10 @@ export const fetchCard = cardId => dispatch => (
 export const createCard = card => dispatch => (
   CardAPI.createCard(card)
     .then(card => dispatch(receiveNewCard(card)))
-    .catch(err => dispatch(receiveCardErrors(err.response.data)))
+    .catch((err) => {
+      dispatch(receiveCardErrors(err.response.data));
+      return Promise.reject(err);
+    })
 );
 
 export const updateCard = card => dispatch => {

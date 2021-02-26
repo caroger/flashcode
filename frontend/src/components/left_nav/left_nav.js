@@ -1,5 +1,5 @@
 // render logo, user handle, search (to be implemented later)
-// 
+// add
 import React from 'react';
 import { receiveCurrentUser } from '../../actions/session_actions';
 import DecksIndex from './decks/decks_index';
@@ -19,6 +19,7 @@ class LeftNav extends React.Component{
     render(){
         
         return(
+
             <div className='left-nav-container'>
                 <div className = 'welcome-message'>
                     <h1>Welcome, {this.props.currentUser.username}</h1>
@@ -32,6 +33,7 @@ class LeftNav extends React.Component{
                 <div>
                     <DecksIndex />
                 </div>
+
             </div>
         )
     }
