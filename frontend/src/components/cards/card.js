@@ -37,6 +37,7 @@ class Card extends Component {
 
   grabCard() {
     if (this.props.card) this.setState(this.props.card);
+    
   }
 
   update(field) {
@@ -62,20 +63,29 @@ class Card extends Component {
 
   render() {
     if (!this.props.card) return null;
-
+    // debugger
     let date = parseDate(this.state.dueDate);
+
+    let due = Date.parse(this.props.card.dueDate);
+    let today = new Date();
+    let pastDueDate = today.setDate(today.getDate() - 2);
 
     const { title, probNum, lcDifficulty, rating, url, notes } = this.state;
 
     return (
-      <div key={this.props.key} className={`card ${this.state.flip ? 'flipped' : ''}`}>
+      <div
+        key={this.props.key}
+        className={`card ${this.state.flip ? 'flipped' : ''} ${due <= pastDueDate ? 'past-due' : ''}`}
+      >
         <div className="front">
           <div>
             <div className="card-header">
               <div>
                 <h1>{title}</h1>
                 <p>
-                  <a href={url} target="_blank">Problem #{probNum}</a>
+                  <a href={url} target="_blank">
+                    Problem #{probNum}
+                  </a>
                 </p>
               </div>
               <button className="flip-button" onClick={this.toggleFlip}>
@@ -113,8 +123,7 @@ class Card extends Component {
           <h2>Notes</h2>
           <textarea value={notes} onChange={this.update('notes')} rows="10" cols="28" />
           <br />
-          <button className="save-button-card"
-            onClick={this.handleSubmit}>
+          <button className="save-button-card" onClick={this.handleSubmit}>
             Save
           </button>
         </div>
