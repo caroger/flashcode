@@ -10,14 +10,14 @@ import '../styles/app.scss';
 
 const App = () => (
   <div>
-      <Route component={NavBarContainer} />
-      <Route component={Modal} />
-      
-      <ProtectedRoute path="/home" component={MainPage} />
-      <ProtectedRoute path="/decks/:deckId" component={MainPage} />
+    <Route component={NavBarContainer} />
+    <Route component={Modal} />
 
-      <AuthRoute exact path="/" component={LoggedOutComponent} />
-      <Route exact path="/team" component={TeamPage} />
+    <ProtectedRoute path="/home" component={MainPage} />
+    <ProtectedRoute path="/decks/:deckId" component={MainPage} />
+
+    <Route exact path="/team" component={TeamPage} />
+    <AuthRoute exact path="/" component={LoggedOutComponent} />
   </div>
 );
 

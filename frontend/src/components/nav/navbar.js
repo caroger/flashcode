@@ -16,7 +16,10 @@ const NavBar = ({ loggedIn, logout, openModal }) => {
       <div></div>
       <div className="navbar-middle">
         <Link to="/"><img src={horizontalLogo}/></Link>
-        <div className="navbar-button-div">{loggedIn ? logoutBtn() : loginBtn()}</div>
+        <div className="navbar-button-div">
+          <Link to="/team" className="team-link">Our Team</Link>
+          {loggedIn ? logoutBtn() : loginBtn()}
+        </div>
       </div>
       <div></div>
     </div>
