@@ -6,6 +6,7 @@ import DecksIndex from './decks/decks_index';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faLayerGroup, faUserAlt } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin, faGithub, faAngellist } from '@fortawesome/free-brands-svg-icons'
 
 
 class LeftNav extends React.Component{
@@ -31,6 +32,18 @@ class LeftNav extends React.Component{
                 </div>
                 <div>
                     <DecksIndex />
+                </div>
+                <div></div>
+                <div className="social-links">
+                    <a href="https://github.com/caroger/flashcode" target="_blank">
+                        <FontAwesomeIcon icon={faLinkedin} />
+                    </a>
+                    <a href="https://github.com/caroger/flashcode" target="_blank">
+                        <FontAwesomeIcon icon={faGithub} />
+                    </a>
+                    <a href="https://github.com/caroger/flashcode" target="_blank">
+                        <FontAwesomeIcon icon={faAngellist} />
+                    </a>
                 </div>
             </div>
         )
