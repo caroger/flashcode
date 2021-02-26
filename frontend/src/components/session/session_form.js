@@ -82,7 +82,7 @@ class SessionForm extends React.Component {
       return (
         <div className="registration-header">
           <div className="registration_h1">Create your account</div>
-          <div className="registration_h2">Registration is as easy as 1, 2, 3... 4</div>
+          <div className="registration_h2">Registration is as easy as 1, 1, 2, 3...</div>
         </div>
       );
     }
