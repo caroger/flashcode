@@ -82,7 +82,7 @@ class SessionForm extends React.Component {
       return (
         <div className="registration-header">
           <div className="registration_h1">Create your account</div>
-          <div className="registration_h2">Registration is easy.</div>
+          <div className="registration_h2">Registration is as easy as 1, 2, 3... 4</div>
         </div>
       );
     }
@@ -137,7 +137,7 @@ class SessionForm extends React.Component {
 
               {this.props.formType === 'signup' && (
                 <div className="input-wrap">
-                  <label className="login-input-label">Email: </label>
+                  {/* <label className="login-input-label">Email: </label> */}
                   <input
                     className="login-input"
                     type="text"
@@ -151,7 +151,7 @@ class SessionForm extends React.Component {
 
               {this.props.formType === 'signup' && (
                 <div className="input-wrap">
-                  <label className="login-input-label">Username:</label>
+                  {/* <label className="login-input-label">Username:</label> */}
                   <input
                     className="login-input"
                     type="text"
@@ -165,7 +165,7 @@ class SessionForm extends React.Component {
 
               {this.props.formType === 'signup' && (
                 <div className="input-wrap">
-                  <label className="login-input-label">Password:</label>
+                  {/* <label className="login-input-label">Password:</label> */}
                   <input
                     className="login-input"
                     type="password"
@@ -179,7 +179,7 @@ class SessionForm extends React.Component {
 
               {this.props.formType === 'signup' && (
                 <div className="input-wrap">
-                  <label className="login-input-label">Confirm your password:</label>
+                  {/* <label className="login-input-label">Confirm your password:</label> */}
                   <input
                     className="login-input"
                     type="password"
@@ -192,7 +192,7 @@ class SessionForm extends React.Component {
               )}
               <div className="session-button-wrapper">
                 <button className="session-submit" type="submit">
-                  {this.props.formType === 'login' ? 'Sign in' : 'Register'}
+                  {this.props.formType === 'login' ? 'Sign in' : 'Start FlashCoding!'}
                 </button>
 
                 {this.props.formType === 'login' && (
