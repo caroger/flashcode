@@ -17,6 +17,7 @@ const mapStateToProps = (state, ownProps) => {
   const date = new Date();
   
   return {
+    currentUser: state.session.user.id,
     easyCards: getAllDeckCards(state, 1),
     mediumCards: getAllDeckCards(state, 2),
     hardCards: getAllDeckCards(state, 3),

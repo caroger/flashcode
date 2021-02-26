@@ -44,10 +44,6 @@ export default class CreateCardForm extends Component {
         )
     }
 
-    componentWillUnmount() {
-        this.props.clearCardErrors();
-    }
-
     render() {
         const { probNum, rating, notes } = this.state;
 

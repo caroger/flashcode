@@ -2,7 +2,7 @@ import { RECEIVE_USER_CARDS, RECEIVE_CARD, RECEIVE_NEW_CARD } from '../actions/c
 
 // import RECEIVE_DECK >> when built, will need to iterate over deck cards and set newState[card.id] = card
 
-const CardsReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
+const CardsReducer = (state = { all: [], user: [], new: undefined }, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
   switch (action.type) {

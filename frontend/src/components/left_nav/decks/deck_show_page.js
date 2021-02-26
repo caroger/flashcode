@@ -5,14 +5,16 @@ import React, { Component } from 'react'
 import CardsList from '../../cards/cards_list';
 
 export default class DeckShow extends Component {
-  constructor(props) {
-    super(props)
+  // constructor(props) {
+  //   super(props)
+  // }
+
+  componentDidMount() {
+    this.props.fetchUserCards(this.props.currentUser)
   }
-
-
-  
   
   render() {
+    if (!this.props.deck) return null;
     switch (this.props.deck) {
     case 'easy':
       return (
@@ -21,7 +23,10 @@ export default class DeckShow extends Component {
             <h1>Easy Cards</h1>
           </div>
           <div className="card-list-container">
-            <CardsList cards={this.props.easyCards} />
+            <CardsList 
+              cards={this.props.easyCards} 
+              fetchUserCards={this.props.fetchUserCards} 
+              currentUser={this.props.currentUser}/>
           </div>
         </div>
       )
@@ -32,10 +37,14 @@ export default class DeckShow extends Component {
             <h1>Medium Cards</h1>
           </div>
           <div className="card-list-container">
-            <CardsList cards={this.props.mediumCards} />
+            <CardsList
+              cards={this.props.mediumCards}
+              fetchUserCards={this.props.fetchUserCards}
+              currentUser={this.props.currentUser}
+            />
           </div>
         </div>
-      )
+      );
     case 'hard':
       return (
         <div className="cards-index-container">
@@ -43,10 +52,14 @@ export default class DeckShow extends Component {
             <h1>Hard Cards</h1>
           </div>
           <div className="card-list-container">
-            <CardsList cards={this.props.hardCards} />
+            <CardsList
+              cards={this.props.hardCards}
+              fetchUserCards={this.props.fetchUserCards}
+              currentUser={this.props.currentUser}
+            />
           </div>
         </div>
-      )
+      );
     case 'today':
       return (
         <div className="cards-index-container">
@@ -54,10 +67,10 @@ export default class DeckShow extends Component {
             <h1>Today's Cards</h1>
           </div>
           <div className="card-list-container">
-            <CardsList cards={this.props.todayCards} />
+            <CardsList cards={this.props.todayCards} fetchUserCards={this.props.fetchUserCards} />
           </div>
         </div>
-      )
+      );
     default:
       return (
         <div>Nothing works</div>
