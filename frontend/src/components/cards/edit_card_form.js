@@ -1,20 +1,20 @@
 import React from 'react';
 
 class EditCardForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = this.props.card;
+  constructor(props) {
+    super(props);
+    this.state = this.props.card;
 
-        this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e) {
-        e.preventDefault();
-        this.props.updateCard(this.state);
+      e.preventDefault();
+      this.props.updateCard(this.state);
     }
 
     update(field) {
-        return e => this.setState({ [field]: e.curentTarget.value });
+      return e => this.setState({ [field]: e.curentTarget.value });
     }
 
     render() {
