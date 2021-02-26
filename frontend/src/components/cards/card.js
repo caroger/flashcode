@@ -80,7 +80,6 @@ class Card extends Component {
               </div>
               <button className="flip-button" onClick={this.toggleFlip}>
                 <FontAwesomeIcon icon={faAngleRight} />
-                {/* {'>>'} */}
               </button>
             </div>
             <div>
@@ -104,7 +103,6 @@ class Card extends Component {
             />
             <input
               className={rating == 3 ? 'rating-button-hard-selected' : 'rating-button-hard'}
-              // className="hard-button"
               type="submit"
               value="3"
               onClick={this.update('rating')}

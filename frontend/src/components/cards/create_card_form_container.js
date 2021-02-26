@@ -5,6 +5,7 @@ import CreateCardForm from './create_card_form';
 import { closeModal } from '../../actions/modal_actions';
 
 
+
 const mapStateToProps = (state) => {
     return {
         // cards: getAllUserCards(state), //TODO - check if this selector gets current users cards for index
@@ -18,7 +19,7 @@ const mapDispatchToProps = dispatch => {
     return {
         createCard: card => dispatch(createCard(card)),
         clearCardErrors: () => dispatch(clearCardErrors()),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
     }
 }
 
