@@ -8,7 +8,7 @@
   padding: 7rem 20%;
   
   h1 {
-    font-size: 56px;
+    font-size: 67px;
     line-height: 70px;
     padding: 0 0 20px;
     color: #4C82E6;
@@ -19,6 +19,7 @@
     text-align: center;
     max-width: 50em;
     margin: 0 auto;
+    padding-right: 50px;
 
     button {
       font-size: 16px;
@@ -45,18 +46,21 @@
 
     h2 {
       font-size: 22px;
-      padding: 0 0 10px;
+      padding: 0 0 25px;
       line-height: 30px;
       font-family: "Soleil",Helvetica,Arial,sans-serif;
     }
   }
   
+}
+
+.hero-image-container {
+  padding: 10px 0 10px 60px;
+
   img {
     width: 100%;
     height: auto;
-    padding: 10px 0 10px 40px;
-    margin: 0 auto;
-
+    
   }
 }
 

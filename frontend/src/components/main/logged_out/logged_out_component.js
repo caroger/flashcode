@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
-import tempImage from '../../../styles/images/temp_app_image.png';
-import Modal from '../../modal/modal';
+import cardsHeroImage from '../../../styles/images/hero_cards.png'
+// import Modal from '../../modal/modal';
 import { openModal } from '../../../actions/modal_actions';
 
 class LoggedOutComponent extends React.Component{
@@ -23,7 +23,7 @@ class LoggedOutComponent extends React.Component{
                         </button>
                     </div>
                     <div className="hero-image-container">
-                        <img src={tempImage} alt="hero image" />
+                        <img src={cardsHeroImage} alt="hero image" />
                     </div>
                 </div>
                 <div className="splash-content">
