@@ -1,17 +1,13 @@
-// body {
-//   background-color: rgb(252, 252, 252);
-// }
-
 .cards-index-container {
   display: grid;
   height: 100vh;
-  grid-template-rows: 100px 1fr;
+  grid-template-rows: 80px 1fr;
 
 }
 
 .cards-index-header {
   padding: 10px 30px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid rgb(230, 230, 230);
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -30,7 +26,6 @@
   overflow: auto;
   padding: 10px 30px;
   justify-content: center;
-  // background-color: rgb(221, 221, 221);
 }
 
 .card-container {
@@ -38,7 +33,6 @@
 }
 
 .card {
-  // background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 5px 2px rgba(177, 191, 206, 0.5);
   padding: 5px 20px;
@@ -73,7 +67,6 @@
   position: absolute;
   padding: 2rem;
   backface-visibility: hidden;
-  // background-color: white;
 }
 
 .card .back {
@@ -105,7 +98,7 @@
 
   h3 {
     padding: 7px 0;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     // color: #696969;
     font-weight: 400;
@@ -140,11 +133,6 @@
       font-size: 16px;
 
     }
-
-    // input[type=submit]:hover {
-    //   background-color: #4C82E6;
-    //   color: white;
-    // }
 
    .rating-button {
       background-color: rgb(245, 245, 245);
@@ -218,7 +206,6 @@
 }
 
 .flip-button:hover {
-  // color: #4C82E6;
   background-color: #f2f2f2;
   border: none;
 }

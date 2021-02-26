@@ -1,65 +1,118 @@
 .left-nav-container {
     align-items: center;
-    padding-left: 15px;
     min-width: 200px;
     display: grid;
-    grid-template-rows: 100px 80px 40px 140px 1fr 130px;
+    grid-template-rows: 70px 100px 40px 365px 1fr 200px;
     height: 100vh;
     background-color: #f8f8ff;
     color: #696969;
     letter-spacing: 1px;
-
+    // border-right: 1px solid #C0C0C0;
+    box-shadow: 0 0 3px 1px rgba(201, 221, 243, 0.5);
 }
 
 .welcome-message {
-    font-size: 15px;
-    padding-top: 10px;
-    font-weight: 400;
-    letter-spacing: 1px;
-
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
+    padding-left: 22px;
+    height: 100%;
+    display: flex;
     align-items: center;
-
-    border-bottom: 1px solid #C0C0C0;
-
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    // border-bottom: 1px solid #C0C0C0;
+    
 }
 
 
-// border-bottom: 1px solid #C0C0C0;
-
-
-
-.left-nav-button {
-    letter-spacing: 1px;
-
-    margin-top: 10px;
-    margin-bottom: 10px;
-
-
-    letter-spacing: 2px;
-
+.left-nav-button{
+    letter-spacing: 1.5px;
     color: #696969;
     text-decoration: none;
+    padding-left: 22px;
+
+    svg {
+        padding-right: 10px;
+    }
+
 }
 
-.deck-index-div {
-    display: flex;
-    flex-direction: column;
+.left-nav-button:hover {
+    color: black;
+}
 
+.deck-index-div{
+    padding-left: 22px;
+    display: grid;
+    grid-template-rows: 50px 300px;
     text-decoration: none;
+    align-content: start;
+    letter-spacing: 1.5px;
+    // font-weight: bold;
+
+    a:hover {
+        color: black;
+    }
+
+    svg {
+        padding-right: 10px;
+    }
+
 }
 
 .deck-button {
-    // margin-top: 10px;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
+    display: block;
+    padding-bottom: 15px;
 
-
+    
 }
 
-.deck-button:hover,
-.left-nav-button:hover {
-    background-color: #DCDCDC;
+.deck-button.hard > svg {
+    color: #ff6b6b;
+}
+
+.deck-button.medium > svg {
+    color: #ffd97d;
+}
+
+.deck-button.easy > svg {
+    color: #4ecdc4;
+}
+
+.new-note-card-container {
+    padding-left: 20px;
+  }
+
+.new-card-button{
+    background-color: #4C82E6;
+    color: white;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px 15px;
+    width: 85%;
+    font-weight: 400;
+    font-size: 18px;
+    transition: .3s background-color ease-in-out;
+    
+    svg {
+        padding-right: 10px;
+    }
+}
+
+.new-card-button:hover{
+    background-color: #3067cc;
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-evenly;
+
+    svg {
+        font-size: 24px;
+    }
+}
+
+.social-links > a:hover {
+    color: #4C82E6;
 }

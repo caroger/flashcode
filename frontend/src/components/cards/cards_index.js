@@ -65,7 +65,11 @@ export default class CardsIndex extends Component {
             
           </div>
           <div className="card-list-container">
-            <CardsList cards={this.props.cards} />
+            <CardsList 
+              cards={this.props.cards} 
+              fetchUserCards={this.props.fetchUserCards}
+              currentUser={this.props.currentUser}
+            />
           </div>
         
         </div>

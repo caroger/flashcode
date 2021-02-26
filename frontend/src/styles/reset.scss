@@ -135,4 +135,10 @@ a,
 input[type="submit"] {
 	cursor: pointer;
 	outline: none;
+	border: none;
+	-webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+	text-decoration:inherit;
+	color:inherit;
 }

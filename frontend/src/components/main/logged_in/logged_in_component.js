@@ -24,7 +24,7 @@ class LoggedInComponent extends React.Component {
     return (
       <div className="component-div">
         {this.redirect()}
-        <LeftNav currentUser={this.props.currentUser} openModal={this.props.openModal} />
+        <LeftNav currentUser={this.props.currentUser} openModal={this.props.openModal} closeModal={this.props.closeModal} />
         {/* <CardIndexContainer /> */}
         {this.props.match.params.deckId ? (
           <DeckShowContainer deck={this.props.deck} />
