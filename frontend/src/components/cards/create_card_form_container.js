@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { clearCardErrors, createCard } from '../../actions/card_actions';
+import { clearCardErrors, createCard, fetchUserCards } from '../../actions/card_actions';
 // import { getAllUserCards } from '../../reducers/selectors';
 import CreateCardForm from './create_card_form';
 import { closeModal } from '../../actions/modal_actions';
@@ -20,6 +20,7 @@ const mapDispatchToProps = dispatch => {
         createCard: card => dispatch(createCard(card)),
         clearCardErrors: () => dispatch(clearCardErrors()),
         closeModal: () => dispatch(closeModal()),
+        fetchUserCards: userId => dispatch(fetchUserCards(userId))
     }
 }
 

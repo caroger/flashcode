@@ -21,15 +21,18 @@ export default class CreateCardForm extends Component {
             this.setState({ [field]: e.target.value })
         }
     }
+    
     componentWillUnmount() {
-        this.props.clearCardErrors();
+        this.props.fetchUserCards(this.props.currentUser.id)
+            .then(this.props.clearCardErrors());
     }
 
     handleSubmit(e) {
         e.preventDefault();
 
         const card = this.state;
-        this.props.createCard(card).then(this.props.closeModal);
+        this.props.createCard(card)
+            .then(this.props.closeModal);
     }
 
     renderErrors() {

@@ -6,11 +6,11 @@ export default class CardsList extends Component {
     super(props)
   }
   
-  componentDidUpdate(nextProps) {
-    if (this.props.cards.length !== nextProps.cards.length) {
-      this.props.fetchUserCards(this.props.currentUser);  
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   if (this.props.cards.length !== prevProps.cards.length) {
+  //     this.props.fetchUserCards(this.props.currentUser);  
+  //   }
+  // }
 
   render() {
 
