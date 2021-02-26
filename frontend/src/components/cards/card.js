@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateCard } from '../../actions/card_actions';
 import { parseDate } from '../../util/date_util';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 class Card extends Component {
   constructor(props) {
@@ -75,7 +77,8 @@ class Card extends Component {
                 <p>Problem #{probNum}</p>
               </div>
               <button className="flip-button" onClick={this.toggleFlip}>
-                {'>>'}
+                <FontAwesomeIcon icon={faAngleRight} />
+                {/* {'>>'} */}
               </button>
             </div>
             <div>
@@ -92,20 +95,19 @@ class Card extends Component {
           <form onSubmit={this.handleSubmit}>
             <h2>My Rating: {rating}</h2>
             <input
-              className={rating == 1 ? 'easy-button-selected' : 'esay-button'}
+              className={rating == 1 ? 'rating-button-easy-selected' : 'rating-button-easy'}
               type="submit"
               value="1"
               onClick={this.update('rating')}
             />
             <input
-              className={rating == 2 ? 'medium-button-selected' : 'medium-button'}
-              // className="medium-button"
+              className={rating == 2 ? 'rating-button-medium-selected' : 'rating-button-medium'}
               type="submit"
               value="2"
               onClick={this.update('rating')}
             />
             <input
-              className={rating == 3 ? 'hard-button-selected' : 'hard-button'}
+              className={rating == 3 ? 'rating-button-hard-selected' : 'rating-button-hard'}
               // className="hard-button"
               type="submit"
               value="3"
