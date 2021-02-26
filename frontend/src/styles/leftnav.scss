@@ -1,65 +1,65 @@
-
-.left-nav-container{
+.left-nav-container {
     align-items: center;
     padding-left: 15px;
     min-width: 200px;
     display: grid;
     grid-template-rows: 100px 80px 40px 140px 1fr 130px;
     height: 100vh;
-    background-color:#f8f8ff;
-    color:#696969;
+    background-color: #f8f8ff;
+    color: #696969;
     letter-spacing: 1px;
 
 }
 
-.welcome-message{
+.welcome-message {
     font-size: 15px;
     padding-top: 10px;
     font-weight: 400;
     letter-spacing: 1px;
-    
+
     margin-top: 10px;
     margin-bottom: 10px;
     padding-bottom: 10px;
     align-items: center;
 
     border-bottom: 1px solid #C0C0C0;
-  
-}
-
-
-    // border-bottom: 1px solid #C0C0C0;
 
 }
 
-.left-nav-button{
+
+// border-bottom: 1px solid #C0C0C0;
+
+
+
+.left-nav-button {
     letter-spacing: 1px;
-    
+
     margin-top: 10px;
     margin-bottom: 10px;
-   
-    
+
+
     letter-spacing: 2px;
 
     color: #696969;
     text-decoration: none;
 }
 
-.deck-index-div{
+.deck-index-div {
     display: flex;
     flex-direction: column;
-    
+
     text-decoration: none;
 }
 
-.deck-button{
+.deck-button {
     // margin-top: 10px;
     margin-bottom: 10px;
     letter-spacing: 2px;
 
-   
+
 }
 
-.deck-button:hover, .left-nav-button:hover{
+.deck-button:hover,
+.left-nav-button:hover {
     background-color: #DCDCDC;
 }
