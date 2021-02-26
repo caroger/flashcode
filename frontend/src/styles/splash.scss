@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  // padding: 40px;
   background-color: #F8F8FF;
   clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
   padding: 7rem 20%;
@@ -18,7 +18,7 @@
   .cta-container {
     text-align: center;
     max-width: 50em;
-    margin: 0 auto;
+    margin: 1em 1em;
     padding-right: 50px;
 
     button {
