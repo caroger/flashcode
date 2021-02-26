@@ -8,11 +8,11 @@
     color:#696969;
     letter-spacing: 1px;
     // border-right: 1px solid #C0C0C0;
-    box-shadow: 0 0 3px 1px rgba(177, 191, 206, 0.5);
+    box-shadow: 0 0 3px 1px rgba(201, 221, 243, 0.5);
 }
 
 .welcome-message {
-    padding-left: 20px;
+    padding-left: 22px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -28,7 +28,7 @@
     letter-spacing: 1.5px;
     color: #696969;
     text-decoration: none;
-    padding-left: 20px;
+    padding-left: 22px;
 
     svg {
         padding-right: 10px;
@@ -40,7 +40,7 @@
     }
 
 .deck-index-div{
-    padding-left: 20px;
+    padding-left: 22px;
     display: grid;
     grid-template-rows: 50px 300px;
     text-decoration: none;
