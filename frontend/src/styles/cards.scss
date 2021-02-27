@@ -29,9 +29,10 @@
   // display: grid;
   // grid-template-columns: repeat(auto-fit, 350px);
   // grid-template-rows: repeat(auto-fit, 400px);
-  // overflow: auto;
   // padding: 10px 30px;
   // justify-content: center;
+  
+  overflow: auto;
 
   display: flex;
   flex-wrap: wrap;
@@ -74,8 +75,16 @@
 
 .card.flipped {
   --rotate-y: 180deg;
-  height: 600px;
+  height: 700px;
   width: 540px;
+
+  .front, .back {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 620px;
+    width: 450px;
+  }
 }
 
 .past-due {
@@ -239,10 +248,10 @@
 }
 
 .save-button-card {
-  padding: 6px 14px;
+  padding: 12px;
   border-radius: 5px;
-  margin-top: 5px;
-  margin-right: 5px;
+  // margin-top: 5px;
+  // margin-right: 5px;
   background-color: rgb(245, 245, 245);
   transition: .3s background-color ease-in-out;
 }

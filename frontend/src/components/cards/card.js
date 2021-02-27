@@ -135,8 +135,8 @@ class Card extends Component {
           <h2>Notes</h2>
           {/* <textarea value={notes} onChange={this.update('notes')} rows="10" cols="28" /> */}
           <div className="editor-container">
-            <div className="quill-container">
-              <EditorToolbar id="toolbar" />
+            <EditorToolbar id="toolbar" />
+            <div className="quill-container" id="quill">
               <ReactQuill
                 theme="snow"
                 value={notes || ''}
@@ -149,7 +149,7 @@ class Card extends Component {
               />
             </div>
           </div>
-          <br />
+          {/* <br /> */}
           <button className="save-button-card" onClick={this.handleSubmit}>
             Save
           </button>
