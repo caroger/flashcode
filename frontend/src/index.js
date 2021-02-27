@@ -6,6 +6,9 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
+// rich-text editor
+import 'react-quill/dist/quill.snow.css';
+
 document.addEventListener('DOMContentLoaded', () => {
   let store;
 
