@@ -52,24 +52,24 @@ export const modules = {
 };
 
 export const formats = [
-  "header",
-  "font",
-  "size",
+  // "header",
+  // "font",
+  // "size",
   "bold",
   "italic",
   "underline",
-  "align",
+  // "align",
   "strike",
-  "script",
-  "blockquote",
-  "background",
-  "list",
-  "bullet",
-  "indent",
-  "link",
-  "image",
-  "color",
-  "code-block"
+  // "script",
+  // "blockquote",
+  // "background",
+  // "list",
+  // "bullet",
+  // "indent",
+  // "link",
+  // "image",
+  // "color",
+  // "code-block"
 ];
 
 export const EditorToolbar = () => (
@@ -82,33 +82,33 @@ export const EditorToolbar = () => (
         <CustomRedo />
       </button>
     </span> */}
-    <span className="ql-formats">
+    {/* <span className="ql-formats">
       <select className="ql-header" defaultValue="3">
         <option value="1">Heading</option>
         <option value="2">Subheading</option>
         <option value="3">Normal</option>
       </select>
-      {/* <select className="ql-font" defaultValue="Sans-Serif">
+      <select className="ql-font" defaultValue="Sans-Serif">
         <option value="Sans-Serif">Sans Serif</option>
         <option value="Serif">Serif</option>
         <option value="Monospace">Monospace</option>
         <option value="Script">Script</option>
         <option value="Arial">Arial</option>
         <option value="Verdana">Verdana</option>
-      </select> */}
-      {/* <select className="ql-size" defaultValue="medium">
+      </select>
+      <select className="ql-size" defaultValue="medium">
         <option value="small">12</option>
         <option value="medium">16</option>
         <option value="large">24</option>
-      </select> */}
-    </span>
+      </select>
+    </span> */}
     <span className="ql-formats">
       <button className="ql-bold" />
       <button className="ql-italic" />
       <button className="ql-underline" />
       <button className="ql-strike" />
     </span>
-    <span className="ql-formats">
+    {/* <span className="ql-formats">
       <select className="ql-color" />
       <select className="ql-background" />
     </span>
@@ -119,20 +119,20 @@ export const EditorToolbar = () => (
       <button className="ql-indent" value="+1" />
       <select className="ql-align" />
     </span>
-    {/* <span className="ql-formats">
+    <span className="ql-formats">
       <button className="ql-script" value="super" />
       <button className="ql-script" value="sub" />
       <button className="ql-blockquote" />
-    </span> */}
-    {/* <span className="ql-formats">
+    </span>
+    <span className="ql-formats">
       <button className="ql-link" />
       <button className="ql-image" />
-    </span> */}
+    </span>
     <span className="ql-formats">
       <button className="ql-formula" />
       <button className="ql-code-block" />
       <button className="ql-clean" />
-    </span>
+    </span> */}
   </div>
 );
 
