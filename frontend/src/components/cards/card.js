@@ -9,8 +9,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 //editor 
 import ReactQuill from 'react-quill';
-// import { debounce } from "debounce";
-import EditorToolbar, { modules, formats } from './editor/editor';
+// import EditorToolbar, { modules, formats } from './editor/editor';
 
 class Card extends Component {
   constructor(props) {
@@ -56,7 +55,6 @@ class Card extends Component {
 
   handleEditorChange(text) {
     this.setState({ notes: text });
-    // this.autosave();
   }
 
   handleSubmit(e) {
@@ -135,14 +133,14 @@ class Card extends Component {
           <h2>Notes</h2>
           {/* <textarea value={notes} onChange={this.update('notes')} rows="10" cols="28" /> */}
           <div className="editor-container">
-            <EditorToolbar id="toolbar" />
+            {/* <EditorToolbar id="toolbar" /> */}
             <div className="quill-container" id="quill">
               <ReactQuill
                 theme="snow"
                 value={notes || ''}
                 onChange={this.handleEditorChange}
-                modules={modules}
-                formats={formats}
+                // modules={modules}
+                // formats={formats}
                 placeholder="Add notes"
                 bounds=".editor-container"
                 scrollingContainer=".quill-container"
