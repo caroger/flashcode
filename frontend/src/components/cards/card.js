@@ -147,7 +147,7 @@ class Card extends Component {
               />
             </div>
           </div>
-          {/* <br /> */}
+          <br />
           <button className="save-button-card" onClick={this.handleSubmit}>
             Save
           </button>

@@ -37,9 +37,9 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  align-content: space-between;
-  justify-content: space-evenly;
-  padding: 30px 0px;
+  align-content: flex-start;
+  // justify-content: space-evenly;
+  // padding: 30px 0px;
   margin: 1em 1em;
 }
 
@@ -58,7 +58,7 @@
   position: relative;
   transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
   transform-style: preserve-3d;
-  transition: 250ms;
+  transition: 300ms;
 
   h1 {
     font-size: 20px;
@@ -75,15 +75,15 @@
 
 .card.flipped {
   --rotate-y: 180deg;
-  height: 700px;
-  width: 540px;
+  height: 525px;
+  width: 405px;
 
   .front, .back {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 620px;
-    width: 450px;
+    height: 410px;
+    width: 372px;
   }
 }
 
@@ -250,7 +250,7 @@
 .save-button-card {
   padding: 12px;
   border-radius: 5px;
-  // margin-top: 5px;
+  margin-top: 5px;
   // margin-right: 5px;
   background-color: rgb(245, 245, 245);
   transition: .3s background-color ease-in-out;
