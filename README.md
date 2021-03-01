@@ -141,9 +141,11 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 
 ## Project Team Member
+**Roger Hu** [![Roger Hu][linkedin-shield]](https://www.linkedin.com/in/rogerhu1989)[![Roger Hu][github-shield]](https://github.com/caroger)
+**Colin Eckert** [![Colin Eckert][linkedin-shield]](https://www.linkedin.com/in/colin-eckert/)[![Colin Eckert][github-shield]](https://github.com/colineckert)
+**Dongsoo Cha** [![Dongsoo Cha][linkedin-shield]](https://www.linkedin.com/in/dongsoo-cha-72511476/)[![Roger Hu][github-shield]](https://github.com/chubbibanana/)
+**Edwin Zhou** [![Edwin Zhou][linkedin-shield]](https://www.linkedin.com/in/edwin-zhou-a231b31b6/)[![Edwin Zhou][github-shield]](https://github.com/ezhou0)
 
-[![Roger Hu][linkedin-shield]](https://www.linkedin.com/in/rogerhu1989)
-[![Roger Hu][github-shield]](https://github.com/caroger)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
