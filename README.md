@@ -63,13 +63,13 @@
 
 [![Product Name Screen Shot][product-screenshot]](http://flashcode.herokuapp.com/#)
 
-There are many great flashcard and note taking apps available online, however, as a group of upcoming bootcamp graduates, we didn't find one that really suit our needs of preparing for the live coding interview so we created one for ourselves. We want to create a flashcard system for aspiring software engineers and LeetCoders so amazing that it'll be the only one you ever need -- We think this is it.
+There are many great flashcard and note taking apps available online, however, as a group of upcoming bootcamp graduates, we didn't find one that really suit our needs of preparing for the live coding interview, so we created one for ourselves. We want to create a flashcard system for aspiring software engineers and LeetCoders so amazing that it'll be the only one you ever need -- We think this is it.
 
 Here's why:
 
-- Your time should be focused on learning and solving algorithm problems.
-- You shouldn't be juggling among multiple websites/apps to take notes and setup review schedules.
-- FlashCode is the one and only reliable source you'll need to track your mastery in LeetCode problems you have attempted to solve.
+- Your time should be focused more on solving algorithm problems and less on planning which to solve.
+- You shouldn't be juggling multiple websites/apps to take notes and setup review schedules.
+- FlashCode is the one and only reliable source you'll need to track your mastery of the LeetCode problems you've attempted.
 
 ### Built With
 
@@ -84,7 +84,7 @@ This project is built with:
 
 ## Getting Started
 
-Head over to the [live site](http://flashcode.herokuapp.com/#) and click the Sign In button to sign in, register, or sign in with a demo account.
+Head over to the [live site](http://flashcode.herokuapp.com/#) and click the Sign In button to log in, register, or test out FlashCode with a demo account.
 
 ![](images/login_demo.gif)
 
@@ -105,9 +105,9 @@ Flip over the card to write down any notes/tips you'd like to see when you revie
 
 ### Review
 
-Based on your confidence rating and review history, we will prepare a "Daily Deck" for you to review. Goal is to keep your "Daily Deck" empty at the end of the day!
+Based on your confidence rating and review history, we will prepare a "Daily Deck" for you to review. Your goal is to have your "Daily Deck" be empty at the end of the day!
 
-1. Click on the Daily Deck button on left navbar to see review problems due today
+1. Click on the Daily Deck button on left navbar to review problems due today
 2. Cards that are way over-due will have a red shadow around their borders
 3. Navigate to LeetCode via the URL on the card, finish and submit your solution on LeetCode, and comback to FlashCode to update your rating and notes.
 
