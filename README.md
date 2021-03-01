@@ -90,7 +90,7 @@ Head over to the [live site](http://flashcode.herokuapp.com/#) and click the Sig
 
 ### Create a card
 
-Create a card by simply entering the corresponding leetcode problem number and give it a rating based on how confident you feel about solving the same problem in a interview setting:
+Create a card by simply entering the corresponding LeetCode problem number and give it a rating based on how confident you feel about solving the same problem in a interview setting:
 
    1. Totally going to ace it
    2. Will be able to solve it with some help
@@ -99,13 +99,13 @@ Create a card by simply entering the corresponding leetcode problem number and g
 ![](images/create_card_demo.gif)
 ### Take notes
 
-Flip over the card to write down any notes/tips you'd like to see when you review the same question in the future.
+Flip over the card to write down any notes/tips you'd like to save for when you review the same question in the future.
 ![](images/add_note_demo.gif)
 
 
 ### Review
 
-Based on your confidence rating and review history, we will prepare a "Daily Deck" for you to review. Your goal is to have your "Daily Deck" be empty at the end of the day!
+Based on your confidence rating and review history, we will prepare a "Daily Deck" for you to review. The goal is to have your "Daily Deck" be empty at the end of the day!
 
 1. Click on the Daily Deck button on left navbar to review problems due today
 2. Cards that are way over-due will have a red shadow around their borders
