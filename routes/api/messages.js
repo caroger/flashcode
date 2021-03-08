@@ -12,4 +12,15 @@ router.post('/', (req, res) => {
     if (!isValid) {
         return res.status(400).json(errors);
     }
+
+    const newMessage = new Message({
+      user: req.user.id,
+      content: req.body
+    });
+
+    newMessage.save()
+        .then((message) => res.json(message))
+        .catch(err => (res.status(404).json({invalid: 'Invalid message'})));
 })
+
+module.exports = router;
