@@ -13,7 +13,7 @@ const CardsReducer = (state = { all: [], user: [], new: undefined }, action) => 
       newState[action.card._id] = action.card.data;
       return newState;
     case RECEIVE_NEW_CARD:
-      newState.new = action.card.data;
+      newState.all.push(action.card.data);
       return newState;
     default:
       return state;

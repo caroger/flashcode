@@ -60,12 +60,12 @@ router.post(
           notes: req.body.notes,
           interval: [2]
         });
-        // const newMessage = new Message({
-        //   user: req.user.id,
-        //   content: `${req.user.username} has completed Problem ${newCard.probNum}`
-        // });
-        // newMessage
-        //   .save()
+        const newMessage = new Message({
+          user: req.user.id,
+          content: `${req.user.username} has completed Problem ${newCard.probNum}`
+        });
+        newMessage
+          .save();
         //   .then(() => newCard.save())
         newCard.save()
           .then((card) => res.json(card))
