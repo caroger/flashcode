@@ -48,7 +48,7 @@ class MessagesFeed extends React.Component {
   }
 
   componentWillUnmount() {
-    this.interval.clearInterval();
+      clearInterval(this.interval);
   }
 
   render() {
