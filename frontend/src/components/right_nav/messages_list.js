@@ -8,7 +8,7 @@ class MessagesList extends React.Component {
   scrollToBottom = () => {
       setTimeout(() => {
           this.messagesEnd.scrollIntoView({ behavior: 'smooth'});
-      }, 200);
+      }, 1000);
   }
 
   componentDidMount() {
