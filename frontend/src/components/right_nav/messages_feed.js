@@ -30,8 +30,8 @@ class MessagesFeed extends React.Component {
     e.preventDefault();
 
     const message = this.state;
-    this.props.createMessage(message);
     this.setState({ content: ''});
+    this.props.createMessage(message);
   }
 
   renderErrors() {
@@ -50,13 +50,13 @@ class MessagesFeed extends React.Component {
 
   render() {
     if (!this.props.messages) return null;
-    const {content} = this.state.content;
+    // const {content} = this.state.content;
 
     return (
       <div>
         <MessagesList messages={this.props.messages} fetchMessages={this.props.fetchMessages} />
         <form onSubmit={this.handleSubmit}>
-            <input type="text" placeholder="enter message" onChange={this.update} value={content}/>
+            <input type="text" placeholder="enter message" onChange={this.update} value={this.state.content}/>
             <input type="submit" value="Send"/>
         </form>
       </div>
