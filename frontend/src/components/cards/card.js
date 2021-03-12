@@ -7,6 +7,10 @@ import { parseDate } from '../../util/date_util';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
+//editor 
+import ReactQuill from 'react-quill';
+// import EditorToolbar, { modules, formats } from './editor/editor';
+
 class Card extends Component {
   constructor(props) {
     super(props);
@@ -29,6 +33,9 @@ class Card extends Component {
     this.grabCard = this.grabCard.bind(this);
 
     this.toggleFlip = this.toggleFlip.bind(this);
+
+    //editor save
+    this.handleEditorChange = this.handleEditorChange.bind(this);
   }
 
   componentDidMount() {
@@ -44,6 +51,10 @@ class Card extends Component {
     return (e) => {
       this.setState({ [field]: e.target.value });
     };
+  }
+
+  handleEditorChange(text) {
+    this.setState({ notes: text });
   }
 
   handleSubmit(e) {
@@ -63,9 +74,8 @@ class Card extends Component {
 
   render() {
     if (!this.props.card) return null;
-    // debugger
-    let date = parseDate(this.state.dueDate);
 
+    let date = parseDate(this.state.dueDate);
     let due = Date.parse(this.props.card.dueDate);
     let today = new Date();
     let pastDueDate = today.setDate(today.getDate() - 2);
@@ -121,7 +131,22 @@ class Card extends Component {
         </div>
         <div className="back">
           <h2>Notes</h2>
-          <textarea value={notes} onChange={this.update('notes')} rows="10" cols="28" />
+          {/* <textarea value={notes} onChange={this.update('notes')} rows="10" cols="28" /> */}
+          <div className="editor-container">
+            {/* <EditorToolbar id="toolbar" /> */}
+            <div className="quill-container" id="quill">
+              <ReactQuill
+                theme="snow"
+                value={notes || ''}
+                onChange={this.handleEditorChange}
+                // modules={modules}
+                // formats={formats}
+                placeholder="Add notes"
+                bounds=".editor-container"
+                scrollingContainer=".quill-container"
+              />
+            </div>
+          </div>
           <br />
           <button className="save-button-card" onClick={this.handleSubmit}>
             Save

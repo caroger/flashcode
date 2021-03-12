@@ -1,0 +1,155 @@
+.editor-container {
+  text-align: left;
+  // display: grid;
+  // grid-template-rows: 100px 1fr 50px;
+  // height: 100vh;
+}
+
+.quill-container {
+  // padding: 24px 40px 0;
+  // display: grid;
+  // grid-template-rows: 50px 1fr;
+  // overflow-y: auto;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  word-break: break-word;
+  height: 360px;
+}
+
+
+.expand-editor-button {
+  text-align: center;
+  background-color: transparent;
+  color: #7a8083;
+  padding: 4px 1px 3px 5px;
+  border-radius: 5px;
+  transition: .1s background-color ease-in-out;
+}
+
+#toolbar {
+  grid-column: 1 / -1;
+  padding: 0;
+  border: 0;
+}
+
+#quill .ql-editor {
+  padding: 12px 0 0;
+  overflow: visible;
+  height: 100%;
+}
+
+#quill .ql-container {
+  font-size: 15px;
+  height: 100%;
+}
+
+#quill .ql-container.ql-snow {
+  border: 0;
+  height: 100%;
+}
+
+#quill .ql-editor.ql-blank::before {
+  left: 0;
+  right: 0;
+}
+
+// .ql-toolbar.ql-snow .ql-picker.ql-header {
+//     width: 110px;
+// }
+
+// .ql-toolbar.ql-snow .ql-picker.ql-font {
+//     width: 113px;
+// }
+
+// .ql-toolbar.ql-snow .ql-picker.ql-size {
+//   width: 60px;
+// }
+
+.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options {
+  padding: 15px 30px 15px 25px;
+}
+
+.ql-editor strong{
+    font-weight:bold;
+}
+
+// .ql-picker.ql-font {
+//   .ql-picker-item {
+//     font-size: 0;
+//     &:before {
+//       content: attr(data-value) !important;
+//       font-size: 14px;
+//     }
+//   }
+// }
+
+// .ql-picker.ql-font{
+//   .ql-active {
+//     &:before {
+//       content: attr(data-value) !important;
+//       font-size: 14px;
+//     }
+//   }
+// }
+
+// .ql-picker.ql-font .ql-picker-label[data-value="Sans-Serif"]::before, 
+// .ql-picker.ql-font .ql-picker-item[data-value="Sans-Serif"]::before
+// {
+//     font-family: sans-serif;;
+//     content: "Sans-Serif" !important;
+// }
+
+// .ql-picker.ql-font .ql-picker-label[data-value="Serif"]::before, 
+// .ql-picker.ql-font .ql-picker-item[data-value="Serif"]::before
+// {
+//     font-family: serif;;
+//     content: "Serif" !important;
+// }
+
+// .ql-picker.ql-font .ql-picker-label[data-value="Verdana"]::before, 
+// .ql-picker.ql-font .ql-picker-item[data-value="Verdana"]::before
+// {
+//     font-family: Verdana, sans-serif;;
+//     content: "Verdana" !important;
+// }
+
+// .ql-picker.ql-font .ql-picker-label[data-value="Monospace"]::before, 
+// .ql-picker.ql-font .ql-picker-item[data-value="Monospace"]::before
+// {
+//     font-family: monospace;;
+//     content: "Monospace" !important;
+// }
+
+// .ql-picker.ql-font .ql-picker-label[data-value="Script"]::before, 
+// .ql-picker.ql-font .ql-picker-item[data-value="Script"]::before
+// {
+//     font-family: 'Brush Script MT', cursive;;
+//     content: "Script" !important;
+// }
+
+// .ql-picker.ql-font .ql-picker-label[data-value="Arial"]::before, 
+// .ql-picker.ql-font .ql-picker-item[data-value="Arial"]::before
+// {
+//     font-family: Arial, sans-serif;;
+//     content: "Arial" !important;
+// }
+
+// /* Set content font-families */
+// .ql-font-Sans Serif {
+//   font-family: sans-serif;
+// }
+// .ql-font-Serif {
+//   font-family: serif;
+// }
+// .ql-font-Verdana {
+//   font-family: Verdana, sans-serif;;
+// }
+// .ql-font-Monospace {
+//   font-family: monospace;
+// }
+// .ql-font-Script {
+//   font-family: 'Brush Script MT', cursive;
+// }
+// .ql-font-Arial {
+//   font-family: Arial, sans-serif;;
+// }
