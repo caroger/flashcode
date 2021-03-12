@@ -21,8 +21,12 @@ class MessagesList extends React.Component {
       <ul className="message-list">
         {this.props.messages.map((message) => (
           <li className="feed-item">
-            {message.user}
-            {message.content}
+            <div className="feed-item-user">
+              {message.user}
+            </div>
+            <div className="feed-item-body">
+              {message.content}
+            </div>
           </li>
         ))}
         <div
