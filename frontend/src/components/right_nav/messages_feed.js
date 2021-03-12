@@ -1,5 +1,8 @@
 import React from 'react';
 import MessagesList from './messages_list';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUsers, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import * as FA from '@fortawesome/free-brands-svg-icons';
 
 class MessagesFeed extends React.Component {
   constructor(props) {
@@ -53,14 +56,25 @@ class MessagesFeed extends React.Component {
     // const {content} = this.state.content;
 
     return (
-      <div>
+      <div className="feed-container">
+        <div className="feed-header">
+          <h1>
+            <FontAwesomeIcon icon={faUsers} /> User Feeds
+          </h1>
+        </div>
         <MessagesList messages={this.props.messages} fetchMessages={this.props.fetchMessages} />
         <form onSubmit={this.handleSubmit}>
-            <input type="text" placeholder="enter message" onChange={this.update} value={this.state.content}/>
-            <input type="submit" value="Send"/>
+          <input
+            type="text"
+            placeholder="enter message"
+            onChange={this.update}
+            value={this.state.content}
+          />
+          <button type="submit">
+            <FontAwesomeIcon icon={faPaperPlane} />
+          </button>
         </form>
       </div>
-    
     );
   }
 }
