@@ -15,7 +15,7 @@ class MessagesFeed extends React.Component {
   componentDidMount() {
     this.interval = setInterval(() => {
         this.refresh()
-    }, 200)
+    }, 1000)
   }
 
   refresh() {
