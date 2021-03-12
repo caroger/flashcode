@@ -61,7 +61,7 @@ router.post(
           interval: [2]
         });
         const newMessage = new Message({
-          user: req.user.username,
+          user: 'Flashcode BOT',
           content: `${req.user.username} has completed Problem ${newCard.probNum}`
         });
         newMessage
@@ -106,7 +106,7 @@ router.put('/:id',
         }
       }
       const newMessage = new Message({
-        user: req.user.username,
+        user: 'Flashcode BOT',
         content: `${req.user.username} has completed Problem ${card.probNum}`
       });
       if (req.body.notes) {
