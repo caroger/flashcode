@@ -7,7 +7,7 @@ const Message = require('../../models/Message');
 const validateMessageInput = require('../../validation/messages');
 
 router.get('/', (req, res) => {
-    Message.find().sort({ createdAt: -1})
+    Message.find().sort({ createdAt: 1})
     .then(messages => res.json(messages))
     .catch(err => res.status(404).json({nomessagesfound: 'No messages found'}));
 })
@@ -20,7 +20,7 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
     return res.status(400).json(errors);
   }
   const newMessage = new Message({
-    user: req.user.id,
+    user: req.user.username,
     content: req.body.content
   });
   newMessage

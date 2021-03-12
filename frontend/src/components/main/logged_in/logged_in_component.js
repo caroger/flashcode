@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import LeftNav from '../../left_nav/left_nav';
 import Feed from '../../right_nav/feed';
+import MessagesFeedContainer from '../../right_nav/messages_feed_container'; 
 import CardIndexContainer from '../../cards/card_index_container';
 import DeckShowContainer from '../../left_nav/decks/deck_show_container';
 
@@ -26,7 +27,7 @@ class LoggedInComponent extends React.Component {
         ) : (
           <CardIndexContainer />
         )}
-        <Feed />
+        <MessagesFeedContainer />
       </div>
     );
   }
