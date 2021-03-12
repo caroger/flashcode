@@ -1,7 +1,19 @@
 import React from 'react';
 
 class MessagesList extends React.Component {
-  
+  constructor(props) {
+      super(props);
+      this.messagesEnd = React.createRef();
+  }
+  scrollToBottom = () => {
+      setTimeout(() => {
+          this.messagesEnd.scrollIntoView({ behavior: 'smooth'});
+      }, 200);
+  }
+
+  componentDidMount() {
+    this.scrollToBottom();
+  }
 
   render() {
     if (!this.props.messages) return null;
@@ -13,6 +25,9 @@ class MessagesList extends React.Component {
             {message.content}
           </li>
         ))}
+        <div
+            ref={el => {this.messagesEnd = el;}}>
+        </div>
       </ul>
     );
   }

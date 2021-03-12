@@ -16,9 +16,10 @@ class MessagesFeed extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchMessages();
     this.interval = setInterval(() => {
         this.refresh()
-    }, 1000)
+    }, 5000)
   }
 
   refresh() {
@@ -48,7 +49,7 @@ class MessagesFeed extends React.Component {
   }
 
   componentWillUnmount() {
-    this.interval.clearInterval();
+      clearInterval(this.interval);
   }
 
   render() {
