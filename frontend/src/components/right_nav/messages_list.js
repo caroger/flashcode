@@ -6,16 +6,14 @@ class MessagesList extends React.Component {
   render() {
     if (!this.props.messages) return null;
     return (
-      <div className="message-list">
-        <ul>
-          {this.props.messages.map((message) => (
-            <li>
-              {message.user}
-              {message.content}
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul className="message-list">
+        {this.props.messages.map((message) => (
+          <li className="feed-item">
+            {message.user}
+            {message.content}
+          </li>
+        ))}
+      </ul>
     );
   }
 }

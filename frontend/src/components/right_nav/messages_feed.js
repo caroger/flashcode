@@ -33,7 +33,7 @@ class MessagesFeed extends React.Component {
     e.preventDefault();
 
     const message = this.state;
-    this.setState({ content: ''});
+    this.setState({ content: '' });
     this.props.createMessage(message);
   }
 
@@ -62,18 +62,22 @@ class MessagesFeed extends React.Component {
             <FontAwesomeIcon icon={faUsers} /> User Feeds
           </h1>
         </div>
-        <MessagesList messages={this.props.messages} fetchMessages={this.props.fetchMessages} />
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            placeholder="enter message"
-            onChange={this.update}
-            value={this.state.content}
-          />
-          <button type="submit">
-            <FontAwesomeIcon icon={faPaperPlane} />
-          </button>
-        </form>
+        <div className="message-list-container">
+          <MessagesList messages={this.props.messages} fetchMessages={this.props.fetchMessages} />
+        </div>
+        <div className="feed-input-container">
+          <form onSubmit={this.handleSubmit}>
+            <input className="feed-input"
+              type="text"
+              placeholder="enter message"
+              onChange={this.update}
+              value={this.state.content}
+            />
+            <button type="submit">
+              <FontAwesomeIcon icon={faPaperPlane} className="feed-submit-button"/>
+            </button>
+          </form>
+        </div>
       </div>
     );
   }

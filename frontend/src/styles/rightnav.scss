@@ -1,54 +1,90 @@
 .feed-container {
-   display: flex;
+   display: grid;
    min-width: 200px;
-   flex-direction: column;
-   // height: 100vh;
+   height: 100vh;
+   grid-template-rows: 70px 1fr 150px;
    background-color: #f8f8ff;
 
    color: #696969;
    box-shadow: 0 0 3px 1px rgba(201, 221, 243, 0.5);
 
    .feed-header {
-      align-self: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 20px;
-      padding: 10px;
-      border-bottom: solid 1px #a7a7a7;
-   }
-
-   .message-list {
-      height: 90%;
-      overflow-y: scroll;
    }
 }
 
 
-.feed-body-container {
+.message-list {
    display: grid;
    align-items: center;
    background-color: none;
-   grid-template-rows: repeat(auto-fit, 100px);
-   overflow: scroll;
-   align-content: flex-start;
+   grid-template-rows: repeat(auto-fit, 60px);
+   overflow-y: scroll;
+   height: 100%;
+}
+
+.message-list > li:nth-child(odd) {
+   background: #e9f0fe;
 }
 
 .feed-body-container::-webkit-scrollbar {
    display: none;
 }
 
-
-
-
 .feed-item {
+   display: flex;
+   align-items: center;
    font-size: 14px;
    width: 100%;
    height: 100%;
-   padding: 10px;
-   align-self: center;
+   padding: 0 10px;
+   // align-self: center;
    background-color: #f8f8ff;
 
+}
 
+.feed-input-container {
+   width: 100%;
+   text-align: center;
 
-   &:nth-of-type(even) {
-      background: #e9f0fe;
+   form {
+      display: flex;
+      padding: 20px 10px;
+      align-items: center;
    }
+}
+
+.feed-input {
+   border: none;
+   width: 100%;
+   border-radius: 40px;
+}
+
+.feed-input {
+   border: 1px solid lightgrey;
+   width: 100%;
+   border-radius: 10px;
+   padding: 8px 10px;
+   outline: none;
+   transition: .3s border ease-in-out;
+}
+
+.feed-input:focus{
+   border: 1px solid grey;
+}
+
+.feed-submit-button {
+   background-color: #4C82E6;
+   color: white;
+   padding: 8px 10px 8px 8px;
+   align-items: center;
+   border-radius: 5px;
+   transition: .3s background-color ease-in-out;
+}
+
+.feed-submit-button:hover {
+   background-color: #3067cc;
 }
