@@ -22,10 +22,8 @@ class MessagesFeed extends React.Component {
       this.props.fetchMessages();
   }
 
-  update() {
-    return (e) => {
-      this.setState({ content: e.target.value });
-    };
+  update(e) {
+    this.setState({ content: e.target.value });
   }
 
   handleSubmit(e) {
@@ -33,6 +31,7 @@ class MessagesFeed extends React.Component {
 
     const message = this.state;
     this.props.createMessage(message);
+    this.setState({ content: ''});
   }
 
   renderErrors() {
@@ -51,11 +50,17 @@ class MessagesFeed extends React.Component {
 
   render() {
     if (!this.props.messages) return null;
+    const {content} = this.state.content;
 
     return (
       <div>
         <MessagesList messages={this.props.messages} fetchMessages={this.props.fetchMessages} />
+        <form onSubmit={this.handleSubmit}>
+            <input type="text" placeholder="enter message" onChange={this.update} value={content}/>
+            <input type="submit" value="Send"/>
+        </form>
       </div>
+    
     );
   }
 }
