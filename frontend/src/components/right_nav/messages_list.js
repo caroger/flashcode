@@ -12,7 +12,7 @@ class MessagesList extends React.Component {
             <div className="feed-item-user">
               {message.user}
             </div>
-            <div>
+            <div className="feed-item-body">
               {message.content}
             </div>
           </li>
