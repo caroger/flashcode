@@ -4,7 +4,7 @@ import MessagesFeed from './messages_feed';
 
 const mapStateToProps = state => {
     return {
-        messages: state.messages ? Object.values(state.messages) : [],
+        messages: state.messages ? Object.values(state.messages).reverse() : [],
         errors: Object.values(state.errors.message)
     }
 }
