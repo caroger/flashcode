@@ -15,13 +15,19 @@
   word-break: break-word;
   height: 360px;
 }
+
 .quill-container::-webkit-scrollbar {
-  background: transparent;
   width: 6px;
   height: 6px;
 }
-.quill-container::-webkit-thumb {
-  background: #4C82E6;
+
+.quill-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.quill-container::-webkit-scrollbar-thumb {
+  background: #5893ff;
+  border-radius: 10px;
 }
 
 .expand-editor-button {
