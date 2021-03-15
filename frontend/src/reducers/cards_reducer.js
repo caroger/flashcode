@@ -1,4 +1,9 @@
-import { RECEIVE_USER_CARDS, RECEIVE_CARD, RECEIVE_NEW_CARD } from '../actions/card_actions';
+import {
+  RECEIVE_USER_CARDS,
+  RECEIVE_CARD,
+  RECEIVE_NEW_CARD,
+  FILTER_CARDS_BY_RATE
+} from '../actions/card_actions';
 
 // import RECEIVE_DECK >> when built, will need to iterate over deck cards and set newState[card.id] = card
 
@@ -15,6 +20,9 @@ const CardsReducer = (state = { all: [], user: [], new: undefined }, action) => 
     case RECEIVE_NEW_CARD:
       newState.all.push(action.card.data);
       return newState;
+    case FILTER_CARDS_BY_RATE:
+      return { ...state, rating: action.payload.rating, fitleredCards: action.payload.cards };
+
     default:
       return state;
   }
