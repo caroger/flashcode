@@ -4,7 +4,7 @@
   grid-template-rows: 80px 1fr;
 }
 
-.cards-header{
+.cards-header {
   letter-spacing: 3px;
   color: #444343;
   font-weight: 300;
@@ -14,15 +14,29 @@
 .cards-index-header {
   padding: 10px 30px;
   border-bottom: 1px solid rgb(230, 230, 230);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  // grid-template-columns: 1fr 1fr;
   align-items: center;
   overflow: hidden;
+  justify-content: space-between;
 
   h1 {
     font-size: 28px;
+    font-weight: 600;
   }
 
+  .cards-filter {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: 500;
+    padding-right: 30px;
+
+    select {
+      margin-top: 5px;
+      outline: none;
+    }
+  }
 }
 
 .card-list-container {
@@ -31,7 +45,7 @@
   // grid-template-rows: repeat(auto-fit, 400px);
   // padding: 10px 30px;
   // justify-content: center;
-  
+
   overflow: auto;
   display: flex;
   flex-wrap: wrap;
@@ -78,7 +92,8 @@
   height: 525px;
   width: 405px;
 
-  .front, .back {
+  .front,
+  .back {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -167,38 +182,47 @@
 
     }
 
-   .rating-button {
+    .rating-button {
       background-color: rgb(245, 245, 245);
+
       &-easy {
         @extend .rating-button;
+
         &:hover {
           color: white;
           background-color: #4ecdc4;
         }
+
         &-selected {
           @extend .rating-button-easy;
           color: white;
           background-color: #4ecdc4;
         }
       }
+
       &-medium {
         @extend .rating-button;
+
         &:hover {
           color: white;
           background-color: #ffd97d;
         }
+
         &-selected {
           @extend .rating-button-medium;
           color: white;
           background-color: #ffd97d;
         }
       }
+
       &-hard {
         @extend .rating-button;
+
         &:hover {
           color: white;
           background-color: #ff6b6b;
         }
+
         &-selected {
           @extend .rating-button-hard;
           color: white;
@@ -206,7 +230,7 @@
         }
       }
     }
-    
+
 
   }
 }

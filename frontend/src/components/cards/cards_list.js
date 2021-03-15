@@ -8,6 +8,19 @@ export default class CardsList extends Component {
     }
   }
 
+  sortCards(cards) {
+    const sortedCards = cards;
+    switch (this.state.sortBy) {
+      case 'dueDate':
+        return sortedCards.sort((a, b) => (a.dueDate > b.dueDate ? 1 : -1));
+      case 'createdAt':
+        return sortedCards.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
+      case 'updatedAt':
+        return sortedCards.sort((a, b) => (a.updatedAt > b.updatedAt ? 1 : -1));
+      default:
+        return cards;
+    }
+  }
   render() {
     const { cards } = this.props;
 
@@ -15,9 +28,9 @@ export default class CardsList extends Component {
       return <h1>No Cards to show; Create some new cards to get started!</h1>;
     }
 
-    cards.sort((a, b) => {
-      return new Date(a.dueDate) - new Date(b.dueDate);
-    });
+    // cards.sort((a, b) => {
+    //   return new Date(a.dueDate) - new Date(b.dueDate);
+    // });
 
     const cardList = cards.map((card) => {
       if (!card) return null;
