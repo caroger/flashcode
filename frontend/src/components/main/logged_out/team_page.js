@@ -54,7 +54,7 @@ export default function TeamPage() {
             <a href="https://www.linkedin.com/in/dongsoo-cha-72511476/" target="_blank">
                 <FontAwesomeIcon icon={faLinkedin} />
             </a>
-            <a href="https://github.com/chubbibanana/" target="_blank">
+            <a href="https://github.com/dongsoocha/" target="_blank">
                 <FontAwesomeIcon icon={faGithub} />
             </a>
             <a href="https://angel.co/u/dongsoo-cha" target="_blank">

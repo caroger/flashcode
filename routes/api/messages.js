@@ -7,7 +7,7 @@ const Message = require('../../models/Message');
 const validateMessageInput = require('../../validation/messages');
 
 router.get('/', (req, res) => {
-    Message.find().sort({ createdAt: 1})
+    Message.find().sort({ createdAt: -1}).limit(20)
     .then(messages => res.json(messages))
     .catch(err => res.status(404).json({nomessagesfound: 'No messages found'}));
 })
