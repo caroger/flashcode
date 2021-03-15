@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(this.props.closeModal);
 
-    if (this.props.formType === 'signup') this.props.login(user);
+    // if (this.props.formType === 'signup') this.props.login(user);
   }
 
   handleDemoUser(e) {
