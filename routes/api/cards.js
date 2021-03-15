@@ -13,7 +13,7 @@ const setDueDate = (interval, updatedAt = new Date()) => {
 router.get('/user/:user_id', (req, res) => {
     // Card.find({ user: req.params.user_id })
   Card.find({ user: req.params.user_id })
-    .sort({ dueDate: -1 })
+    .sort({ dueDate: 1 })
     .then((cards) => res.json(cards))
     .catch((err) => res.status(404).json({ nocardsfound: 'No cards found' }));
 });
