@@ -25,7 +25,8 @@ class Card extends Component {
       url: '',
       notes: '',
       updatedAt: new Date(),
-      flip: false
+      flip: false,
+      value: '',
     };
 
     this.update = this.update.bind(this);
@@ -37,7 +38,7 @@ class Card extends Component {
     //editor save
     this.handleEditorChange = this.handleEditorChange.bind(this);
   }
-
+  
   componentDidMount() {
     this.grabCard();
   }
@@ -80,7 +81,7 @@ class Card extends Component {
     let today = new Date();
     let pastDueDate = today.setDate(today.getDate() - 2);
 
-    const { title, probNum, lcDifficulty, rating, url, notes } = this.state;
+    const { title, probNum, lcDifficulty, rating, url, notes} = this.state;
 
     return (
       <div
@@ -93,7 +94,7 @@ class Card extends Component {
               <div>
                 <h1>{title}</h1>
                 <p>
-                  <a href={url} target="_blank">
+                  <a href={url} rel="noreferrer" target="_blank">
                     Problem #{probNum}
                   </a>
                 </p>
@@ -149,7 +150,7 @@ class Card extends Component {
           </div>
           <br />
           <button className="save-button-card" onClick={this.handleSubmit}>
-            Save
+            Save Note
           </button>
         </div>
       </div>
