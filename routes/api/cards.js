@@ -41,7 +41,6 @@ router.post(
         return res.status(400).json(errors);
       } else {
         let problem = findProblem(parseInt(req.body.probNum));
-        console.log(problem);
         if (!problem) {
           res.status(404).json({noproblemfound: 'No Leetcode problem with that number'});
           return 0;
