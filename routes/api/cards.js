@@ -99,20 +99,21 @@ router.put('/:id',
           }
           card.dueDate = setDueDate(lastInt);
           card.interval.push(lastInt);
+          const newMessage = new Message({
+            user: 'Flashcode BOT',
+            content: `${req.user.username} has completed Problem ${card.probNum}`
+          });
+          newMessage.save();
         }
       } else {
         if (req.body.rating) {
           card.rating = parseInt(req.body.rating);
         }
       }
-      const newMessage = new Message({
-        user: 'Flashcode BOT',
-        content: `${req.user.username} has completed Problem ${card.probNum}`
-      });
       if (req.body.notes) {
         card.notes = req.body.notes;
       }
-      (card.save() && newMessage.save()).then((card) => res.json(card));
+      card.save().then((card) => res.json(card));
     } else {
       res.status(404).json({ nocardfound: 'No card with that ID' });
     }
