@@ -15,7 +15,14 @@
   word-break: break-word;
   height: 360px;
 }
-
+.quill-container::-webkit-scrollbar {
+  background: transparent;
+  width: 6px;
+  height: 6px;
+}
+.quill-container::-webkit-thumb {
+  background: #4C82E6;
+}
 
 .expand-editor-button {
   text-align: center;
@@ -37,6 +44,8 @@
   overflow: visible;
   height: 100%;
 }
+
+
 
 #quill .ql-container {
   font-size: 15px;
