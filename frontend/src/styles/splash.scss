@@ -126,14 +126,24 @@
   font-family: "Soleil_Bold",Helvetica,Arial,sans-serif;
   padding: 20px;
 
-  a {
-    font-weight: 900;
-    text-decoration: none;
-    color: #759FEB;
-    transition: .2s color ease-in-out;
-  }
+  // a {
+  //   font-weight: 900;
+  //   text-decoration: none;
+  //   color: #759FEB;
+  //   transition: .2s color ease-in-out;
+  // }
 
-  a:hover {
-    color: #4C82E6;
+  // a:hover {
+  //   color: #4C82E6;
+  // }
+
+  button {
+    background: #4C82E6;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
   }
 }

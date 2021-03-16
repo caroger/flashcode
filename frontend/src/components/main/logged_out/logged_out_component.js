@@ -36,7 +36,7 @@ class LoggedOutComponent extends React.Component {
           <div className="callout-card">
             <h4>Live messaging and community</h4>
             <p>
-              See real-time as other Leetcoders complete problems and compare ideas with our live 
+              See real-time as other Leetcoders complete problems and compare ideas with our live
               messaging feature, allowing you to interact with fellow studiers.
             </p>
           </div>
@@ -55,7 +55,9 @@ class LoggedOutComponent extends React.Component {
             providing structure to guide your progress.
           </p>
           <div className="alt-cta">
-            <Link to="/signup">Get Started</Link>
+            <button className="second-cta" onClick={() => this.props.openModal('signup')}>
+              Get Started
+            </button>
           </div>
         </div>
         <footer>Copyright &copy; 2020 FlashCode</footer>
