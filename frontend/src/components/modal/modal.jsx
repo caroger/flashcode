@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
 import CreateCardFormContainer from '../cards/create_card_form_container';
+import Instruction from '../left_nav/instructionModal/instruction';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -19,6 +20,9 @@ function Modal({ modal, closeModal }) {
       break;
     case 'createCard':
       component = <CreateCardFormContainer />;
+      break;
+    case 'instruction':
+      component = <Instruction />;
       break;
     default:
       return null;

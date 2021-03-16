@@ -1,10 +1,14 @@
-//  TODO render logo, user handle, search (to be implemented later)
 import React from 'react';
 import DecksIndex from './decks/decks_index';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faLayerGroup, faUserAlt } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin, faGithub, faAngellist } from '@fortawesome/free-brands-svg-icons';
+import {
+  faPlus,
+  faLayerGroup,
+  faUserAlt,
+  faQuestionCircle
+} from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 class LeftNav extends React.Component {
   render() {
@@ -13,6 +17,12 @@ class LeftNav extends React.Component {
         <div className="welcome-message">
           <h1>
             <FontAwesomeIcon icon={faUserAlt} /> {this.props.currentUser.username}
+          </h1>
+        </div>
+        <div className="instruction-button">
+
+          <h1>
+            <FontAwesomeIcon icon={faQuestionCircle} /> User Guide
           </h1>
         </div>
         <div className="new-note-card-container">
@@ -34,7 +44,8 @@ class LeftNav extends React.Component {
         <div className="social-links">
           <a
             href="https://github.com/caroger/flashcode/wiki/Group-Members-and-Work-Breakdown"
-            target="_blank">
+            target="_blank"
+          >
             <FontAwesomeIcon icon={faGithub} />
           </a>
         </div>
