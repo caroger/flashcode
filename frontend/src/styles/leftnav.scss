@@ -13,16 +13,23 @@
 
 .welcome-message {
     padding-left: 22px;
+    padding-top: 20px;
     height: 100%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    // align-items: center;
     font-size: 20px;
     font-weight: 400;
+
     // border-bottom: 1px solid #C0C0C0;
+    .help {
+        cursor: help;
+    }
 }
 
 
-.left-nav-button{
+.left-nav-button {
     letter-spacing: 1.5px;
     color: #696969;
     text-decoration: none;
@@ -38,7 +45,7 @@
     color: black;
 }
 
-.deck-index-div{
+.deck-index-div {
     padding-left: 22px;
     display: grid;
     grid-template-rows: 50px 300px;
@@ -61,26 +68,26 @@
     display: block;
     padding-bottom: 15px;
 
-    
+
 }
 
-.deck-button.hard > svg {
+.deck-button.hard>svg {
     color: #ff6b6b;
 }
 
-.deck-button.medium > svg {
+.deck-button.medium>svg {
     color: #ffd97d;
 }
 
-.deck-button.easy > svg {
+.deck-button.easy>svg {
     color: #4ecdc4;
 }
 
 .new-note-card-container {
     padding-left: 20px;
-  }
+}
 
-.new-card-button{
+.new-card-button {
     background-color: #4C82E6;
     color: white;
     letter-spacing: 2px;
@@ -92,13 +99,13 @@
     font-weight: 400;
     font-size: 18px;
     transition: .3s background-color ease-in-out;
-    
+
     svg {
         padding-right: 10px;
     }
 }
 
-.new-card-button:hover{
+.new-card-button:hover {
     background-color: #3067cc;
 }
 
@@ -111,6 +118,6 @@
     }
 }
 
-.social-links > a:hover {
+.social-links>a:hover {
     color: #4C82E6;
 }

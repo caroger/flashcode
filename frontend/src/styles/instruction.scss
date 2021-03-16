@@ -1,0 +1,66 @@
+ @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+ $font: "Rubik",
+ sans-serif;
+
+ .instruction-container {
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     font-family: $font;
+
+     .content {
+         //  width: 340px;
+         background: white;
+         position: relative;
+         border: 1px solid rgba(0, 0, 0, 0.2);
+         border-radius: 20px;
+         font-size: 12px;
+         color: #444;
+         padding: 30px;
+
+         h1 {
+             font-size: 32px;
+             margin: 20px 0;
+         }
+
+         //  h2 {
+         //      font-size: 20px;
+         //      margin: 16px 0;
+         //  }
+
+         h3 {
+             font-size: 24px;
+             margin: 20px 0;
+         }
+
+         p {
+             font-size: 16px;
+             margin: 12px 0;
+         }
+
+         //  li {
+         //      list-style: lower-roman;
+         //  }
+         ol {
+
+             list-style-position: inside;
+             list-style-type: decimal;
+
+             li {
+                 margin-bottom: 0.5rem;
+             }
+
+         }
+
+         ul {
+
+             list-style-position: inside;
+             list-style-type: circle;
+
+             li {
+                 margin-bottom: 0.5rem;
+             }
+
+         }
+     }
+ }
