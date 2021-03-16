@@ -30,6 +30,9 @@ app.use('/api/users', users);
 app.use('/api/cards', cards);
 app.use('/api/decks', decks);
 app.use('/api/messages', messages);
+app.get('*', function (req, res) {
+  res.redirect('/');
+});
 const port = process.env.PORT || 5000;
 
 // app.listen(port, () => console.log(`Server is running on port ${port}`));
