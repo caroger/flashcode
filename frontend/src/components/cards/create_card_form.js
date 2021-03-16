@@ -52,7 +52,7 @@ export default class CreateCardForm extends Component {
           <form id="new-card-form" onSubmit={this.handleSubmit}>
             <div className="create-input-div">
               <label>
-                Problem Number:
+                LeetCode Problem Number: 
                 <input
                   className="problem-num-input"
                   type="text"
@@ -66,7 +66,7 @@ export default class CreateCardForm extends Component {
             <br />
             <div className="create-input-div">
               <label>
-                My Rating:
+                Difficulty Rating:
                 <input type="radio" name="rating" value="1" onChange={this.update('rating')} /> Easy
                 <input type="radio" name="rating" value="2" onChange={this.update('rating')} />{' '}
                 Medium
@@ -76,7 +76,7 @@ export default class CreateCardForm extends Component {
             <br />
 
             <div className="create-input-div" id="create-notes-div">
-              <label>Problem Notes:</label>
+              <label>Study Notes:</label>
               <textarea
                 className="create-text-area"
                 value={notes}

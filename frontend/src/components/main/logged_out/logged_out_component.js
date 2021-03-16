@@ -11,7 +11,7 @@ class LoggedOutComponent extends React.Component {
       <div className="splash-container">
         <div className="splash-hero-container">
           <div className="cta-container">
-            <h1>The Perfect Pair Programmer</h1>
+            <h1>Welcome Leetcoders!</h1>
             <h2>
               FlashCode is the best platform to help you study LeetCode® problems, build your
               knowledge, and prepare for technical interviews.
@@ -34,10 +34,10 @@ class LoggedOutComponent extends React.Component {
             </p>
           </div>
           <div className="callout-card">
-            <h4>Daily Challenges to Expand Your Learning</h4>
+            <h4>Live messaging and community</h4>
             <p>
-              Try your hand at the Daily Challenge problems to test what you've learned. Add them to
-              your decks and grow your knowledge base.
+              See real-time as other Leetcoders complete problems and compare ideas with our live 
+              messaging feature, allowing you to interact with fellow studiers.
             </p>
           </div>
           <div className="callout-card">
