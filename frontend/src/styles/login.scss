@@ -1,11 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
-$form-font: "Rubik", sans-serif;
+$form-font: "Rubik",
+sans-serif;
 
 .login-form-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   font-family: $form-font;
+
   .close-container {
     display: flex;
     flex-direction: row;
@@ -14,6 +16,7 @@ $form-font: "Rubik", sans-serif;
     margin-right: -10px;
     margin-top: -10px;
     margin-bottom: -40px;
+
     .close-x {
       font-size: 20px;
       color: #888888;
@@ -22,34 +25,20 @@ $form-font: "Rubik", sans-serif;
       height: 35px;
       width: 35px;
     }
+
     .close-x:hover {
       background: #888888;
       color: white;
       border-radius: 50%;
     }
   }
-  //   .close-x {
-  //     font-size: 20px;
-  //     color: white;
-  //     font-weight: bold;
-  //     display: block;
-  //     border: none;
-  //     width: 28px;
-  //     height: 28px;
-  //     border-radius: 50%;
-  //     margin-bottom: 5px;
-  //     background-color: transparent;
-  //     &:hover {
-  //       background-color: #727272;
-  //       cursor: pointer;
-  //     }
-  //   }
-  // }
+
   .login-header {
     display: flex;
     justify-content: flex;
     align-items: center;
     padding-right: 15 px;
+
     .form-type {
       font-size: 20px;
       font-weight: 500;
@@ -60,6 +49,7 @@ $form-font: "Rubik", sans-serif;
       margin-inline-start: 0px;
       margin-inline-end: 0px;
     }
+
     .other-form {
       font-size: 13px;
       line-height: 1.4;
@@ -73,6 +63,7 @@ $form-font: "Rubik", sans-serif;
       background-color: white;
       color: black;
       border-radius: 24px;
+
       &:hover {
         transform: scale(1.03);
         opacity: 1;
@@ -95,6 +86,7 @@ $form-font: "Rubik", sans-serif;
     margin-block-start: 0.67em;
     margin-block-end: 0.67em;
   }
+
   .registration_h2 {
     font-size: 16px;
     line-height: 24px;
@@ -116,6 +108,7 @@ $form-font: "Rubik", sans-serif;
     font-weight: 0;
     color: #444;
     padding: 30px;
+
     .login-form {
       height: 375px;
       width: 324px;
@@ -123,6 +116,7 @@ $form-font: "Rubik", sans-serif;
       flex-direction: column;
       justify-content: flex-start;
       padding-top: 1em;
+
       .login-input {
         display: block;
         font-size: 13px;
@@ -132,29 +126,34 @@ $form-font: "Rubik", sans-serif;
         border: 1px solid #e5e4e2;
         border-radius: 6px;
         width: 100%;
+
         &:hover {
           border: 1px solid rgb(174, 167, 167);
         }
+
         &--error {
           @extend .login-input;
           border-color: red;
           background-color: #fddcd8;
         }
       }
+
       .error {
         color: #a61a2e;
         font-size: 10px;
         margin: 3px;
         font-weight: bold;
       }
+
       .login-input-label {
         line-height: 18px;
         font-size: 12px;
         font-weight: bold;
         letter-spacing: 0.1px;
         padding-bottom: 5px;
-        
+
       }
+
       .session-submit {
         display: block;
         font-size: 16px;
@@ -170,42 +169,45 @@ $form-font: "Rubik", sans-serif;
         position: relative;
         margin-top: 10px;
         outline: none;
+
         &:hover {
           transform: scale(1.01);
           opacity: 1;
           cursor: pointer;
-           background-color:#3067CC;
+          background-color: #3067CC;
         }
       }
     }
   }
 }
 
-.input-wrap{
+.input-wrap {
   display: flex;
   flex-direction: column;
 }
 
-.header-wrapper{
+.header-wrapper {
   padding-left: 125px;
   border-bottom: 1px solid #888888;
 }
-.session-logo{
+
+.session-logo {
   width: 100px;
   height: 100px;
-  
+
 }
 
 .extra-info {
   margin-top: 100px;
   margin-left: 5px;
+
   .other-form {
     background: transparent;
     color: rgb(0, 153, 255);
   }
+
   .other-form:hover {
     text-decoration: underline;
     color: #4C82E6;
   }
 }
-

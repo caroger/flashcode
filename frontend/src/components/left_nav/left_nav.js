@@ -18,11 +18,9 @@ class LeftNav extends React.Component {
           <h1>
             <FontAwesomeIcon icon={faUserAlt} /> {this.props.currentUser.username}
           </h1>
-        </div>
-        <div className="instruction-button">
-
-          <h1>
-            <FontAwesomeIcon icon={faQuestionCircle} /> User Guide
+          <h1 className="help" onClick={() => this.props.openModal('instruction')}>
+            <FontAwesomeIcon icon={faQuestionCircle} />
+            {' FAQ'}
           </h1>
         </div>
         <div className="new-note-card-container">
