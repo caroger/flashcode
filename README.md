@@ -102,6 +102,19 @@ Create a card by simply entering the corresponding LeetCode problem number and g
 Flip over the card to write down any notes/tips you'd like to save for when you review the same question in the future.
 ![](images/add_note_demo.gif)
 
+The card flipping animation is built using CSS variables, positioning, and transform properties. 
+
+```css
+.card {
+  ...
+  display: flex;
+  justify-content: center;
+  position: relative;
+  transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
+  transform-style: preserve-3d;
+  transition: 300ms;
+}
+```
 
 ### Review
 
