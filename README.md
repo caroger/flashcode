@@ -97,9 +97,23 @@ Create a card by simply entering the corresponding LeetCode problem number and g
    3. Hard stuck
 
 ![](images/create_card_demo.gif)
+
+FlashCode employs thunks for asynchronous CRUD actions to more effectively manage dispatch calls between front and backend. 
+
+```js
+export const createCard = (card) => (dispatch) =>
+  CardAPI.createCard(card)
+    .then((card) => dispatch(receiveNewCard(card)))
+    .catch((err) => {
+      dispatch(receiveCardErrors(err.response.data));
+      return Promise.reject(err);
+    });
+```
+
 ### Take notes
 
 Flip over the card to write down any notes/tips you'd like to save for when you review the same question in the future.
+
 ![](images/add_note_demo.gif)
 
 The card flipping animation is built using CSS variables, positioning, and transform properties. 
@@ -126,6 +140,23 @@ Based on your confidence rating and review history, we will prepare a "Daily Dec
 
 ![](images/review_demo.gif)
 
+When reviewing cards, users can choose to sort cards by due date, created date, or last updated.
+
+```js
+sortCards(cards) {
+  const sortedCards = cards;
+  switch (this.state.sortBy) {
+    case 'dueDate':
+      return sortedCards.sort((a, b) => (a.dueDate > b.dueDate ? 1 : -1));
+    case 'createdAt':
+      return sortedCards.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
+    case 'updatedAt':
+      return sortedCards.sort((a, b) => (a.updatedAt > b.updatedAt ? 1 : -1));
+    default:
+      return cards;
+  }
+}
+```
 
 <!-- ROADMAP -->
 
