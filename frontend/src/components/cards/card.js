@@ -7,7 +7,7 @@ import { parseDate } from '../../util/date_util';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
-//editor 
+//editor
 import ReactQuill from 'react-quill';
 // import EditorToolbar, { modules, formats } from './editor/editor';
 
@@ -26,7 +26,7 @@ class Card extends Component {
       notes: '',
       updatedAt: new Date(),
       flip: false,
-      value: '',
+      value: ''
     };
 
     this.update = this.update.bind(this);
@@ -38,14 +38,13 @@ class Card extends Component {
     //editor save
     this.handleEditorChange = this.handleEditorChange.bind(this);
   }
-  
+
   componentDidMount() {
     this.grabCard();
   }
 
   grabCard() {
     if (this.props.card) this.setState(this.props.card);
-    
   }
 
   update(field) {
@@ -81,12 +80,14 @@ class Card extends Component {
     let today = new Date();
     let pastDueDate = today.setDate(today.getDate() - 2);
 
-    const { title, probNum, lcDifficulty, rating, url, notes} = this.state;
+    const { title, probNum, lcDifficulty, rating, url, notes } = this.state;
 
     return (
       <div
         key={this.props.key}
-        className={`card ${this.state.flip ? 'flipped' : ''} ${due <= pastDueDate ? 'past-due' : ''}`}
+        className={`card ${this.state.flip ? 'flipped' : ''} ${
+          due <= pastDueDate ? 'past-due' : ''
+        }`}
       >
         <div className="front">
           <div>
@@ -111,19 +112,25 @@ class Card extends Component {
           <form onSubmit={this.handleSubmit}>
             <h2>My Rating</h2>
             <input
-              className={rating == 1 ? 'rating-button-easy-selected' : 'rating-button-easy'}
+              className={
+                parseInt(rating) === 1 ? 'rating-button-easy-selected' : 'rating-button-easy'
+              }
               type="submit"
               value="1"
               onClick={this.update('rating')}
             />
             <input
-              className={rating == 2 ? 'rating-button-medium-selected' : 'rating-button-medium'}
+              className={
+                parseInt(rating) === 2 ? 'rating-button-medium-selected' : 'rating-button-medium'
+              }
               type="submit"
               value="2"
               onClick={this.update('rating')}
             />
             <input
-              className={rating == 3 ? 'rating-button-hard-selected' : 'rating-button-hard'}
+              className={
+                parseInt(rating) === 3 ? 'rating-button-hard-selected' : 'rating-button-hard'
+              }
               type="submit"
               value="3"
               onClick={this.update('rating')}
