@@ -14,17 +14,17 @@ export default class Instruction extends Component {
           </p>
           <p>
             It tracks the LeetCode problem solved and automatically creates review timeline based on
-            user's comfortable/confidence rating
+            user's comfortable/confidence rating.
           </p>
           <h3>How to create a card?</h3>
           <p>
             <ol>
               <li>
-                Click on the <strong>Add Card</strong> blue button.
+                Click on the <strong>Add Card</strong> blue button
               </li>
               <li>
                 Fill in the problem number for the problem you just solved on{' '}
-                <a href="https://leetcode.com/">LeetCode</a>.
+                <a href="https://leetcode.com/">LeetCode</a>
               </li>
               <li>
                 Rate it based on your comfortable/confidence level. Repetition interval for easier
@@ -44,7 +44,7 @@ export default class Instruction extends Component {
               </li>
               <li>
                 <strong>Daily Deck</strong>: contains cards/problems that are due for review today.
-                Your goal is to keep this deck empty.
+                Your goal is to keep this deck empty
               </li>
               <li>
                 <strong>Difficult/Medium/Easy Decks</strong>: contain cards corresponding to the
@@ -54,7 +54,7 @@ export default class Instruction extends Component {
           </p>
           <h3>Why are the borders red on some of the cards?</h3>
           <p>
-            It's the indication that this particular card is more than 3 days over-due for review
+            It's the indication that this particular card is more than 3 days over-due for review.
           </p>
           <h3>How do I review?</h3>
           <p>
