@@ -98,7 +98,7 @@ Create a card by simply entering the corresponding LeetCode problem number and g
 
 ![](images/create_card_demo.gif)
 
-FlashCode employs thunks for asynchronous CRUD actions to more effectively manage dispatch calls between front and backend. 
+FlashCode employs thunks for asynchronous CRUD actions to more effectively manage dispatch calls between front and backend.
 
 ```js
 export const createCard = (card) => (dispatch) =>
@@ -109,6 +109,20 @@ export const createCard = (card) => (dispatch) =>
       return Promise.reject(err);
     });
 ```
+FlashCode retrieves LeetCode problem details by making axios fetch request to LeetCode's public API. It guarentees the ease and the accuracy of card creation with only the problem number from user input.
+
+```js
+const axios = require('axios');
+let lcdata;
+axios.get('https://leetcode.com/api/problems/all/').then((res) => {
+  lcdata = res.data;
+});
+
+function findProblem(probNum, input = lcdata) {
+  problem = input['stat_status_pairs'].filter((pair) => pair.stat.question_id === probNum)[0];
+  return problem;
+}
+```
 
 ### Take notes
 
@@ -116,7 +130,7 @@ Flip over the card to write down any notes/tips you'd like to save for when you 
 
 ![](images/add_note_demo.gif)
 
-The card flipping animation is built using CSS variables, positioning, and transform properties. 
+The card flipping animation is built using CSS variables, positioning, and transform properties.
 
 ```css
 .card {
