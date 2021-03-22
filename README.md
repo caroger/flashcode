@@ -172,6 +172,41 @@ sortCards(cards) {
 }
 ```
 
+Your card's due date is determined by previous time intervals and the rating. FlashCode will pull the previous time interval (if it exists) and assign a new due date based on the day you completed the problem and the rating you gave it. 
+
+```
+const setDueDate = (interval, updatedAt = new Date()) => {
+      return updatedAt.setDate(updatedAt.getDate() + interval);
+};
+
+if (card) {
+  let today = new Date();
+  if (Date.parse(card.dueDate.toDateString()) <= Date.parse(today.toDateString())) {
+    if (req.body.rating) {
+      card.rating = parseInt(req.body.rating);
+      let lastInt = card.interval[card.interval.length - 1];
+      switch (card.rating) {
+        case 3:
+          lastInt = Math.floor(lastInt * 0.4) + 1;
+          break;
+        case 2:
+          lastInt = lastInt;
+          break;
+        case 1:
+          lastInt = lastInt * 2;
+          break;
+      }
+      card.dueDate = setDueDate(lastInt);
+      card.interval.push(lastInt);
+      ...
+    }
+    ...
+  }
+  ...
+}
+    
+```
+
 <!-- ROADMAP -->
 
 ## Roadmap
