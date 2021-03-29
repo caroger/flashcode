@@ -174,7 +174,7 @@ sortCards(cards) {
 
 Your card's due date is determined by previous time intervals and the rating. FlashCode will pull the previous time interval (if it exists) and assign a new due date based on the day you completed the problem and the rating you gave it. 
 
-```
+```js
 const setDueDate = (interval, updatedAt = new Date()) => {
       return updatedAt.setDate(updatedAt.getDate() + interval);
 };
